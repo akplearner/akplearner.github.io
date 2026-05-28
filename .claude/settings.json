@@ -8,7 +8,8 @@
       "Bash(mkdir -p \"/c/tmp/site-shots\")",
       "Bash(\"/c/Program Files/Google/Chrome/Application/chrome.exe\" --headless=new --disable-gpu --hide-scrollbars --window-size=1280,900 --screenshot=\"C:\\\\tmp\\\\site-shots\\\\01-top.png\" http://localhost:8765/index.html)",
       "Read(//c/Users/Tony/AppData/Local/Temp/site-shots/**)",
-      "PowerShell(Get-NetTCPConnection -LocalPort 8765 -ErrorAction SilentlyContinue | ForEach-Object { Stop-Process -Id $_.OwningProcess -Force -ErrorAction SilentlyContinue }; \"stopped\")"
+      "PowerShell(Get-NetTCPConnection -LocalPort 8765 -ErrorAction SilentlyContinue | ForEach-Object { Stop-Process -Id $_.OwningProcess -Force -ErrorAction SilentlyContinue }; \"stopped\")",
+      "Bash(curl -s -o /dev/null -w \"Server: HTTP %{http_code}\\\\nOpen: http://localhost:8765/index.html\\\\n\" http://localhost:8765/index.html)"
     ]
   }
 }
