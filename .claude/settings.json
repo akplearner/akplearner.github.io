@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(mkdir -p /tmp/site-shots)",
+      "Bash(\"/c/Program Files/Google/Chrome/Application/chrome.exe\" --headless=new --disable-gpu --hide-scrollbars --window-size=1280,900 --screenshot=C:/tmp/site-shots/01-top.png http://localhost:8765/index.html)",
+      "Read(//c/tmp/**)",
+      "Read(//tmp/**)",
+      "Bash(mkdir -p \"/c/tmp/site-shots\")",
+      "Bash(\"/c/Program Files/Google/Chrome/Application/chrome.exe\" --headless=new --disable-gpu --hide-scrollbars --window-size=1280,900 --screenshot=\"C:\\\\tmp\\\\site-shots\\\\01-top.png\" http://localhost:8765/index.html)",
+      "Read(//c/Users/Tony/AppData/Local/Temp/site-shots/**)",
+      "PowerShell(Get-NetTCPConnection -LocalPort 8765 -ErrorAction SilentlyContinue | ForEach-Object { Stop-Process -Id $_.OwningProcess -Force -ErrorAction SilentlyContinue }; \"stopped\")"
+    ]
+  }
+}

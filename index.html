@@ -6,86 +6,84 @@
   <title>Kerry P. — Strategic Architect of Integrated Defense | Austin, TX</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Press+Start+2P&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Press+Start+2P&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
+  <div class="bg-mesh" aria-hidden="true"></div>
+
   <div class="page-shell">
-    <header class="topbar">
+    <header class="topbar" id="topbar">
       <div class="brand">
         <p class="brand-label">KP</p>
         <h1>Strategic Architect of Integrated Defense</h1>
-        <p class="brand-subtitle">Lead Instructor — CyberTex Institute | Pursuing CMMC CCP (2026) | Cloud, AIOps & Physical Security | Austin, Texas</p>
       </div>
-      <nav class="nav-links">
+      <nav class="nav-links" aria-label="Primary">
         <a href="#router">Start</a>
-        <a href="#about">About</a>
         <a href="#services">Services</a>
-        <a href="#leadership">Guilds</a>
+        <a href="#ecosystem">Ecosystem</a>
         <a href="#portfolio">Portfolio</a>
         <a href="#journey">Funnel</a>
-        <a href="#connect">Connect</a>
+        <a href="#connect" class="nav-cta">Book a Call</a>
       </nav>
     </header>
 
     <main>
+      <!-- PHASE 1 · HOOK -->
       <section class="hero" id="about">
         <div class="hero-copy">
-          <p class="eyebrow">Austin–Elgin Corridor • DoD CMMC 2.0 Deadline: November 10, 2026</p>
-          <h2>Architect of Integrated Defense: Cybersecurity, AI-Ops & Compliance.</h2>
-          <p class="hero-subtitle">Building the next generation of CMMC-ready infrastructure in the Austin-Elgin corridor. 10+ years of infrastructure and security experience now focused on preparing the Defense Industrial Base for the November 2026 deadline.</p>
+          <p class="eyebrow"><span class="pixel-dot"></span> CMMC 2.0 Deadline · November 10, 2026</p>
+          <h2>Architect of <span class="grad-text">Integrated Defense</span>.<br />Cybersecurity. AI-Ops. Compliance.</h2>
+          <p class="hero-subtitle">10+ years of infrastructure and security — now preparing the Austin–Elgin Defense Industrial Base for the November 2026 deadline.</p>
+          <div class="hero-roles">
+            <span class="role-chip">Lead Instructor · CyberTex</span>
+            <span class="role-chip">Cloud + AIOps Architect</span>
+            <span class="role-chip">HHO Guild Network</span>
+            <span class="role-chip">CMMC CCP · 2026</span>
+          </div>
           <div class="hero-actions">
             <a href="#connect" class="button primary">Request a CMMC Readiness Briefing</a>
-            <a href="#communities" class="button secondary">Join the HHO Community</a>
+            <a href="#follow" class="button secondary">Follow the Work</a>
           </div>
           <p class="hero-note">By November 10, 2026, CMMC Level 2 becomes a condition of contract award for DoD solicitations. Position your organization now.</p>
         </div>
       </section>
 
+      <!-- PHASE 2 · PROOF AT A GLANCE -->
       <section class="section snapshot">
         <div class="snapshot-grid">
           <article class="metric-card">
-            <span class="metric-value">10+</span>
-            <p>Years in Infrastructure & Security</p>
+            <span class="metric-value" data-count="10" data-suffix="+">0+</span>
+            <p>Years infrastructure &amp; security</p>
           </article>
           <article class="metric-card">
-            <span class="metric-value">110</span>
-            <p>NIST 800-171 Practices Mapped in Labs</p>
+            <span class="metric-value" data-count="110">0</span>
+            <p>NIST 800-171 practices mapped</p>
           </article>
           <article class="metric-card">
-            <span class="metric-value">4</span>
-            <p>HHO Specialty Guilds</p>
+            <span class="metric-value" data-count="4">0</span>
+            <p>HHO specialty guilds</p>
           </article>
           <article class="metric-card">
             <span class="metric-value">2026</span>
-            <p>CMMC CCP Sprint Target</p>
+            <p>CMMC CCP sprint target</p>
           </article>
-          <article class="metric-card">
-            <span class="metric-value">DIB</span>
-            <p>Defense Industrial Base Focus</p>
-          </article>
-          <article class="metric-card">
-            <span class="metric-value">Austin</span>
-            <p>Elgin Corridor Engagement</p>
-          </article>
-        </div>
-        <div class="snapshot-note">
-          <p>Total Spectrum Security • Risk Mitigation • Contract Eligibility • CMMC Automation</p>
         </div>
       </section>
 
+      <!-- PHASE 3 · ROUTE -->
       <section class="section router" id="router">
         <div class="section-head">
           <span>Start Here</span>
           <h3>I'm here because&hellip; pick your path in one click.</h3>
         </div>
         <div class="router-grid">
-          <a href="#security" class="router-card" data-route="dib">
+          <a href="#services" class="router-card" data-route="dib">
             <span class="router-icon">🏢</span>
             <p class="router-tag">DoD / DIB Contractor</p>
             <h4>I need to be CMMC-ready by Nov 2026</h4>
             <p>Gap analysis, NIST 800-171 mapping, audit prep.</p>
-            <span class="router-arrow">Go to Security &rarr;</span>
+            <span class="router-arrow">Go to Services &rarr;</span>
           </a>
           <a href="#platforms" class="router-card" data-route="learner">
             <span class="router-icon">🎓</span>
@@ -101,7 +99,7 @@
             <p>Cloud, AIOps, physical security, DevOps.</p>
             <span class="router-arrow">View Services &rarr;</span>
           </a>
-          <a href="#leadership" class="router-card" data-route="community">
+          <a href="#ecosystem" class="router-card" data-route="community">
             <span class="router-icon">⚔️</span>
             <p class="router-tag">Community Seeker</p>
             <h4>I want disciplined brotherhood + growth</h4>
@@ -118,44 +116,30 @@
         </div>
       </section>
 
-      <section class="section about-grid">
-        <div class="section-head">
-          <span>Who I Am</span>
-          <h3>Why I design full-spectrum infrastructure, security, and automation solutions.</h3>
-        </div>
-        <div class="split-grid">
-          <div>
-            <p>I'm a Security Architect and Lead Instructor at CyberTex Institute, currently shaping the next generation of the Austin-Elgin cybersecurity workforce. I specialize in translating complex frameworks like NIST SP 800-171 into automated, AIOps-driven reality.</p>
-            <p>Over 10+ years across AWS, Azure, Terraform, cybersecurity, and physical security systems, I've built the technical depth to design full-spectrum defense. Through the HHO Guild Network, I lead a disciplined ecosystem of engineers, veterans, and domain experts focused on technical excellence and integrated security.</p>
-          </div>
-          <div class="bio-card">
-            <p class="bio-role">Lead Instructor — CyberTex Institute</p>
-            <p class="bio-role">Cloud & Infrastructure Architect</p>
-            <p class="bio-role">HHO Guild Network Leader</p>
-            <p class="bio-role">CMMC CCP Candidate (2026)</p>
-            <p class="bio-role">Lab & Curriculum Designer</p>
-            <p class="bio-tagline">My mission: make every system secure, every automation intelligent, and every infrastructure future-ready.</p>
-            <div class="bio-metrics">
-              <span>10+ Years infrastructure & security</span>
-              <span>CyberTex cohorts taught</span>
-              <span>HHO Guild Network active</span>
-            </div>
-          </div>
-        </div>
-      </section>
-
+      <!-- PHASE 4 · WHAT I DO -->
       <section class="section skills" id="services">
         <div class="section-head">
           <span>Total Spectrum Security</span>
           <h3>Six integrated capabilities that secure your organization end-to-end.</h3>
         </div>
         <div class="skill-grid">
+          <div class="skill-card featured">
+            <span class="skill-icon">🔐</span>
+            <h4>CMMC &amp; NIST Readiness <span class="status-tag current">Current</span></h4>
+            <p>Gap analysis, control mapping, and remediation roadmaps for organizations preparing for CMMC Level 2 — backed by Terraform, Ansible, and AIOps automation.</p>
+            <ul class="feature-list">
+              <li>NIST SP 800-171 gap assessments</li>
+              <li>Control mapping &amp; remediation roadmaps</li>
+              <li>Pre-audit documentation packages</li>
+              <li>Continuous compliance via AIOps</li>
+            </ul>
+          </div>
           <div class="skill-card">
             <span class="skill-icon">☁️</span>
             <h4>Cloud + Infrastructure</h4>
             <p>Build secure, scalable cloud systems with confidence and delivery speed.</p>
             <ul class="feature-list">
-              <li>AWS & Azure architecture</li>
+              <li>AWS &amp; Azure architecture</li>
               <li>Terraform + infrastructure as code</li>
               <li>Kubernetes, CI/CD, observability</li>
             </ul>
@@ -171,23 +155,13 @@
             </ul>
           </div>
           <div class="skill-card">
-            <span class="skill-icon">🔐</span>
-            <h4>CMMC & NIST Readiness <span class="status-tag current">Current</span></h4>
-            <p>Gap analysis, control mapping, and remediation roadmaps for organizations preparing for CMMC Level 2.</p>
-            <ul class="feature-list">
-              <li>NIST SP 800-171 gap assessments</li>
-              <li>Control mapping & remediation roadmaps</li>
-              <li>Pre-audit documentation packages</li>
-            </ul>
-          </div>
-          <div class="skill-card">
             <span class="skill-icon">🏗️</span>
             <h4>Physical Security + Wiring</h4>
             <p>Design complete physical security systems from cameras to access control.</p>
             <ul class="feature-list">
-              <li>IP camera & PoE wiring systems</li>
-              <li>Access control & structured cabling</li>
-              <li>Network closets & perimeter planning</li>
+              <li>IP camera &amp; PoE wiring systems</li>
+              <li>Badge &amp; multi-factor access control</li>
+              <li>Network closets &amp; perimeter planning</li>
             </ul>
           </div>
           <div class="skill-card">
@@ -202,104 +176,55 @@
           </div>
           <div class="skill-card">
             <span class="skill-icon">🎯</span>
-            <h4>Certified CMMC Level 2 Auditing <span class="status-tag soon">Coming Q3 2027</span></h4>
-            <p>Pursuing CCP (2026) and CCA certification to provide official Level 2 audits for DoD contractors through a C3PAO partnership.</p>
+            <h4>Certified Level 2 Auditing <span class="status-tag soon">Q3 2027</span></h4>
+            <p>Pursuing CCP (2026) and CCA certification to provide official Level 2 audits via C3PAO partnership.</p>
             <ul class="feature-list">
               <li>CCP exam target: Q3 2026</li>
-              <li>CCA training & background check: 2027</li>
-              <li>Join the early-access list for assessment slots</li>
+              <li>CCA training &amp; background check: 2027</li>
+              <li>Early-access list for assessment slots</li>
             </ul>
           </div>
         </div>
       </section>
 
-      <section class="section leadership" id="leadership">
+      <!-- PHASE 5 · ECOSYSTEM -->
+      <section class="section leadership" id="ecosystem">
         <div class="section-head">
-          <span>Leadership & Ecosystem</span>
+          <span>Leadership &amp; Ecosystem</span>
           <h3>Guardian of the Austin-Elgin Tech Corridor. Four specialty guilds, unified mission.</h3>
         </div>
         <div class="guild-grid">
           <article class="guild-card">
-            <h4>🧠 Expert Guild</h4>
+            <span class="guild-icon">🧠</span>
+            <h4>Expert Guild</h4>
             <p>A brain trust of Cybersecurity, AI, and Litigation experts protecting corporate assets and intellectual property.</p>
           </article>
           <article class="guild-card">
-            <h4>🛡️ Physical Elite</h4>
+            <span class="guild-icon">🛡️</span>
+            <h4>Physical Elite</h4>
             <p>Ex-military and survivalist professionals securing the physical perimeter and critical infrastructure.</p>
           </article>
           <article class="guild-card">
-            <h4>💼 Business & Investment</h4>
+            <span class="guild-icon">💼</span>
+            <h4>Business &amp; Investment</h4>
             <p>Strategic partners driving growth and market advantage in the Austin tech corridor and beyond.</p>
           </article>
           <article class="guild-card">
-            <h4>✨ Spiritual Leadership</h4>
+            <span class="guild-icon">✨</span>
+            <h4>Spiritual Leadership</h4>
             <p>A core group of dedicated men ensuring moral alignment and the protection of the marginalized.</p>
           </article>
         </div>
+        <p class="ecosystem-partners">
+          <strong>Actively engaged with:</strong>
+          Austin Technology Council · Austin AI Alliance · Elgin City Leadership
+        </p>
       </section>
 
-      <section class="section communities" id="communities">
-        <div class="section-head">
-          <span>Ecosystem Partners</span>
-          <h3>Actively engaged with Austin leadership and defense technology infrastructure.</h3>
-        </div>
-        <div class="community-copy">
-          <p>I'm deeply embedded in the Austin-Elgin tech corridor. I actively engage with the Austin Technology Council, Austin AI Alliance, and Elgin City Leadership to advance integrated defense and AI-driven infrastructure for the region.</p>
-        </div>
-        <div class="link-grid">
-          <article class="link-card">
-            <h4>Austin Technology Council</h4>
-            <p>Driving technology adoption and innovation across the Austin metro area, with focus on defense contractors and critical infrastructure compliance.</p>
-          </article>
-          <article class="link-card">
-            <h4>Austin AI Alliance</h4>
-            <p>Leading AI and AIOps initiatives that enhance security, compliance automation, and intelligent infrastructure for enterprise and government sectors.</p>
-          </article>
-          <article class="link-card">
-            <h4>Elgin City Leadership</h4>
-            <p>Collaborating with city officials and local government on integrated security infrastructure and technology modernization for public safety.</p>
-          </article>
-          <article class="link-card">
-            <h4>HHO Guilds</h4>
-            <p>Four specialty guilds unified around expertise, physical security, business investment, and moral leadership for the Austin-Elgin region.</p>
-          </article>
-</div>
-      </section>
-
-      <section class="section security" id="security">
-        <div class="section-head">
-          <span>Risk Mitigation</span>
-          <h3>Compliance, automation, and integrated defense for the Austin-Elgin corridor.</h3>
-        </div>
-        <div class="split-grid">
-          <div class="security-card">
-            <h4>CMMC 2.0 Readiness for the DIB</h4>
-            <p>Position your organization for contract award by November 2026. I map the 110 security practices required by NIST SP 800-171 for CMMC Level 2, using Terraform, Ansible, and AIOps to enforce controls at scale.</p>
-            <ul class="feature-list">
-              <li>CMMC pre-assessment and gap analysis</li>
-              <li>NIST 800-171 control mapping and automation</li>
-              <li>Terraform-driven security policy enforcement</li>
-              <li>AIOps-enabled continuous compliance monitoring</li>
-              <li>Audit preparation (independent assessor referrals available)</li>
-            </ul>
-          </div>
-          <div class="security-card">
-            <h4>Total Spectrum Physical & Digital</h4>
-            <p>Integrated security across digital infrastructure, physical perimeter, and agentic operations. From access control to cloud hardening, I architect unified security for enterprise environments.</p>
-            <ul class="feature-list">
-              <li>Enterprise IP camera and PoE infrastructure</li>
-              <li>Badge systems and multi-factor access control</li>
-              <li>Secure network closets and structured cabling</li>
-              <li>Cloud security reviews (IAM, networking, encryption)</li>
-              <li>Perimeter planning and threat intelligence</li>
-            </ul>
-          </div>
-        </div>
-      </section>
-
+      <!-- PHASE 6 · PLATFORMS -->
       <section class="section platforms" id="platforms">
         <div class="section-head">
-          <span>Platforms & Ecosystem</span>
+          <span>Platforms &amp; Ecosystem</span>
           <h3>One live community today. Two infrastructure pillars coming soon.</h3>
         </div>
         <div class="platform-grid">
@@ -309,13 +234,13 @@
               <span class="status-tag live">Live</span>
             </div>
             <h4>HackersHideout</h4>
-            <p>Discord guild for engineers building toward cloud, security, and CMMC careers. Real feedback, peer review, and structured progression.</p>
+            <p>Discord guild for engineers building toward cloud, security, and CMMC careers. Real feedback, peer review, structured progression.</p>
             <ul class="feature-list">
               <li>Weekly cohort engagement</li>
               <li>Lab review and peer mentorship</li>
               <li>Direct access to instructors and HHO Guild members</li>
             </ul>
-            <a href="#connect" class="button secondary small">Join the Discord</a>
+            <a href="mailto:kerry.p.pro@gmail.com?subject=HHO%20Discord%20Invite" class="button secondary small">Join the Discord</a>
           </article>
           <article class="platform-card">
             <div class="platform-head">
@@ -325,7 +250,7 @@
             <h4>InfraRange</h4>
             <p>Hands-on lab platform under active development. Engineers will build CMMC-aligned infrastructure across Azure and AWS and earn skill badges tied to NIST 800-171 controls.</p>
             <ul class="feature-list">
-              <li>Guided Terraform & Ansible labs</li>
+              <li>Guided Terraform &amp; Ansible labs</li>
               <li>Compliance-as-code scenarios</li>
               <li>Badge-based progression</li>
             </ul>
@@ -348,6 +273,7 @@
         </div>
       </section>
 
+      <!-- PHASE 7 · PORTFOLIO -->
       <section class="section portfolio" id="portfolio">
         <div class="section-head">
           <span>Portfolio</span>
@@ -375,32 +301,7 @@
         </div>
       </section>
 
-      <section class="section proof" id="proof">
-        <div class="section-head">
-          <span>Community Impact</span>
-          <h3>What I'm building, teaching, and leading right now.</h3>
-        </div>
-        <div class="impact-grid">
-          <article class="impact-card">
-            <h4>CyberTex Institute</h4>
-            <p>Lead Instructor delivering Security+, CySA+, and cloud security curriculum. Translating NIST frameworks into hands-on labs that students can take into DIB roles.</p>
-          </article>
-          <article class="impact-card">
-            <h4>HHO Guild Network</h4>
-            <p>Architect of a four-guild ecosystem — Expert, Physical Elite, Business & Investment, and Spiritual Leadership — unified around technical excellence and integrated defense.</p>
-          </article>
-          <article class="impact-card">
-            <h4>Austin-Elgin Engagement</h4>
-            <p>Active participation with regional technology councils and city leadership to advance CMMC readiness and integrated security for the corridor.</p>
-          </article>
-          <article class="impact-card">
-            <h4>Weekly Cadence</h4>
-            <p>Consistent public output across LinkedIn, Discord, and short-form video — labs, breakdowns, and frameworks for engineers preparing for the 2026 deadline.</p>
-          </article>
-        </div>
-        <p class="proof-note">Student and partner testimonials will be published here as engagements close. Attribution requires written consent.</p>
-      </section>
-
+      <!-- PHASE 8 · FUNNEL -->
       <section class="section journey" id="journey">
         <div class="section-head">
           <span>The Funnel</span>
@@ -442,7 +343,7 @@
               <p class="stage-label">Engage</p>
               <h4>Pick a Guild and a cohort</h4>
               <p>Expert, Physical Elite, Business &amp; Investment, or Spiritual Leadership. Each guild has a track &mdash; you don't grow alone.</p>
-              <a href="#leadership" class="button secondary small">See the four guilds &uarr;</a>
+              <a href="#ecosystem" class="button secondary small">See the four guilds &uarr;</a>
             </div>
           </li>
           <li class="stage-card" data-stage="05">
@@ -457,6 +358,7 @@
         </ol>
       </section>
 
+      <!-- STAGE 1 LANDING · FOLLOW -->
       <section class="section follow" id="follow">
         <div class="section-head">
           <span>Stage 1 &middot; Follow</span>
@@ -522,6 +424,7 @@
         </div>
       </section>
 
+      <!-- STAGE 2 LANDING · ENDORSE -->
       <section class="section endorse" id="endorse">
         <div class="section-head">
           <span>Stage 2 &middot; Endorse</span>
@@ -552,6 +455,7 @@
         </div>
       </section>
 
+      <!-- PHASE 9 · NEWSLETTER -->
       <section class="section newsletter" id="newsletter">
         <div class="newsletter-card">
           <div>
@@ -570,39 +474,20 @@
         </div>
       </section>
 
+      <!-- PHASE 10 · CONVERT -->
       <section class="section connect" id="connect">
         <div class="section-head">
-          <span>Engagement</span>
-          <h3>Pick the path that matches where you are.</h3>
-        </div>
-        <div class="path-grid">
-          <article class="path-card">
-            <p class="path-label">For Businesses</p>
-            <h4>Request a CMMC Readiness Briefing</h4>
-            <p>If you're a DoD contractor or DIB supplier preparing for the November 2026 deadline, start with a structured gap analysis.</p>
-            <a href="#connect-form" class="button primary small">Start the Briefing</a>
-          </article>
-          <article class="path-card">
-            <p class="path-label">For Engineers</p>
-            <h4>Join the HHO Discord</h4>
-            <p>Plug into a disciplined community of engineers building cloud, security, and CMMC skill stacks together.</p>
-            <a href="mailto:kerry.p.pro@gmail.com?subject=HHO%20Discord%20Invite" class="button secondary small">Request an Invite</a>
-          </article>
-          <article class="path-card">
-            <p class="path-label">For Partners</p>
-            <h4>Ecosystem Collaboration</h4>
-            <p>Vendors, C3PAOs, recruiters, and Austin-Elgin leaders looking to align on integrated defense.</p>
-            <a href="mailto:kerry.p.pro@gmail.com?subject=Partnership%20Inquiry" class="button secondary small">Open a Conversation</a>
-          </article>
+          <span>Stage 5 &middot; Work With Me</span>
+          <h3>Tell me the outcome you want. I'll route your request with clarity.</h3>
         </div>
         <div class="connect-grid" id="connect-form">
           <div class="connect-panel">
-            <p>Tell me the outcome you want — readiness assessment, community access, or partnership — and I'll route your request with clarity.</p>
+            <p>Readiness assessment, community access, or partnership — name the outcome and I'll send back the next step.</p>
             <div class="connect-links">
               <a href="mailto:kerry.p.pro@gmail.com">Email: kerry.p.pro@gmail.com</a>
-              <a href="https://www.linkedin.com/in/kerrypp/" target="_blank">LinkedIn</a>
+              <a href="https://www.linkedin.com/in/kerrypp/" target="_blank" rel="noopener">LinkedIn</a>
             </div>
-            <p class="hero-note">Response: Usually within 24–48 hours. I only reply with action-oriented guidance, not noise.</p>
+            <p class="hero-note">Response: usually within 24–48 hours. Action-oriented guidance only, no noise.</p>
           </div>
           <form class="contact-form">
             <label>
@@ -617,8 +502,8 @@
               I'm contacting you for:
               <select name="focus">
                 <option>Choose your focus...</option>
-                <option>CMMC readiness & gap analysis</option>
-                <option>AIOps & security automation</option>
+                <option>CMMC readiness &amp; gap analysis</option>
+                <option>AIOps &amp; security automation</option>
                 <option>Physical security design</option>
                 <option>HHO community membership</option>
                 <option>Strategic partnership / referral</option>
@@ -632,39 +517,6 @@
           </form>
         </div>
       </section>
-
-      <section class="section schedule" id="schedule">
-        <div class="section-head">
-          <span>Weekly Content Schedule</span>
-          <h3>Fresh insights, labs, and community updates every week.</h3>
-        </div>
-        <div class="schedule-grid">
-          <article class="schedule-card">
-            <h4>Monday — LinkedIn Post</h4>
-            <p>Professional insight on cloud, DevOps, AIOps, business consulting, cybersecurity, or physical security.</p>
-          </article>
-          <article class="schedule-card">
-            <h4>Tuesday — Discord Engagement</h4>
-            <p>Lab of the Week, resource share, community questions, and new member welcome.</p>
-          </article>
-          <article class="schedule-card">
-            <h4>Wednesday — Short-Form Video</h4>
-            <p>30–60s lab snippet, quick cloud tip, camera placement hack, or AI workflow demo.</p>
-          </article>
-          <article class="schedule-card">
-            <h4>Thursday — Portfolio Update</h4>
-            <p>Add or refresh a lab, testimonial, project screenshot, or community milestone.</p>
-          </article>
-          <article class="schedule-card">
-            <h4>Friday — LinkedIn Engagement</h4>
-            <p>Comment, congratulate students, and share a small win.</p>
-          </article>
-          <article class="schedule-card">
-            <h4>Weekend — Optional</h4>
-            <p>Behind the scenes, community highlight, meme, or physical security tip.</p>
-          </article>
-        </div>
-      </section>
     </main>
 
     <footer class="footer">
@@ -673,13 +525,10 @@
           <p class="footer-col-label">Site</p>
           <ul class="footer-links">
             <li><a href="#router">Start Here</a></li>
-            <li><a href="#about">About</a></li>
             <li><a href="#services">Services</a></li>
-            <li><a href="#security">Security &amp; CMMC</a></li>
+            <li><a href="#ecosystem">Ecosystem</a></li>
             <li><a href="#platforms">Platforms</a></li>
-            <li><a href="#leadership">HHO Guilds</a></li>
             <li><a href="#portfolio">Portfolio</a></li>
-            <li><a href="#proof">Proof</a></li>
             <li><a href="#journey">Funnel</a></li>
             <li><a href="#connect">Book a Call</a></li>
           </ul>
@@ -703,7 +552,6 @@
             <li><a href="https://www.linkedin.com/in/kerrypp/" target="_blank" rel="noopener">LinkedIn Recommendation</a></li>
             <li><a href="#REPLACE-GOOGLE-BUSINESS-REVIEW-URL" target="_blank" rel="noopener">Google Business</a></li>
             <li><a href="#REPLACE-RATEMYPROFESSOR-URL" target="_blank" rel="noopener">RateMyProfessor</a></li>
-            <li><a href="#REPLACE-YELP-URL" target="_blank" rel="noopener">Yelp</a></li>
             <li><a href="#REPLACE-CLUTCH-URL" target="_blank" rel="noopener">Clutch.co</a></li>
             <li><a href="#REPLACE-G2-URL" target="_blank" rel="noopener">G2</a></li>
             <li><a href="#REPLACE-TRUSTPILOT-URL" target="_blank" rel="noopener">Trustpilot</a></li>
@@ -727,27 +575,6 @@
       </div>
       <p class="footer-copy">© 2026 Kerry P. &mdash; Strategic Architect of Integrated Defense &middot; Lead Instructor &amp; Security Strategist &middot; Austin, Texas</p>
     </footer>
-  </div>
-
-  <div class="modal-overlay hidden" id="modal-overlay">
-    <div class="modal">
-      <button class="modal-close" aria-label="Close modal">✕</button>
-      <div class="modal-content">
-        <p class="modal-label">Architecture detail</p>
-        <h4 id="modal-title"></h4>
-        <p id="modal-description"></p>
-        <div class="modal-grid">
-          <div>
-            <strong>Tools</strong>
-            <p id="modal-tools"></p>
-          </div>
-          <div>
-            <strong>Impact</strong>
-            <p id="modal-impact"></p>
-          </div>
-        </div>
-      </div>
-    </div>
   </div>
 
   <script src="script.js"></script>
