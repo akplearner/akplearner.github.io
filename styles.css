@@ -1969,6 +1969,289 @@ textarea:focus-visible {
   }
 }
 
+/* ============================================================
+   V3.3 · Restructure — metrics strip, accordion, tabs, cues
+   ============================================================ */
+
+/* ---- Hero scroll cue ---- */
+.scroll-cue {
+  position: absolute;
+  bottom: 22px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: grid;
+  place-items: start center;
+  width: 26px;
+  height: 42px;
+  border-radius: 14px;
+  border: 2px solid rgba(161, 65, 255, 0.35);
+  padding-top: 7px;
+}
+
+.scroll-cue-dot {
+  width: 5px;
+  height: 9px;
+  border-radius: 3px;
+  background: var(--accent);
+  animation: scrollCue 1.8s ease-in-out infinite;
+}
+
+@keyframes scrollCue {
+  0% { opacity: 0; transform: translateY(-4px); }
+  40% { opacity: 1; }
+  100% { opacity: 0; transform: translateY(12px); }
+}
+
+@media (max-width: 720px) {
+  .scroll-cue { display: none; }
+}
+
+/* ---- Compact metrics strip (above router) ---- */
+.metrics-strip {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  margin-bottom: 36px;
+  padding: 16px;
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: saturate(160%) blur(10px);
+  -webkit-backdrop-filter: saturate(160%) blur(10px);
+  border: 1px solid var(--border);
+  border-radius: 22px;
+  box-shadow: var(--shadow);
+}
+
+.metric-chip {
+  display: grid;
+  gap: 4px;
+  justify-items: center;
+  text-align: center;
+  padding: 10px 8px;
+  border-radius: 16px;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.metric-chip:hover {
+  background: rgba(161, 65, 255, 0.06);
+  transform: translateY(-2px);
+}
+
+.metric-chip:not(:last-child) {
+  border-right: 1px solid var(--border);
+}
+
+.metric-chip .metric-value {
+  font-size: clamp(1.4rem, 3vw, 2rem);
+  font-weight: 800;
+  margin: 0;
+}
+
+.metric-chip p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.78rem;
+  line-height: 1.4;
+}
+
+@media (max-width: 720px) {
+  .metrics-strip {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 6px;
+  }
+  .metric-chip:nth-child(2) { border-right: 0; }
+}
+
+/* ---- Services accordion ---- */
+.accordion {
+  display: grid;
+  gap: 14px;
+}
+
+.acc-item {
+  position: relative;
+  overflow: hidden;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 22px;
+  box-shadow: var(--shadow);
+  transition: border-color 0.25s ease, box-shadow 0.25s ease, transform 0.25s ease;
+}
+
+.acc-item:hover {
+  border-color: rgba(161, 65, 255, 0.4);
+  box-shadow: 0 28px 60px rgba(161, 65, 255, 0.12);
+}
+
+.acc-item.is-open {
+  border-color: rgba(161, 65, 255, 0.45);
+  background:
+    linear-gradient(180deg, rgba(161, 65, 255, 0.05), transparent 30%),
+    var(--surface);
+  box-shadow: 0 28px 60px rgba(161, 65, 255, 0.14);
+}
+
+.acc-trigger {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 20px 24px;
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+  text-align: left;
+  font: inherit;
+  color: var(--text);
+}
+
+.acc-icon {
+  display: inline-grid;
+  place-items: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 12px;
+  background: rgba(161, 65, 255, 0.10);
+  font-size: 1.15rem;
+  flex: 0 0 auto;
+  transition: transform 0.25s ease;
+}
+
+.acc-item.is-open .acc-icon {
+  transform: scale(1.08) rotate(-4deg);
+}
+
+.acc-heading {
+  font-size: 1.08rem;
+  font-weight: 700;
+  flex: 1 1 auto;
+}
+
+.acc-trigger .status-tag {
+  margin-left: 0;
+}
+
+.acc-chevron {
+  flex: 0 0 auto;
+  color: var(--accent);
+  font-size: 0.9rem;
+  transition: transform 0.3s ease;
+}
+
+.acc-item.is-open .acc-chevron {
+  transform: rotate(180deg);
+}
+
+.acc-panel {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.35s ease;
+}
+
+.acc-item.is-open .acc-panel {
+  grid-template-rows: 1fr;
+}
+
+.acc-panel-inner {
+  overflow: hidden;
+  min-height: 0;
+}
+
+.acc-panel-inner > * {
+  margin: 0 24px;
+}
+
+.acc-panel-inner p {
+  color: var(--muted);
+  line-height: 1.75;
+  padding-top: 2px;
+}
+
+.acc-panel-inner .feature-list {
+  margin: 14px 24px 0 42px;
+}
+
+.acc-panel-inner .card-cta {
+  margin: 14px 24px 22px;
+}
+
+/* ---- Proof of Work tabs ---- */
+.tabs {
+  display: inline-flex;
+  gap: 4px;
+  padding: 6px;
+  margin-bottom: 28px;
+  background: rgba(255, 255, 255, 0.65);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  box-shadow: var(--shadow);
+}
+
+.tab {
+  position: relative;
+  padding: 10px 22px;
+  border: 0;
+  border-radius: 999px;
+  background: transparent;
+  color: var(--muted);
+  font: inherit;
+  font-weight: 700;
+  font-size: 0.92rem;
+  cursor: pointer;
+  transition: color 0.2s ease, background 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tab:hover {
+  color: var(--text);
+}
+
+.tab.is-active {
+  color: #fff;
+  background: linear-gradient(135deg, #A141FF 0%, #6B2BFF 100%);
+  box-shadow: 0 10px 22px rgba(161, 65, 255, 0.30);
+}
+
+.tab-panel {
+  display: none;
+}
+
+.tab-panel.is-active {
+  display: block;
+  animation: panelIn 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@keyframes panelIn {
+  from { opacity: 0; transform: translateY(14px); }
+  to { opacity: 1; transform: none; }
+}
+
+.project-footnote {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.9rem;
+  font-style: italic;
+}
+
+/* ---- Connect: newsletter now sits inside the convert section ---- */
+.connect .newsletter-card {
+  margin-top: 28px;
+}
+
+/* ---- Reveal stagger for new grids ---- */
+.router-grid .router-card.reveal:nth-child(2) { transition-delay: 60ms; }
+.router-grid .router-card.reveal:nth-child(3) { transition-delay: 120ms; }
+.router-grid .router-card.reveal:nth-child(4) { transition-delay: 180ms; }
+.router-grid .router-card.reveal:nth-child(5) { transition-delay: 240ms; }
+
+.accordion .acc-item.reveal:nth-child(2) { transition-delay: 50ms; }
+.accordion .acc-item.reveal:nth-child(3) { transition-delay: 100ms; }
+.accordion .acc-item.reveal:nth-child(4) { transition-delay: 150ms; }
+.accordion .acc-item.reveal:nth-child(5) { transition-delay: 200ms; }
+.accordion .acc-item.reveal:nth-child(6) { transition-delay: 250ms; }
+
+.metric-chip.reveal:nth-child(2) { transition-delay: 60ms; }
+.metric-chip.reveal:nth-child(3) { transition-delay: 120ms; }
+.metric-chip.reveal:nth-child(4) { transition-delay: 180ms; }
+
 /* Respect reduced motion */
 @media (prefers-reduced-motion: reduce) {
   *,
@@ -1982,5 +2265,8 @@ textarea:focus-visible {
   .reveal {
     opacity: 1;
     transform: none;
+  }
+  .acc-panel {
+    transition: none;
   }
 }

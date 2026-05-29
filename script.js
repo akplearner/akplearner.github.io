@@ -33,14 +33,12 @@ document.addEventListener('DOMContentLoaded', () => {
   /* ─── Reveal on scroll ─────────────────────────── */
   const revealSelectors = [
     'main .section',
-    '.stage-card',
-    '.skill-card',
+    '.metric-chip',
+    '.router-card',
+    '.acc-item',
     '.platform-card',
     '.project-card',
-    '.guild-card',
-    '.follow-card',
-    '.endorse-col',
-    '.metric-card'
+    '.guild-card'
   ].join(',');
   const revealTargets = Array.from(document.querySelectorAll(revealSelectors));
 
@@ -170,4 +168,51 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
   }
+
+  /* ─── Services accordion (single-open) ─────────── */
+  const accItems = Array.from(document.querySelectorAll('.acc-item'));
+  accItems.forEach(item => {
+    const trigger = item.querySelector('.acc-trigger');
+    if (!trigger) return;
+    trigger.addEventListener('click', () => {
+      const willOpen = !item.classList.contains('is-open');
+      accItems.forEach(other => {
+        other.classList.remove('is-open');
+        const t = other.querySelector('.acc-trigger');
+        if (t) t.setAttribute('aria-expanded', 'false');
+      });
+      if (willOpen) {
+        item.classList.add('is-open');
+        trigger.setAttribute('aria-expanded', 'true');
+      }
+    });
+  });
+
+  /* ─── Proof-of-Work tabs ───────────────────────── */
+  const tabs = Array.from(document.querySelectorAll('.tab[data-tab]'));
+  const panels = Array.from(document.querySelectorAll('.tab-panel[data-panel]'));
+  const activateTab = name => {
+    let matched = false;
+    tabs.forEach(tab => {
+      const on = tab.dataset.tab === name;
+      if (on) matched = true;
+      tab.classList.toggle('is-active', on);
+      tab.setAttribute('aria-selected', on ? 'true' : 'false');
+    });
+    if (!matched) return;
+    panels.forEach(panel => {
+      const on = panel.dataset.panel === name;
+      panel.classList.toggle('is-active', on);
+      if (on) panel.removeAttribute('hidden');
+      else panel.setAttribute('hidden', '');
+    });
+  };
+  tabs.forEach(tab => {
+    tab.addEventListener('click', () => activateTab(tab.dataset.tab));
+  });
+
+  /* ─── Router cards that open a specific Work tab ── */
+  document.querySelectorAll('[data-open-tab]').forEach(card => {
+    card.addEventListener('click', () => activateTab(card.dataset.openTab));
+  });
 });
