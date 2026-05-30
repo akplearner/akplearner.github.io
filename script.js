@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const revealSelectors = [
     'main .section',
     '.metric-chip',
-    '.router-card',
+    '.funnel-stage',
     '.acc-item',
     '.platform-card',
     '.project-card',
@@ -214,5 +214,15 @@ document.addEventListener('DOMContentLoaded', () => {
   /* ─── Router cards that open a specific Work tab ── */
   document.querySelectorAll('[data-open-tab]').forEach(card => {
     card.addEventListener('click', () => activateTab(card.dataset.openTab));
+  });
+
+  /* ─── Journey funnel stages (independent toggle) ── */
+  document.querySelectorAll('.funnel-stage .stage-trigger').forEach(trigger => {
+    trigger.addEventListener('click', () => {
+      const stage = trigger.closest('.funnel-stage');
+      const willOpen = !stage.classList.contains('is-open');
+      stage.classList.toggle('is-open', willOpen);
+      trigger.setAttribute('aria-expanded', willOpen ? 'true' : 'false');
+    });
   });
 });

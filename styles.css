@@ -2252,6 +2252,261 @@ textarea:focus-visible {
 .metric-chip.reveal:nth-child(3) { transition-delay: 120ms; }
 .metric-chip.reveal:nth-child(4) { transition-delay: 180ms; }
 
+/* ============================================================
+   V3.4 · Journey funnel (merged router + staged ladder)
+   ============================================================ */
+
+/* ---- Folded-in audience quick-pick ---- */
+.quickpick {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  margin: -8px 0 32px;
+  padding: 16px 18px;
+  background: rgba(161, 65, 255, 0.04);
+  border: 1px dashed rgba(161, 65, 255, 0.28);
+  border-radius: 18px;
+}
+
+.quickpick-label {
+  color: var(--muted);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-right: 4px;
+}
+
+.quickpick-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 9px 15px;
+  border-radius: 999px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  color: var(--text);
+  font-size: 0.88rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: transform 0.18s ease, border-color 0.18s ease, box-shadow 0.18s ease;
+}
+
+.quickpick-chip:hover {
+  transform: translateY(-2px);
+  border-color: rgba(161, 65, 255, 0.45);
+  box-shadow: 0 12px 24px rgba(161, 65, 255, 0.12);
+}
+
+/* ---- Funnel ladder ---- */
+.funnel {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 16px;
+}
+
+.funnel-stage {
+  position: relative;
+  display: grid;
+  grid-template-columns: 64px 1fr;
+  gap: 18px;
+  align-items: start;
+}
+
+/* numbered rail + connecting line */
+.funnel-stage .stage-rail {
+  display: grid;
+  place-items: start center;
+  position: relative;
+  height: 100%;
+}
+
+.funnel-stage .stage-rail::after {
+  content: '';
+  position: absolute;
+  top: 64px;
+  bottom: -30px;
+  left: 50%;
+  width: 2px;
+  background: linear-gradient(to bottom, rgba(161, 65, 255, 0.45), rgba(161, 65, 255, 0));
+  transform: translateX(-50%);
+}
+
+.funnel-stage:last-child .stage-rail::after {
+  display: none;
+}
+
+.funnel-stage .stage-num {
+  display: grid;
+  place-items: center;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: #0f0f0f;
+  color: #fff;
+  font-weight: 800;
+  font-size: 0.9rem;
+  font-family: 'Press Start 2P', monospace;
+  border: 4px solid var(--surface);
+  box-shadow: 0 0 0 1px var(--border), 0 0 0 8px rgba(161, 65, 255, 0.08);
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.funnel-stage.is-open .stage-num {
+  background: linear-gradient(140deg, #A141FF, #6B2BFF);
+  box-shadow: 0 0 0 1px rgba(161, 65, 255, 0.4), 0 0 0 10px rgba(161, 65, 255, 0.14);
+  transform: scale(1.04);
+}
+
+/* card body that holds trigger + collapsible panel */
+.stage-main {
+  position: relative;
+  overflow: hidden;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 22px;
+  box-shadow: var(--shadow);
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.stage-main:hover {
+  border-color: rgba(161, 65, 255, 0.4);
+  box-shadow: 0 28px 60px rgba(161, 65, 255, 0.12);
+}
+
+.funnel-stage.is-open .stage-main {
+  border-color: rgba(161, 65, 255, 0.45);
+}
+
+.stage-trigger {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 20px 24px;
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+  text-align: left;
+  font: inherit;
+  color: var(--text);
+}
+
+.stage-headings {
+  display: grid;
+  gap: 4px;
+  flex: 1 1 auto;
+}
+
+.stage-headings .stage-label {
+  color: var(--accent);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.stage-title {
+  font-size: 1.08rem;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.stage-chevron {
+  flex: 0 0 auto;
+  color: var(--accent);
+  font-size: 0.9rem;
+  transition: transform 0.3s ease;
+}
+
+.funnel-stage.is-open .stage-chevron {
+  transform: rotate(180deg);
+}
+
+.stage-panel {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.35s ease;
+}
+
+.funnel-stage.is-open .stage-panel {
+  grid-template-rows: 1fr;
+}
+
+.stage-panel-inner {
+  overflow: hidden;
+  min-height: 0;
+}
+
+.stage-panel-inner > p {
+  margin: 0 24px 16px;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.stage-panel-inner .follow-grid,
+.stage-panel-inner .endorse-columns {
+  margin: 0 24px 22px;
+}
+
+/* compact chip rows inside Join / Services / Work stages */
+.chip-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 0 24px 18px;
+}
+
+.mini-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 14px;
+  border-radius: 999px;
+  background: #fafafa;
+  border: 1px solid var(--border);
+  color: var(--text);
+  font-size: 0.86rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: transform 0.18s ease, border-color 0.18s ease, background 0.18s ease;
+}
+
+.mini-chip:hover {
+  transform: translateY(-2px);
+  border-color: rgba(161, 65, 255, 0.45);
+  background: #fff;
+}
+
+.stage-cta {
+  margin: 0 24px 22px;
+}
+
+@media (max-width: 600px) {
+  .funnel-stage {
+    grid-template-columns: 46px 1fr;
+    gap: 12px;
+  }
+  .funnel-stage .stage-num {
+    width: 40px;
+    height: 40px;
+    font-size: 0.62rem;
+    border-width: 3px;
+  }
+  .funnel-stage .stage-rail::after {
+    top: 46px;
+  }
+  .stage-trigger { padding: 16px 18px; gap: 12px; }
+  .stage-panel-inner > p,
+  .stage-panel-inner .follow-grid,
+  .stage-panel-inner .endorse-columns,
+  .chip-row,
+  .stage-cta { margin-left: 18px; margin-right: 18px; }
+}
+
 /* Respect reduced motion */
 @media (prefers-reduced-motion: reduce) {
   *,
@@ -2266,7 +2521,8 @@ textarea:focus-visible {
     opacity: 1;
     transform: none;
   }
-  .acc-panel {
+  .acc-panel,
+  .stage-panel {
     transition: none;
   }
 }
