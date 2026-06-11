@@ -453,6 +453,60 @@ a {
   gap: 18px;
 }
 
+.portfolio-intro {
+  max-width: 720px;
+  margin: -8px 0 24px;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.project-roles {
+  list-style: none;
+  margin: 4px 0 0;
+  padding: 12px 0 0;
+  border-top: 1px dashed var(--border);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.project-role {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 12px;
+  border-radius: 999px;
+  background: #fafafa;
+  border: 1px solid var(--border);
+  color: var(--text);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+.project-role[data-role="mentor"] {
+  background: rgba(161, 65, 255, 0.08);
+  border-color: rgba(161, 65, 255, 0.30);
+  color: var(--accent);
+}
+
+.project-role[data-role="peer"] {
+  background: rgba(0, 255, 156, 0.10);
+  border-color: rgba(0, 255, 156, 0.35);
+  color: #0a8a52;
+}
+
+.project-role[data-role="student"] {
+  background: #f3f3f3;
+  border-color: var(--border);
+  color: #2a2a2a;
+}
+
+.project-role span {
+  font-size: 0.9rem;
+  line-height: 1;
+}
+
 .project-footer {
   display: flex;
   align-items: center;
