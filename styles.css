@@ -895,70 +895,88 @@ a {
 }
 
 /* ============================================================
-   The Journey / Funnel
+   The Funnel — 3 simple steps
    ============================================================ */
+.router-intro,
 .journey-intro {
   max-width: 720px;
-  margin: -8px 0 28px;
+  margin: -8px 0 24px;
   color: var(--muted);
   line-height: 1.7;
 }
 
-.stages {
+.router-grid-3 {
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
+
+.role-card {
+  border-top: 3px solid var(--accent);
+}
+
+.role-card[data-role="peer"] {
+  border-top-color: var(--accent-green);
+}
+
+.role-card[data-role="mentee"] {
+  border-top-color: #0f0f0f;
+}
+
+.steps {
   list-style: none;
   margin: 0;
   padding: 0;
   display: grid;
-  gap: 16px;
+  gap: 20px;
   position: relative;
 }
 
-.stage-card {
+.step-card {
   position: relative;
   display: grid;
-  grid-template-columns: 76px 1fr;
-  gap: 22px;
-  align-items: stretch;
-  padding: 24px 26px;
+  grid-template-columns: 84px 1fr;
+  gap: 24px;
+  padding: 28px 30px;
   background: var(--surface);
   border: 1px solid var(--border);
   border-radius: 24px;
   box-shadow: var(--shadow);
   transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+  scroll-margin-top: 24px;
 }
 
-.stage-card:hover {
+.step-card:target,
+.step-card:hover {
   transform: translateY(-2px);
-  border-color: rgba(161, 65, 255, 0.4);
-  box-shadow: 0 28px 60px rgba(161, 65, 255, 0.10);
+  border-color: rgba(161, 65, 255, 0.45);
+  box-shadow: 0 32px 70px rgba(161, 65, 255, 0.12);
 }
 
-.stage-rail {
+.step-rail {
   display: grid;
   place-items: center;
   position: relative;
 }
 
-.stage-rail::after {
+.step-rail::after {
   content: '';
   position: absolute;
-  top: 60px;
-  bottom: -38px;
+  top: 72px;
+  bottom: -44px;
   left: 50%;
   width: 2px;
-  background: linear-gradient(to bottom, rgba(161,65,255,0.45), rgba(161,65,255,0));
+  background: linear-gradient(to bottom, rgba(161,65,255,0.5), rgba(161,65,255,0));
   transform: translateX(-50%);
 }
 
-.stage-card:last-child .stage-rail::after {
+.step-card:last-child .step-rail::after {
   display: none;
 }
 
-.stage-num {
+.step-num {
   display: grid;
   place-items: center;
-  width: 60px;
-  height: 60px;
+  width: 64px;
+  height: 64px;
   border-radius: 50%;
   background: #0f0f0f;
   color: #fff;
@@ -967,164 +985,115 @@ a {
   letter-spacing: 0.04em;
   font-family: 'Press Start 2P', monospace;
   border: 4px solid var(--surface);
-  box-shadow: 0 0 0 1px var(--border), 0 0 0 8px rgba(161,65,255,0.08);
+  box-shadow: 0 0 0 1px var(--border), 0 0 0 8px rgba(161,65,255,0.10);
 }
 
-.stage-body {
+.step-body {
   display: grid;
-  gap: 8px;
+  gap: 10px;
   align-content: center;
 }
 
-.stage-label {
+.step-label {
   margin: 0;
   color: var(--accent);
-  font-size: 0.72rem;
+  font-size: 0.74rem;
   font-weight: 700;
-  letter-spacing: 0.18em;
+  letter-spacing: 0.2em;
   text-transform: uppercase;
 }
 
-.stage-body h4 {
+.step-body h4 {
   margin: 0;
-  font-size: 1.15rem;
-  line-height: 1.3;
+  font-size: 1.35rem;
+  line-height: 1.25;
 }
 
-.stage-body p {
+.step-context {
   margin: 0;
   color: var(--muted);
-  line-height: 1.7;
+  line-height: 1.65;
+  font-size: 0.98rem;
 }
 
-.stage-body em {
-  font-style: normal;
-  font-weight: 700;
-  color: var(--text);
+.step-context-small {
+  margin: 6px 0 0;
+  color: var(--muted);
+  font-size: 0.82rem;
+  font-style: italic;
 }
 
-.stage-body .button {
+.step-cta {
   justify-self: start;
-  margin-top: 6px;
-}
-
-@media (max-width: 600px) {
-  .stage-card {
-    grid-template-columns: 56px 1fr;
-    gap: 14px;
-    padding: 20px;
-  }
-  .stage-num {
-    width: 44px;
-    height: 44px;
-    font-size: 0.72rem;
-    border-width: 3px;
-  }
-  .stage-rail::after {
-    top: 48px;
-    bottom: -30px;
-  }
-}
-
-/* ============================================================
-   Follow Channels
-   ============================================================ */
-.follow-grid {
-  display: grid;
-  gap: 16px;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-}
-
-.follow-card {
-  display: grid;
-  grid-template-columns: 44px 1fr;
-  gap: 14px;
-  align-items: center;
-  padding: 18px 20px;
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: 20px;
-  box-shadow: var(--shadow);
-  text-decoration: none;
-  color: var(--text);
-  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
-}
-
-.follow-card:hover {
-  transform: translateY(-2px);
-  border-color: rgba(161, 65, 255, 0.4);
-  box-shadow: 0 24px 50px rgba(161, 65, 255, 0.10);
-}
-
-.follow-icon {
-  display: grid;
-  place-items: center;
-  width: 44px;
-  height: 44px;
-  border-radius: 12px;
-  background: rgba(161, 65, 255, 0.10);
-  color: var(--accent);
-  font-weight: 800;
-  font-size: 0.85rem;
-  letter-spacing: 0.04em;
-}
-
-.follow-card h4 {
-  margin: 0 0 4px;
+  margin-top: 8px;
+  padding: 16px 26px;
   font-size: 1rem;
-  line-height: 1.2;
 }
 
-.follow-card p {
-  margin: 0;
-  color: var(--muted);
-  font-size: 0.88rem;
-  line-height: 1.5;
+.step-cta-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 8px;
 }
 
-/* ============================================================
-   Endorse / Review Platforms
-   ============================================================ */
-.endorse-intro {
-  max-width: 720px;
-  margin: -8px 0 24px;
-  color: var(--muted);
-  line-height: 1.7;
+.step-cta-row .step-cta {
+  margin-top: 0;
 }
 
-.endorse-columns {
+.step-secondary {
+  margin-top: 16px;
+  padding-top: 14px;
+  border-top: 1px dashed var(--border);
   display: grid;
-  gap: 22px;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 10px;
 }
 
-.endorse-col {
-  padding: 24px;
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: 22px;
-  box-shadow: var(--shadow);
-}
-
-.endorse-col-label {
-  margin: 0 0 14px;
+.step-secondary-label {
   color: var(--muted);
-  text-transform: uppercase;
-  letter-spacing: 0.16em;
-  font-size: 0.78rem;
+  font-size: 0.74rem;
   font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
 }
 
-.endorse-list {
+.step-icons {
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
 }
 
-.endorse-pill {
+.step-icon {
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  background: rgba(161, 65, 255, 0.08);
+  border: 1px solid rgba(161, 65, 255, 0.20);
+  color: var(--accent);
+  font-weight: 800;
+  font-size: 0.78rem;
+  text-decoration: none;
+  transition: transform 0.18s ease, background 0.18s ease, border-color 0.18s ease;
+}
+
+.step-icon:hover {
+  transform: translateY(-2px);
+  background: rgba(161, 65, 255, 0.16);
+  border-color: rgba(161, 65, 255, 0.45);
+}
+
+.step-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.step-pill {
   display: inline-flex;
   align-items: center;
-  padding: 9px 14px;
+  padding: 8px 14px;
   border-radius: 999px;
   background: #fafafa;
   border: 1px solid var(--border);
@@ -1132,23 +1101,60 @@ a {
   font-size: 0.86rem;
   font-weight: 600;
   text-decoration: none;
-  transition: transform 0.18s ease, border-color 0.18s ease, background 0.18s ease;
+  transition: transform 0.18s ease, border-color 0.18s ease;
 }
 
-.endorse-pill:hover {
+.step-pill:hover {
   transform: translateY(-2px);
   border-color: rgba(161, 65, 255, 0.45);
-  background: #fff;
 }
 
-.endorse-pill.priority {
-  background: rgba(161, 65, 255, 0.08);
-  border-color: rgba(161, 65, 255, 0.35);
-  color: var(--accent);
+@media (max-width: 600px) {
+  .step-card {
+    grid-template-columns: 56px 1fr;
+    gap: 16px;
+    padding: 22px;
+  }
+  .step-num {
+    width: 48px;
+    height: 48px;
+    font-size: 0.78rem;
+    border-width: 3px;
+  }
+  .step-rail::after {
+    top: 56px;
+    bottom: -36px;
+  }
+  .step-body h4 {
+    font-size: 1.15rem;
+  }
+  .step-cta {
+    width: 100%;
+    text-align: center;
+  }
+  .step-cta-row {
+    flex-direction: column;
+  }
+  .step-cta-row .step-cta {
+    width: 100%;
+  }
 }
 
-.endorse-pill.priority:hover {
-  background: rgba(161, 65, 255, 0.14);
+/* ============================================================
+   Schedule one-liner + Footer blurb
+   ============================================================ */
+.schedule-one-liner {
+  max-width: 720px;
+  margin: -8px 0 0;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.footer-blurb {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.92rem;
+  line-height: 1.6;
 }
 
 /* ============================================================
