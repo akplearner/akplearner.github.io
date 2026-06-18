@@ -2660,3 +2660,42 @@ textarea:focus-visible {
   display: none !important;
 }
 
+/* ============================================================
+   Dark mode coverage for V3.4 hardcoded elements
+   ============================================================ */
+:root[data-theme="dark"] .topbar {
+  background: rgba(23, 23, 28, 0.78);
+  border-color: var(--border);
+}
+
+:root[data-theme="dark"] .topbar.is-scrolled {
+  background: rgba(23, 23, 28, 0.92);
+}
+
+:root[data-theme="dark"] .button.secondary {
+  background: var(--surface);
+  color: var(--text);
+  border-color: var(--border);
+}
+
+:root[data-theme="dark"] .button.secondary:hover {
+  background: rgba(161, 65, 255, 0.12);
+  border-color: rgba(161, 65, 255, 0.45);
+  color: var(--text);
+}
+
+:root[data-theme="dark"] .bg-mesh {
+  opacity: 0.35;
+}
+
+/* Quickpick + mini-chips in dark mode — keep them legible */
+:root[data-theme="dark"] .quickpick-chip,
+:root[data-theme="dark"] .mini-chip {
+  background: var(--surface);
+  color: var(--text);
+  border-color: var(--border);
+}
+
+/* Metric chips, follow cards, role chips, project/platform/guild cards
+   inherit surface/border/text via CSS vars already — no overrides needed. */
+
