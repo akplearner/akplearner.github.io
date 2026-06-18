@@ -101,7 +101,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  /* ─── Live countdown to CMMC deadline ──────────── */
+  /* ─── Live countdown to next milestone ─────────── */
   const countdownEl = document.querySelector('.countdown[data-deadline]');
   if (countdownEl) {
     const deadline = new Date(countdownEl.dataset.deadline).getTime();
@@ -225,4 +225,60 @@ document.addEventListener('DOMContentLoaded', () => {
       trigger.setAttribute('aria-expanded', willOpen ? 'true' : 'false');
     });
   });
+
+  /* ─── Theme (dark mode) toggle ─────────────────── */
+  const root = document.documentElement;
+  const themeToggle = document.getElementById('theme-toggle');
+  const themeIcon = themeToggle ? themeToggle.querySelector('.theme-icon') : null;
+
+  const applyTheme = theme => {
+    root.setAttribute('data-theme', theme);
+    if (themeToggle) themeToggle.setAttribute('aria-pressed', theme === 'dark' ? 'true' : 'false');
+    if (themeIcon) themeIcon.textContent = theme === 'dark' ? '☼' : '☾';
+  };
+
+  const stored = (() => { try { return localStorage.getItem('theme'); } catch (e) { return null; } })();
+  const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+  applyTheme(stored || (prefersDark ? 'dark' : 'light'));
+
+  if (themeToggle) {
+    themeToggle.addEventListener('click', () => {
+      const next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      applyTheme(next);
+      try { localStorage.setItem('theme', next); } catch (e) {}
+    });
+  }
+
+  /* ─── Contact form (Web3Forms) ─────────────────── */
+  const form = document.querySelector('.contact-form');
+  const status = document.getElementById('form-status');
+
+  if (form && status) {
+    form.addEventListener('submit', async event => {
+      event.preventDefault();
+      status.hidden = false;
+      status.className = 'form-status';
+      status.textContent = 'Sending…';
+
+      try {
+        const res = await fetch(form.action, {
+          method: 'POST',
+          body: new FormData(form),
+          headers: { Accept: 'application/json' }
+        });
+        const data = await res.json().catch(() => ({}));
+        if (res.ok && data.success !== false) {
+          form.reset();
+          status.className = 'form-status success';
+          status.textContent = "Got it — I'll reply when I can.";
+        } else {
+          status.className = 'form-status error';
+          status.innerHTML = "Couldn't send. Reach me on <a href=\"https://www.linkedin.com/in/kerrypp/\" target=\"_blank\" rel=\"noopener\">LinkedIn</a> instead.";
+        }
+      } catch (err) {
+        status.className = 'form-status error';
+        status.innerHTML = "Couldn't send. Reach me on <a href=\"https://www.linkedin.com/in/kerrypp/\" target=\"_blank\" rel=\"noopener\">LinkedIn</a> instead.";
+      }
+    });
+  }
 });

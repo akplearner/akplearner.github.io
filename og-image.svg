@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0f0f0f"/>
+      <stop offset="100%" stop-color="#1a1a1a"/>
+    </linearGradient>
+    <linearGradient id="monogram" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#A141FF"/>
+      <stop offset="100%" stop-color="#00FF9C"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="630" fill="url(#bg)"/>
+
+  <circle cx="940" cy="315" r="180" fill="url(#monogram)"/>
+  <text x="940" y="345" text-anchor="middle"
+        font-family="Inter, system-ui, sans-serif" font-weight="800"
+        font-size="148" fill="#0f0f0f" letter-spacing="-4">KP</text>
+
+  <text x="90" y="240" font-family="Inter, system-ui, sans-serif"
+        font-weight="800" font-size="72" fill="#ffffff" letter-spacing="-2">Kerry P.</text>
+  <text x="90" y="310" font-family="Inter, system-ui, sans-serif"
+        font-weight="600" font-size="32" fill="#A141FF" letter-spacing="0">
+    Cloud · DevOps · Security
+  </text>
+  <text x="90" y="380" font-family="Inter, system-ui, sans-serif"
+        font-weight="500" font-size="26" fill="#b0b0b0">
+    Instructor · Builder · Austin, TX
+  </text>
+
+  <rect x="90" y="520" width="60" height="3" fill="#00FF9C"/>
+  <text x="90" y="558" font-family="Inter, system-ui, sans-serif"
+        font-weight="600" font-size="20" fill="#6f6f6f" letter-spacing="2">
+    AKPLEARNER.GITHUB.IO
+  </text>
+</svg>
