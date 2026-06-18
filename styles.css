@@ -1792,7 +1792,7 @@ a {
   color: transparent;
 }
 
-/* Skill cards — hover lift + accent rail; featured CMMC card */
+/* Skill cards — hover lift + accent rail; featured first card */
 .skill-card {
   transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
   position: relative;
@@ -2526,3 +2526,137 @@ textarea:focus-visible {
     transition: none;
   }
 }
+
+/* ============================================================
+   MVP additions: theme toggle, dark mode, status-tag, testimonials,
+   form status, honeypot
+   ============================================================ */
+
+/* status-tag variant added for "Pending" */
+.status-tag.pending {
+  background: #f3f3f3;
+  color: #5a5a5a;
+  border: 1px solid var(--border);
+}
+
+/* Theme toggle button in topbar */
+.theme-toggle {
+  display: inline-grid;
+  place-items: center;
+  width: 38px;
+  height: 38px;
+  margin-left: 6px;
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  cursor: pointer;
+  color: var(--text);
+  font-size: 1rem;
+  transition: background 0.18s ease, border-color 0.18s ease, color 0.18s ease;
+}
+
+.theme-toggle:hover,
+.theme-toggle:focus-visible {
+  background: rgba(161, 65, 255, 0.08);
+  border-color: rgba(161, 65, 255, 0.45);
+  color: var(--accent);
+  outline: none;
+}
+
+/* Dark mode — variable overrides + targeted tweaks */
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --bg: #0f0f12;
+  --surface: #17171c;
+  --text: #ececec;
+  --muted: #9a9aa3;
+  --border: #2a2a32;
+  --shadow: 0 24px 60px rgba(0, 0, 0, 0.42);
+}
+
+:root[data-theme="dark"] body {
+  background: var(--bg);
+  color: var(--text);
+}
+
+:root[data-theme="dark"] .contact-form input,
+:root[data-theme="dark"] .contact-form textarea,
+:root[data-theme="dark"] .contact-form select {
+  background: #1f1f25;
+  color: var(--text);
+  border-color: var(--border);
+}
+
+:root[data-theme="dark"] .status-tag.pending {
+  background: #1f1f25;
+  color: #a8a8b2;
+}
+
+/* Testimonial scaffold (extends V3.4 .testimonial-grid / .testimonial-card) */
+.testimonial-card {
+  position: relative;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  padding: 28px;
+  margin: 0;
+  box-shadow: var(--shadow);
+}
+
+.testimonial-ribbon {
+  display: inline-block;
+  margin-bottom: 14px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: rgba(161, 65, 255, 0.10);
+  border: 1px solid rgba(161, 65, 255, 0.35);
+  color: var(--accent);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.testimonial-quote {
+  margin: 0 0 14px;
+  color: var(--text);
+  font-size: 1.04rem;
+  line-height: 1.65;
+  font-style: italic;
+}
+
+/* Form status + honeypot */
+.hp {
+  position: absolute !important;
+  left: -9999px !important;
+  width: 1px !important;
+  height: 1px !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
+
+.form-status {
+  margin: 12px 0 0;
+  padding: 12px 14px;
+  border-radius: 14px;
+  font-size: 0.92rem;
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+.form-status.success {
+  background: rgba(0, 255, 156, 0.10);
+  color: #0a8a52;
+  border: 1px solid rgba(0, 255, 156, 0.35);
+}
+
+.form-status.error {
+  background: rgba(255, 80, 80, 0.08);
+  color: #b03030;
+  border: 1px solid rgba(255, 80, 80, 0.35);
+}
+
+[hidden] {
+  display: none !important;
+}
+
