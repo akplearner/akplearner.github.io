@@ -226,6 +226,45 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
+  /* ─── Hamburger nav (mobile) ───────────────────── */
+  const navToggle = document.getElementById('nav-toggle');
+  const navLinks = document.getElementById('primary-nav');
+
+  if (navToggle && navLinks) {
+    const closeNav = () => {
+      navLinks.classList.remove('is-open');
+      navToggle.setAttribute('aria-expanded', 'false');
+      navToggle.setAttribute('aria-label', 'Open menu');
+    };
+    const openNav = () => {
+      navLinks.classList.add('is-open');
+      navToggle.setAttribute('aria-expanded', 'true');
+      navToggle.setAttribute('aria-label', 'Close menu');
+    };
+
+    navToggle.addEventListener('click', () => {
+      if (navLinks.classList.contains('is-open')) closeNav();
+      else openNav();
+    });
+
+    // close when a nav link is tapped
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', closeNav);
+    });
+
+    // close on ESC
+    window.addEventListener('keydown', event => {
+      if (event.key === 'Escape' && navLinks.classList.contains('is-open')) closeNav();
+    });
+
+    // close on outside click
+    document.addEventListener('click', event => {
+      if (!navLinks.classList.contains('is-open')) return;
+      if (navLinks.contains(event.target) || navToggle.contains(event.target)) return;
+      closeNav();
+    });
+  }
+
   /* ─── Theme (dark mode) toggle ─────────────────── */
   const root = document.documentElement;
   const themeToggle = document.getElementById('theme-toggle');

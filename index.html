@@ -42,7 +42,10 @@
         <p class="brand-label">KP</p>
         <h1>Kerry P.</h1>
       </div>
-      <nav class="nav-links" aria-label="Primary">
+      <button type="button" class="nav-toggle" id="nav-toggle" aria-controls="primary-nav" aria-expanded="false" aria-label="Open menu">
+        <span class="nav-toggle-bar" aria-hidden="true"></span>
+      </button>
+      <nav class="nav-links" id="primary-nav" aria-label="Primary">
         <a href="#router">Start</a>
         <a href="#services">Services</a>
         <a href="#work">Work</a>
@@ -301,123 +304,216 @@
       <section class="section services-accordion" id="services">
         <div class="section-head">
           <span>Services</span>
-          <h3>Six things I'm available for &mdash; ordered from broad to specific.</h3>
+          <h3>Six things I'm available for &mdash; by category.</h3>
         </div>
-        <div class="accordion">
-          <div class="acc-item is-open" data-glow>
-            <button class="acc-trigger" type="button" aria-expanded="true">
-              <span class="acc-icon">🧭</span>
-              <span class="acc-heading">Consulting</span>
-              <span class="acc-chevron" aria-hidden="true">▾</span>
-            </button>
-            <div class="acc-panel">
-              <div class="acc-panel-inner">
-                <p>Short-engagement advisory for teams trying to figure out what to build, what to fix, or what to retire.</p>
-                <ul class="feature-list">
-                  <li>Architecture &amp; tooling reviews</li>
-                  <li>Cloud &amp; DevOps roadmap planning</li>
-                  <li>Second-opinion sessions for technical leads</li>
-                </ul>
-                <a href="#connect" class="card-cta">Start a conversation <span aria-hidden="true">→</span></a>
-              </div>
-            </div>
-          </div>
 
-          <div class="acc-item" data-glow>
-            <button class="acc-trigger" type="button" aria-expanded="false">
-              <span class="acc-icon">☁️</span>
-              <span class="acc-heading">Cloud &amp; Infrastructure</span>
-              <span class="acc-chevron" aria-hidden="true">▾</span>
-            </button>
-            <div class="acc-panel">
-              <div class="acc-panel-inner">
-                <p>Stand up clean, repeatable cloud environments and tighten existing ones.</p>
-                <ul class="feature-list">
-                  <li>AWS &amp; Azure environments</li>
-                  <li>Terraform &amp; infrastructure as code</li>
-                  <li>Networking, observability, baseline hardening</li>
-                </ul>
-                <a href="#connect" class="card-cta">Scope a cloud build <span aria-hidden="true">→</span></a>
-              </div>
-            </div>
-          </div>
+        <div class="acc-group" data-group="strategic">
+          <p class="acc-group-label">Strategic</p>
+          <div class="accordion">
+            <div class="acc-item is-open" data-glow>
+              <button class="acc-trigger" type="button" aria-expanded="true">
+                <span class="acc-icon">🧭</span>
+                <span class="acc-heading">Consulting</span>
+                <span class="acc-chevron" aria-hidden="true">▾</span>
+              </button>
+              <div class="acc-panel">
+                <div class="acc-panel-inner">
+                  <p class="service-summary">Short-engagement advisory for teams trying to figure out what to build, what to fix, or what to retire.</p>
 
-          <div class="acc-item" data-glow>
-            <button class="acc-trigger" type="button" aria-expanded="false">
-              <span class="acc-icon">⚙️</span>
-              <span class="acc-heading">DevOps &amp; Code</span>
-              <span class="acc-chevron" aria-hidden="true">▾</span>
-            </button>
-            <div class="acc-panel">
-              <div class="acc-panel-inner">
-                <p>CI/CD, scripting, and automation work that turns one-off effort into repeatable systems.</p>
-                <ul class="feature-list">
-                  <li>Pipelines (GitHub Actions, GitLab CI)</li>
-                  <li>Python &amp; shell automation</li>
-                  <li>Ansible playbooks, GitOps workflows</li>
-                </ul>
-                <a href="#connect" class="card-cta">Automate a workflow <span aria-hidden="true">→</span></a>
-              </div>
-            </div>
-          </div>
+                  <p class="service-block-label">Engagement options</p>
+                  <ul class="service-packages">
+                    <li><span class="pkg-name">Quick Consult</span><span class="pkg-shape">1&ndash;2 sessions</span></li>
+                    <li><span class="pkg-name">Focused Project</span><span class="pkg-shape">2&ndash;6 weeks</span></li>
+                    <li><span class="pkg-name">Retainer</span><span class="pkg-shape">Ongoing</span></li>
+                  </ul>
 
-          <div class="acc-item" data-glow>
-            <button class="acc-trigger" type="button" aria-expanded="false">
-              <span class="acc-icon">🤖</span>
-              <span class="acc-heading">AIOps &amp; Automation</span>
-              <span class="acc-chevron" aria-hidden="true">▾</span>
-            </button>
-            <div class="acc-panel">
-              <div class="acc-panel-inner">
-                <p>Practical AI-assisted ops work &mdash; small agents and workflows that take repetitive tasks off your plate.</p>
-                <ul class="feature-list">
-                  <li>Agentic workflow prototypes</li>
-                  <li>Operational alerting &amp; triage helpers</li>
-                  <li>LLM-assisted scripts and tooling</li>
-                </ul>
-                <a href="#connect" class="card-cta">Map an AIOps pilot <span aria-hidden="true">→</span></a>
-              </div>
-            </div>
-          </div>
+                  <p class="service-block-label">How it works</p>
+                  <ol class="service-pipeline">
+                    <li><span class="step-tag">01</span><span>Discovery call &mdash; you describe the situation</span></li>
+                    <li><span class="step-tag">02</span><span>Written scope &mdash; what we'll cover, in plain language</span></li>
+                    <li><span class="step-tag">03</span><span>Working sessions &mdash; review, decisions, next steps</span></li>
+                    <li><span class="step-tag">04</span><span>Recap doc + recommendations you can act on</span></li>
+                  </ol>
 
-          <div class="acc-item" data-glow>
-            <button class="acc-trigger" type="button" aria-expanded="false">
-              <span class="acc-icon">🏗️</span>
-              <span class="acc-heading">Physical Security</span>
-              <span class="acc-chevron" aria-hidden="true">▾</span>
-            </button>
-            <div class="acc-panel">
-              <div class="acc-panel-inner">
-                <p>On-the-ground design and install for small commercial and residential builds.</p>
-                <ul class="feature-list">
-                  <li>IP cameras &amp; PoE wiring</li>
-                  <li>Access control &amp; structured cabling</li>
-                  <li>Network closets &amp; site walkthroughs</li>
-                </ul>
-                <a href="#connect" class="card-cta">Request a site walkthrough <span aria-hidden="true">→</span></a>
-              </div>
-            </div>
-          </div>
+                  <p class="service-outcome"><strong>You walk away with:</strong> a written perspective on what's working, what isn't, and what to do next &mdash; from someone outside the room.</p>
 
-          <div class="acc-item" data-glow>
-            <button class="acc-trigger" type="button" aria-expanded="false">
-              <span class="acc-icon">🎓</span>
-              <span class="acc-heading">Tutoring &amp; Instruction</span>
-              <span class="acc-chevron" aria-hidden="true">▾</span>
-            </button>
-            <div class="acc-panel">
-              <div class="acc-panel-inner">
-                <p>1:1 and small-group teaching for cloud, IT, and security learners. Cohort-style or async.</p>
-                <ul class="feature-list">
-                  <li>Career-switcher &amp; cert-prep coaching</li>
-                  <li>Custom lab walkthroughs</li>
-                  <li>Resume / interview support for IT roles</li>
-                </ul>
-                <a href="#connect" class="card-cta">Book a session <span aria-hidden="true">→</span></a>
+                  <a href="#connect" class="card-cta">Start a conversation <span aria-hidden="true">→</span></a>
+                </div>
               </div>
             </div>
           </div>
         </div>
+
+        <div class="acc-group" data-group="engineering">
+          <p class="acc-group-label">Engineering</p>
+          <div class="accordion">
+            <div class="acc-item" data-glow>
+              <button class="acc-trigger" type="button" aria-expanded="false">
+                <span class="acc-icon">☁️</span>
+                <span class="acc-heading">Cloud &amp; Infrastructure</span>
+                <span class="acc-chevron" aria-hidden="true">▾</span>
+              </button>
+              <div class="acc-panel">
+                <div class="acc-panel-inner">
+                  <p class="service-summary">Stand up clean, repeatable cloud environments and tighten existing ones across AWS and Azure.</p>
+
+                  <p class="service-block-label">Engagement options</p>
+                  <ul class="service-packages">
+                    <li><span class="pkg-name">Audit &amp; Plan</span><span class="pkg-shape">1&ndash;2 weeks</span></li>
+                    <li><span class="pkg-name">Build &amp; Ship</span><span class="pkg-shape">4&ndash;8 weeks</span></li>
+                    <li><span class="pkg-name">Retainer</span><span class="pkg-shape">Ongoing</span></li>
+                  </ul>
+
+                  <p class="service-block-label">How it works</p>
+                  <ol class="service-pipeline">
+                    <li><span class="step-tag">01</span><span>Audit current state &mdash; accounts, networking, baseline gaps</span></li>
+                    <li><span class="step-tag">02</span><span>Architecture plan with Terraform / IaC structure</span></li>
+                    <li><span class="step-tag">03</span><span>Build &amp; ship &mdash; environments, modules, CI hooks</span></li>
+                    <li><span class="step-tag">04</span><span>Documentation + handoff to your team</span></li>
+                  </ol>
+
+                  <p class="service-outcome"><strong>You walk away with:</strong> a working, version-controlled cloud foundation your team can extend without me.</p>
+
+                  <a href="#connect" class="card-cta">Scope a cloud build <span aria-hidden="true">→</span></a>
+                </div>
+              </div>
+            </div>
+
+            <div class="acc-item" data-glow>
+              <button class="acc-trigger" type="button" aria-expanded="false">
+                <span class="acc-icon">⚙️</span>
+                <span class="acc-heading">DevOps &amp; Code</span>
+                <span class="acc-chevron" aria-hidden="true">▾</span>
+              </button>
+              <div class="acc-panel">
+                <div class="acc-panel-inner">
+                  <p class="service-summary">CI/CD, scripting, and automation work that turns one-off effort into repeatable systems.</p>
+
+                  <p class="service-block-label">Engagement options</p>
+                  <ul class="service-packages">
+                    <li><span class="pkg-name">Pipeline Setup</span><span class="pkg-shape">1&ndash;3 weeks</span></li>
+                    <li><span class="pkg-name">Automation Project</span><span class="pkg-shape">3&ndash;6 weeks</span></li>
+                    <li><span class="pkg-name">Retainer</span><span class="pkg-shape">Ongoing</span></li>
+                  </ul>
+
+                  <p class="service-block-label">How it works</p>
+                  <ol class="service-pipeline">
+                    <li><span class="step-tag">01</span><span>Map the manual work that's slowing things down</span></li>
+                    <li><span class="step-tag">02</span><span>Design pipelines, scripts, or playbooks</span></li>
+                    <li><span class="step-tag">03</span><span>Build, test, and roll out incrementally</span></li>
+                    <li><span class="step-tag">04</span><span>Runbook + walkthrough for your team</span></li>
+                  </ol>
+
+                  <p class="service-outcome"><strong>You walk away with:</strong> automation that survives the person who wrote it &mdash; documented, owned by your team.</p>
+
+                  <a href="#connect" class="card-cta">Automate a workflow <span aria-hidden="true">→</span></a>
+                </div>
+              </div>
+            </div>
+
+            <div class="acc-item" data-glow>
+              <button class="acc-trigger" type="button" aria-expanded="false">
+                <span class="acc-icon">🤖</span>
+                <span class="acc-heading">AIOps &amp; Automation</span>
+                <span class="acc-chevron" aria-hidden="true">▾</span>
+              </button>
+              <div class="acc-panel">
+                <div class="acc-panel-inner">
+                  <p class="service-summary">Practical AI-assisted ops &mdash; small agents and workflows that take repetitive tasks off your plate.</p>
+
+                  <p class="service-block-label">Engagement options</p>
+                  <ul class="service-packages">
+                    <li><span class="pkg-name">Pilot</span><span class="pkg-shape">2&ndash;4 weeks</span></li>
+                    <li><span class="pkg-name">Production Build</span><span class="pkg-shape">4&ndash;8 weeks</span></li>
+                    <li><span class="pkg-name">Retainer</span><span class="pkg-shape">Ongoing</span></li>
+                  </ul>
+
+                  <p class="service-block-label">How it works</p>
+                  <ol class="service-pipeline">
+                    <li><span class="step-tag">01</span><span>Pick one painful, repeatable workflow</span></li>
+                    <li><span class="step-tag">02</span><span>Prototype an AI-assisted version</span></li>
+                    <li><span class="step-tag">03</span><span>Measure: time saved, error rate, handoff fit</span></li>
+                    <li><span class="step-tag">04</span><span>Ship the keepers, drop the rest</span></li>
+                  </ol>
+
+                  <p class="service-outcome"><strong>You walk away with:</strong> a working AI workflow that solves a specific problem &mdash; not a demo.</p>
+
+                  <a href="#connect" class="card-cta">Map an AIOps pilot <span aria-hidden="true">→</span></a>
+                </div>
+              </div>
+            </div>
+
+            <div class="acc-item" data-glow>
+              <button class="acc-trigger" type="button" aria-expanded="false">
+                <span class="acc-icon">🏗️</span>
+                <span class="acc-heading">Physical Security</span>
+                <span class="acc-chevron" aria-hidden="true">▾</span>
+              </button>
+              <div class="acc-panel">
+                <div class="acc-panel-inner">
+                  <p class="service-summary">On-the-ground design and install for small commercial and residential builds.</p>
+
+                  <p class="service-block-label">Engagement options</p>
+                  <ul class="service-packages">
+                    <li><span class="pkg-name">Site Walkthrough</span><span class="pkg-shape">Half day</span></li>
+                    <li><span class="pkg-name">Design &amp; Install</span><span class="pkg-shape">1&ndash;3 weeks</span></li>
+                    <li><span class="pkg-name">Maintenance Plan</span><span class="pkg-shape">Ongoing</span></li>
+                  </ul>
+
+                  <p class="service-block-label">How it works</p>
+                  <ol class="service-pipeline">
+                    <li><span class="step-tag">01</span><span>Walk the site &mdash; access points, coverage, gaps</span></li>
+                    <li><span class="step-tag">02</span><span>Design: cameras, cabling, access control</span></li>
+                    <li><span class="step-tag">03</span><span>Install &amp; configure on-site</span></li>
+                    <li><span class="step-tag">04</span><span>Handoff with labeled diagrams + access docs</span></li>
+                  </ol>
+
+                  <p class="service-outcome"><strong>You walk away with:</strong> a clean, labeled physical security setup with the diagrams to maintain it.</p>
+
+                  <a href="#connect" class="card-cta">Request a site walkthrough <span aria-hidden="true">→</span></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="acc-group" data-group="education">
+          <p class="acc-group-label">Education</p>
+          <div class="accordion">
+            <div class="acc-item" data-glow>
+              <button class="acc-trigger" type="button" aria-expanded="false">
+                <span class="acc-icon">🎓</span>
+                <span class="acc-heading">Tutoring &amp; Instruction</span>
+                <span class="acc-chevron" aria-hidden="true">▾</span>
+              </button>
+              <div class="acc-panel">
+                <div class="acc-panel-inner">
+                  <p class="service-summary">1:1 and small-group teaching for cloud, IT, and security learners. Cohort-style or async.</p>
+
+                  <p class="service-block-label">Engagement options</p>
+                  <ul class="service-packages">
+                    <li><span class="pkg-name">Single Session</span><span class="pkg-shape">60&ndash;90 min</span></li>
+                    <li><span class="pkg-name">Cert Sprint</span><span class="pkg-shape">4&ndash;8 weeks</span></li>
+                    <li><span class="pkg-name">Ongoing Coaching</span><span class="pkg-shape">Monthly</span></li>
+                  </ul>
+
+                  <p class="service-block-label">How it works</p>
+                  <ol class="service-pipeline">
+                    <li><span class="step-tag">01</span><span>Intake &mdash; your goal, current level, study time</span></li>
+                    <li><span class="step-tag">02</span><span>Custom plan with milestones</span></li>
+                    <li><span class="step-tag">03</span><span>Sessions + labs + accountability</span></li>
+                    <li><span class="step-tag">04</span><span>Review and re-plan as you progress</span></li>
+                  </ol>
+
+                  <p class="service-outcome"><strong>You walk away with:</strong> a clear study plan, real hands-on practice, and someone in your corner.</p>
+
+                  <a href="#connect" class="card-cta">Book a session <span aria-hidden="true">→</span></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
         <p class="section-foot">Not sure which fits? <a href="#connect">Send a one-line note</a> and I'll route you.</p>
       </section>
 
@@ -439,24 +535,59 @@
           <div class="tab-panel is-active" id="panel-built" role="tabpanel" aria-labelledby="tab-built" data-panel="built">
             <div class="project-grid">
               <article class="project-card" data-glow>
-                <div class="project-tag">Lab</div>
-                <h4>Cloud Security Automation Lab</h4>
-                <p>Terraform and Ansible environment used to teach baseline cloud security across AWS and Azure tenants. Built for CyberTex coursework and small-group practice.</p>
-                <p class="project-footnote">Repeatable per cohort. Always evolving.</p>
+                <div class="project-card-head">
+                  <div class="project-tag">Lab</div>
+                  <h4>Cloud Security Automation Lab</h4>
+                </div>
+                <p class="project-summary">Terraform + Ansible environment used to teach baseline cloud security across AWS and Azure. Built for CyberTex coursework and small-group practice.</p>
+                <ul class="project-stats">
+                  <li><span class="stat-label">Built with</span> Terraform &middot; Ansible &middot; AWS &middot; Azure</li>
+                  <li><span class="stat-label">Used by</span> CyberTex cohorts &amp; HHO study groups</li>
+                  <li><span class="stat-label">Status</span> Ongoing &mdash; rebuilt each cohort</li>
+                </ul>
+                <ul class="project-roles" aria-label="Open roles">
+                  <li class="project-role" data-role="mentor"><span>🧭</span> Mentor</li>
+                  <li class="project-role" data-role="peer"><span>🤝</span> Peer</li>
+                  <li class="project-role" data-role="student"><span>🌱</span> Student</li>
+                </ul>
                 <a href="#connect" class="card-cta">Request a walkthrough <span aria-hidden="true">→</span></a>
               </article>
+
               <article class="project-card" data-glow>
-                <div class="project-tag">Lab</div>
-                <h4>Incident Response Practice Pipeline</h4>
-                <p>A Python-driven simulation that runs students through detection-to-remediation workflows. Used in classroom labs to build incident-response muscle memory.</p>
-                <p class="project-footnote">From alert to action in a guided environment.</p>
+                <div class="project-card-head">
+                  <div class="project-tag">Lab</div>
+                  <h4>Incident Response Practice Pipeline</h4>
+                </div>
+                <p class="project-summary">Python-driven simulation that runs students through detection-to-remediation workflows. Built so incident response becomes muscle memory.</p>
+                <ul class="project-stats">
+                  <li><span class="stat-label">Built with</span> Python &middot; log generators &middot; lightweight SIEM</li>
+                  <li><span class="stat-label">Used by</span> Classroom labs at CyberTex</li>
+                  <li><span class="stat-label">Status</span> Active in current cohort</li>
+                </ul>
+                <ul class="project-roles" aria-label="Open roles">
+                  <li class="project-role" data-role="mentor"><span>🧭</span> Mentor</li>
+                  <li class="project-role" data-role="peer"><span>🤝</span> Peer</li>
+                  <li class="project-role" data-role="student"><span>🌱</span> Student</li>
+                </ul>
                 <a href="#connect" class="card-cta">See the pipeline <span aria-hidden="true">→</span></a>
               </article>
+
               <article class="project-card" data-glow>
-                <div class="project-tag">Community Design</div>
-                <h4>HHO Community Framework</h4>
-                <p>The structure behind HackersHideout &mdash; Discord roles, project tracks, and how mentors, peers, and students plug in together.</p>
-                <p class="project-footnote">Community as a small, deliberate system.</p>
+                <div class="project-card-head">
+                  <div class="project-tag">Community Design</div>
+                  <h4>HHO Community Framework</h4>
+                </div>
+                <p class="project-summary">The structure behind HackersHideout &mdash; Discord roles, project tracks, and how mentors, peers, and students plug in.</p>
+                <ul class="project-stats">
+                  <li><span class="stat-label">Built with</span> Discord &middot; structured channels &middot; simple norms</li>
+                  <li><span class="stat-label">Used by</span> The HHO Discord community</li>
+                  <li><span class="stat-label">Status</span> Live and evolving</li>
+                </ul>
+                <ul class="project-roles" aria-label="Open roles">
+                  <li class="project-role" data-role="mentor"><span>🧭</span> Mentor</li>
+                  <li class="project-role" data-role="peer"><span>🤝</span> Peer</li>
+                  <li class="project-role" data-role="student"><span>🌱</span> Student</li>
+                </ul>
                 <a href="#connect" class="card-cta">Get the framework brief <span aria-hidden="true">→</span></a>
               </article>
             </div>
@@ -605,17 +736,24 @@
               <input type="email" name="email" placeholder="you@email.com" required />
             </label>
             <label>
-              What's this about?
-              <select name="focus">
+              Who are you?
+              <select name="role" required>
                 <option value="">Pick one&hellip;</option>
-                <option>Consulting</option>
-                <option>Cloud &amp; Infrastructure</option>
-                <option>DevOps &amp; Code</option>
-                <option>AIOps &amp; Automation</option>
-                <option>Physical Security</option>
-                <option>Tutoring &amp; Instruction</option>
-                <option>HHO community</option>
+                <option>Apprentice / Student</option>
+                <option>Peer / Collaborator</option>
+                <option>Partner / Sponsor</option>
+                <option>Mentor / Advisor</option>
                 <option>Other</option>
+              </select>
+            </label>
+            <label>
+              Looking for
+              <select name="focus" required>
+                <option value="">Pick one&hellip;</option>
+                <option>Community / HHO Guild</option>
+                <option>Services (Cloud / DevOps / AIOps / Security)</option>
+                <option>Tutoring / Consulting</option>
+                <option>Just exploring</option>
               </select>
             </label>
             <label>
