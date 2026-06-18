@@ -1454,3 +1454,291 @@ a {
   font-size: 0.88rem;
   color: var(--muted);
 }
+
+/* ============================================================
+   Theme toggle + Dark mode
+   ============================================================ */
+.theme-toggle {
+  display: inline-grid;
+  place-items: center;
+  width: 38px;
+  height: 38px;
+  margin-left: 6px;
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  cursor: pointer;
+  color: var(--text);
+  font-size: 1rem;
+  transition: background 0.18s ease, border-color 0.18s ease, color 0.18s ease;
+}
+
+.theme-toggle:hover,
+.theme-toggle:focus-visible {
+  background: rgba(161, 65, 255, 0.08);
+  border-color: rgba(161, 65, 255, 0.45);
+  color: var(--accent);
+  outline: none;
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --bg: #0f0f12;
+  --surface: #17171c;
+  --text: #ececec;
+  --muted: #9a9aa3;
+  --border: #2a2a32;
+  --shadow: 0 24px 60px rgba(0, 0, 0, 0.4);
+}
+
+:root[data-theme="dark"] body {
+  background: var(--bg);
+  color: var(--text);
+}
+
+:root[data-theme="dark"] .contact-form input,
+:root[data-theme="dark"] .contact-form textarea,
+:root[data-theme="dark"] .contact-form select {
+  background: #1f1f25;
+  color: var(--text);
+  border-color: var(--border);
+}
+
+:root[data-theme="dark"] .step-toggle,
+:root[data-theme="dark"] .collapse-toggle {
+  background: #1f1f25;
+}
+
+:root[data-theme="dark"] .endorse-pill,
+:root[data-theme="dark"] .step-pill,
+:root[data-theme="dark"] .project-role {
+  background: #1f1f25;
+}
+
+:root[data-theme="dark"] .bio-card {
+  background: #1c1c22;
+}
+
+:root[data-theme="dark"] .footer-blurb,
+:root[data-theme="dark"] .footer-links li,
+:root[data-theme="dark"] .footer-links a {
+  color: var(--muted);
+}
+
+/* ============================================================
+   Hero monogram
+   ============================================================ */
+.hero {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 36px;
+  align-items: center;
+}
+
+.hero-monogram {
+  display: grid;
+  place-items: center;
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--accent), var(--accent-green));
+  box-shadow: 0 24px 60px rgba(161, 65, 255, 0.28), 0 0 0 10px rgba(161, 65, 255, 0.06);
+  color: #0f0f0f;
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  flex-shrink: 0;
+}
+
+.hero-monogram span {
+  font-size: 5.5rem;
+  line-height: 1;
+}
+
+@media (max-width: 860px) {
+  .hero {
+    grid-template-columns: 1fr;
+    text-align: left;
+  }
+  .hero-monogram {
+    width: 96px;
+    height: 96px;
+    order: -1;
+    justify-self: start;
+    box-shadow: 0 12px 30px rgba(161, 65, 255, 0.22);
+  }
+  .hero-monogram span {
+    font-size: 2.4rem;
+  }
+}
+
+/* ============================================================
+   Testimonials
+   ============================================================ */
+.testimonial-grid {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+.testimonial-card {
+  position: relative;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  padding: 28px;
+  margin: 0;
+  box-shadow: var(--shadow);
+}
+
+.testimonial-ribbon {
+  display: inline-block;
+  margin-bottom: 14px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: rgba(161, 65, 255, 0.10);
+  border: 1px solid rgba(161, 65, 255, 0.35);
+  color: var(--accent);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.testimonial-quote {
+  margin: 0 0 14px;
+  color: var(--text);
+  font-size: 1.04rem;
+  line-height: 1.65;
+  font-style: italic;
+}
+
+.testimonial-author {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
+/* ============================================================
+   Project card expand
+   ============================================================ */
+.project-card-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 14px;
+  cursor: pointer;
+}
+
+.project-card-head > div {
+  display: grid;
+  gap: 6px;
+  flex: 1;
+  min-width: 0;
+}
+
+.collapse-toggle {
+  flex-shrink: 0;
+  width: 34px;
+  height: 34px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background: #fff;
+  color: var(--text);
+  font-size: 1.15rem;
+  font-weight: 700;
+  line-height: 1;
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+  transition: background 0.18s ease, border-color 0.18s ease, color 0.18s ease;
+}
+
+.collapse-toggle:hover,
+.collapse-toggle:focus-visible {
+  background: rgba(161, 65, 255, 0.08);
+  border-color: rgba(161, 65, 255, 0.45);
+  color: var(--accent);
+  outline: none;
+}
+
+.project-detail {
+  display: none;
+  padding-top: 4px;
+}
+
+.project-card.expanded .project-detail {
+  display: block;
+}
+
+.project-detail-grid {
+  margin: 0;
+  display: grid;
+  gap: 14px;
+  padding: 16px 18px;
+  background: rgba(161, 65, 255, 0.05);
+  border: 1px dashed rgba(161, 65, 255, 0.25);
+  border-radius: 14px;
+}
+
+.project-detail-grid > div {
+  display: grid;
+  gap: 4px;
+}
+
+.project-detail-grid dt {
+  margin: 0;
+  color: var(--accent);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.project-detail-grid dd {
+  margin: 0;
+  color: var(--text);
+  font-size: 0.94rem;
+  line-height: 1.6;
+}
+
+:root[data-theme="dark"] .project-detail-grid {
+  background: rgba(161, 65, 255, 0.10);
+}
+
+/* ============================================================
+   Form status + honeypot
+   ============================================================ */
+.hp {
+  position: absolute !important;
+  left: -9999px !important;
+  width: 1px !important;
+  height: 1px !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
+
+.form-status {
+  margin: 12px 0 0;
+  padding: 12px 14px;
+  border-radius: 14px;
+  font-size: 0.92rem;
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+.form-status.success {
+  background: rgba(0, 255, 156, 0.10);
+  color: #0a8a52;
+  border: 1px solid rgba(0, 255, 156, 0.35);
+}
+
+.form-status.error {
+  background: rgba(255, 80, 80, 0.08);
+  color: #b03030;
+  border: 1px solid rgba(255, 80, 80, 0.35);
+}
+
+[hidden] {
+  display: none !important;
+}
+

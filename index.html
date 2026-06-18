@@ -4,10 +4,33 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Kerry P. — Cloud, DevOps & Security Engineer · Instructor · Austin, TX</title>
+  <meta name="description" content="Kerry P. — cloud, DevOps, and security engineer. Instructor at CyberTex. Building HackersHideout (HHO) — a small operators' community in Austin, TX." />
+
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+
+  <meta property="og:type" content="profile" />
+  <meta property="og:title" content="Kerry P. — Cloud, DevOps & Security Engineer" />
+  <meta property="og:description" content="Instructor, engineer, and builder. Currently teaching at CyberTex and running HackersHideout." />
+  <meta property="og:image" content="og-image.svg" />
+  <meta property="og:url" content="https://akplearner.github.io/" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Kerry P. — Cloud, DevOps & Security Engineer" />
+  <meta name="twitter:description" content="Instructor, engineer, and builder." />
+  <meta name="twitter:image" content="og-image.svg" />
+
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Press+Start+2P&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
+
+  <!-- Google Analytics 4 — replace G-REPLACE-MEASUREMENT-ID with your real ID -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-REPLACE-MEASUREMENT-ID"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-REPLACE-MEASUREMENT-ID');
+  </script>
 </head>
 <body>
   <div class="page-shell">
@@ -24,6 +47,9 @@
         <a href="#leadership">Guilds</a>
         <a href="#portfolio">Portfolio</a>
         <a href="#connect">Connect</a>
+        <button type="button" class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode" aria-pressed="false">
+          <span class="theme-icon" aria-hidden="true">☾</span>
+        </button>
       </nav>
     </header>
 
@@ -36,7 +62,11 @@
           <div class="hero-actions">
             <a href="#router" class="button primary">Start here</a>
             <a href="#portfolio" class="button secondary">See projects</a>
+            <a id="cv-link" href="cv.pdf" download class="button secondary">Download CV</a>
           </div>
+        </div>
+        <div class="hero-monogram" aria-hidden="true">
+          <span>KP</span>
         </div>
       </section>
 
@@ -238,12 +268,25 @@
           <span>Projects</span>
           <h3>Every project has room for mentors, peers, and students.</h3>
         </div>
-        <p class="portfolio-intro">Pick one that fits. Reach out through HHO Discord and tell me which role you want to play.</p>
+        <p class="portfolio-intro">Pick one that fits. Click any card for the deeper story. Reach out through HHO Discord and tell me which role you want to play.</p>
         <div class="project-grid">
-          <article class="project-card">
-            <div class="project-tag">Lab</div>
-            <h4>Cloud Security Automation Lab</h4>
+          <article class="project-card collapsible">
+            <div class="project-card-head">
+              <div>
+                <div class="project-tag">Lab</div>
+                <h4>Cloud Security Automation Lab</h4>
+              </div>
+              <button type="button" class="collapse-toggle" aria-expanded="false" aria-label="Toggle details">+</button>
+            </div>
             <p>Terraform and Ansible environment used to teach baseline cloud security across AWS and Azure tenants. Built for CyberTex coursework and small-group practice.</p>
+            <div class="project-detail">
+              <dl class="project-detail-grid">
+                <div><dt>Problem</dt><dd>Students need a safe place to practice secure cloud baselines without contaminating real environments.</dd></div>
+                <div><dt>Approach</dt><dd>Terraform-defined sandboxes with Ansible reset scripts so each cohort can break and rebuild from scratch.</dd></div>
+                <div><dt>Tech</dt><dd>Terraform, Ansible, AWS, Azure.</dd></div>
+                <div><dt>What I learned</dt><dd>Repeatability beats complexity. A simple lab anyone can rebuild beats a fancy one only I can run.</dd></div>
+              </dl>
+            </div>
             <p class="project-footnote">Repeatable per cohort. Always evolving.</p>
             <ul class="project-roles" aria-label="Open roles">
               <li class="project-role" data-role="mentor"><span>🧭</span> Mentor</li>
@@ -251,10 +294,23 @@
               <li class="project-role" data-role="student"><span>🌱</span> Student</li>
             </ul>
           </article>
-          <article class="project-card">
-            <div class="project-tag">Lab</div>
-            <h4>Incident Response Practice Pipeline</h4>
+          <article class="project-card collapsible">
+            <div class="project-card-head">
+              <div>
+                <div class="project-tag">Lab</div>
+                <h4>Incident Response Practice Pipeline</h4>
+              </div>
+              <button type="button" class="collapse-toggle" aria-expanded="false" aria-label="Toggle details">+</button>
+            </div>
             <p>A Python-driven simulation that runs students through detection-to-remediation workflows. Used in classroom labs to make incident response muscle memory instead of theory.</p>
+            <div class="project-detail">
+              <dl class="project-detail-grid">
+                <div><dt>Problem</dt><dd>Incident response is usually taught as theory &mdash; students freeze the first time an alert fires.</dd></div>
+                <div><dt>Approach</dt><dd>A scripted simulation that drives realistic alerts through a guided playbook so the response becomes muscle memory.</dd></div>
+                <div><dt>Tech</dt><dd>Python, log generators, lightweight SIEM.</dd></div>
+                <div><dt>What I learned</dt><dd>Reps under controlled stress are what build the instinct &mdash; not slides.</dd></div>
+              </dl>
+            </div>
             <p class="project-footnote">From alert to action in a guided environment.</p>
             <ul class="project-roles" aria-label="Open roles">
               <li class="project-role" data-role="mentor"><span>🧭</span> Mentor</li>
@@ -262,10 +318,23 @@
               <li class="project-role" data-role="student"><span>🌱</span> Student</li>
             </ul>
           </article>
-          <article class="project-card">
-            <div class="project-tag">System Design</div>
-            <h4>HHO Community Framework</h4>
+          <article class="project-card collapsible">
+            <div class="project-card-head">
+              <div>
+                <div class="project-tag">System Design</div>
+                <h4>HHO Community Framework</h4>
+              </div>
+              <button type="button" class="collapse-toggle" aria-expanded="false" aria-label="Toggle details">+</button>
+            </div>
             <p>The structure behind HackersHideout &mdash; Discord roles, project tracks, and how mentors, peers, and students plug in together.</p>
+            <div class="project-detail">
+              <dl class="project-detail-grid">
+                <div><dt>Problem</dt><dd>Most communities either go silent or get noisy. Few stay focused on the work.</dd></div>
+                <div><dt>Approach</dt><dd>Clear roles (mentor / peer / student), small group sizes, and projects as the unit of work.</dd></div>
+                <div><dt>Tech</dt><dd>Discord, structured channels, simple norms.</dd></div>
+                <div><dt>What I learned</dt><dd>Structure beats hype. People stay where roles are clear and the work is visible.</dd></div>
+              </dl>
+            </div>
             <p class="project-footnote">Community as a small, deliberate system.</p>
             <ul class="project-roles" aria-label="Open roles">
               <li class="project-role" data-role="mentor"><span>🧭</span> Mentor</li>
@@ -273,6 +342,20 @@
               <li class="project-role" data-role="student"><span>🌱</span> Student</li>
             </ul>
           </article>
+        </div>
+      </section>
+
+      <section class="section testimonials" id="testimonials">
+        <div class="section-head">
+          <span>What people say</span>
+          <h3>Real quotes will land here as students and peers opt in.</h3>
+        </div>
+        <div class="testimonial-grid">
+          <blockquote class="testimonial-card">
+            <span class="testimonial-ribbon">Sample &middot; collecting real quotes now</span>
+            <p class="testimonial-quote">&ldquo;A short, honest quote from a student, peer, or mentor will live here once the first one opts in to be named on the site.&rdquo;</p>
+            <footer class="testimonial-author">&mdash; Name, role / context</footer>
+          </blockquote>
         </div>
       </section>
 
@@ -377,7 +460,14 @@
             </div>
             <p class="hero-note">Usually replies within a few days. No tracking pixels.</p>
           </div>
-          <form class="contact-form" action="#REPLACE-FORM-ENDPOINT-URL" method="post">
+          <form class="contact-form" action="https://api.web3forms.com/submit" method="POST">
+            <!-- Replace with your real key from https://web3forms.com -->
+            <input type="hidden" name="access_key" value="REPLACE-WEB3FORMS-ACCESS-KEY" />
+            <input type="hidden" name="subject" value="New contact from portfolio" />
+            <input type="hidden" name="from_name" value="Portfolio Contact Form" />
+            <!-- honeypot — bots fill this, real users don't -->
+            <input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off" />
+
             <label>
               Name *
               <input type="text" name="name" placeholder="Your name" required />
@@ -405,6 +495,7 @@
               <textarea name="goal" placeholder="A couple of sentences is plenty." rows="4"></textarea>
             </label>
             <button type="submit" class="button primary">Send</button>
+            <p class="form-status" id="form-status" role="status" aria-live="polite" hidden></p>
           </form>
         </div>
       </section>
