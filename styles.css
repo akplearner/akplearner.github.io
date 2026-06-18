@@ -2699,3 +2699,355 @@ textarea:focus-visible {
 /* Metric chips, follow cards, role chips, project/platform/guild cards
    inherit surface/border/text via CSS vars already — no overrides needed. */
 
+/* ============================================================
+   Service category groups
+   ============================================================ */
+.acc-group + .acc-group {
+  margin-top: 28px;
+}
+
+.acc-group-label {
+  margin: 0 0 12px;
+  color: var(--accent);
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+}
+
+/* ============================================================
+   Service detail: summary, packages, pipeline, outcome
+   ============================================================ */
+.service-summary {
+  margin: 0 0 18px;
+  color: var(--text);
+  font-size: 1rem;
+  line-height: 1.65;
+}
+
+.service-block-label {
+  margin: 18px 0 10px;
+  color: var(--muted);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.service-packages {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 8px;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+}
+
+.service-packages li {
+  display: grid;
+  gap: 2px;
+  padding: 12px 14px;
+  background: rgba(161, 65, 255, 0.06);
+  border: 1px solid rgba(161, 65, 255, 0.20);
+  border-radius: 14px;
+}
+
+.pkg-name {
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.pkg-shape {
+  font-size: 0.78rem;
+  color: var(--muted);
+}
+
+.service-pipeline {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 6px;
+}
+
+.service-pipeline li {
+  display: grid;
+  grid-template-columns: 38px 1fr;
+  gap: 12px;
+  align-items: start;
+  padding: 10px 0;
+  border-bottom: 1px dashed var(--border);
+}
+
+.service-pipeline li:last-child {
+  border-bottom: none;
+}
+
+.step-tag {
+  display: grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 10px;
+  background: rgba(161, 65, 255, 0.10);
+  color: var(--accent);
+  font-family: 'Press Start 2P', monospace;
+  font-size: 0.62rem;
+}
+
+.service-pipeline li span:not(.step-tag) {
+  color: var(--text);
+  font-size: 0.95rem;
+  line-height: 1.55;
+}
+
+.service-outcome {
+  margin: 18px 0 16px;
+  padding: 12px 14px;
+  background: rgba(0, 255, 156, 0.08);
+  border-left: 3px solid var(--accent-green);
+  border-radius: 0 12px 12px 0;
+  color: var(--text);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.service-outcome strong {
+  color: var(--text);
+}
+
+:root[data-theme="dark"] .service-packages li {
+  background: rgba(161, 65, 255, 0.12);
+}
+
+:root[data-theme="dark"] .service-outcome {
+  background: rgba(0, 255, 156, 0.06);
+}
+
+/* ============================================================
+   Project card refresh (panel-built)
+   ============================================================ */
+.project-card-head {
+  display: grid;
+  gap: 6px;
+  margin-bottom: 12px;
+}
+
+.project-summary {
+  margin: 0 0 14px;
+  color: var(--text);
+  font-size: 0.96rem;
+  line-height: 1.6;
+}
+
+.project-stats {
+  list-style: none;
+  margin: 0 0 14px;
+  padding: 12px 14px;
+  display: grid;
+  gap: 6px;
+  background: rgba(161, 65, 255, 0.04);
+  border: 1px solid rgba(161, 65, 255, 0.16);
+  border-radius: 12px;
+}
+
+.project-stats li {
+  font-size: 0.88rem;
+  line-height: 1.5;
+  color: var(--text);
+}
+
+.stat-label {
+  display: inline-block;
+  min-width: 78px;
+  color: var(--muted);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+:root[data-theme="dark"] .project-stats {
+  background: rgba(161, 65, 255, 0.08);
+}
+
+/* ============================================================
+   Hamburger menu (mobile)
+   ============================================================ */
+.nav-toggle {
+  display: none;
+  width: 42px;
+  height: 42px;
+  padding: 0;
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  cursor: pointer;
+  position: relative;
+}
+
+.nav-toggle-bar,
+.nav-toggle-bar::before,
+.nav-toggle-bar::after {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: var(--text);
+  border-radius: 2px;
+  transition: transform 0.2s ease, opacity 0.15s ease, top 0.2s ease;
+  position: absolute;
+  left: 50%;
+  margin-left: -11px;
+}
+
+.nav-toggle-bar {
+  top: 50%;
+  margin-top: -1px;
+}
+
+.nav-toggle-bar::before,
+.nav-toggle-bar::after {
+  content: '';
+  left: 0;
+  margin-left: 0;
+}
+
+.nav-toggle-bar::before { top: -7px; }
+.nav-toggle-bar::after  { top: 7px; }
+
+.nav-toggle[aria-expanded="true"] .nav-toggle-bar {
+  background: transparent;
+}
+
+.nav-toggle[aria-expanded="true"] .nav-toggle-bar::before {
+  top: 0;
+  transform: rotate(45deg);
+}
+
+.nav-toggle[aria-expanded="true"] .nav-toggle-bar::after {
+  top: 0;
+  transform: rotate(-45deg);
+}
+
+/* ============================================================
+   Mobile polish (≤ 600px)
+   ============================================================ */
+@media (max-width: 600px) {
+  .nav-toggle { display: block; }
+
+  .topbar {
+    position: relative;
+    flex-wrap: wrap;
+  }
+
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: calc(100% + 8px);
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    align-items: stretch;
+    padding: 18px 22px;
+    gap: 16px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    box-shadow: var(--shadow);
+    z-index: 60;
+  }
+
+  .nav-links.is-open {
+    display: flex;
+  }
+
+  .nav-links a {
+    font-size: 1rem;
+    padding: 6px 0;
+  }
+
+  .nav-links .nav-cta {
+    text-align: center;
+    padding: 10px 14px;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+  }
+
+  /* Hero countdown 2x2 on tiny screens */
+  .countdown-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+
+  /* Hero actions stack full-width */
+  .hero-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .hero-actions .button {
+    width: 100%;
+    justify-content: center;
+  }
+
+  /* Metric strip 2x2 */
+  .metrics-strip {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+  .metric-chip:nth-child(2n) {
+    border-right: none;
+  }
+
+  /* Quickpick + mini chips with tap-friendly size */
+  .quickpick-chip,
+  .mini-chip {
+    min-height: 36px;
+    padding: 8px 12px;
+    font-size: 0.88rem;
+  }
+
+  /* Accordion trigger row */
+  .acc-trigger {
+    flex-wrap: wrap;
+    row-gap: 4px;
+    min-height: 56px;
+  }
+  .acc-heading {
+    flex: 1 1 auto;
+    min-width: 0;
+  }
+
+  /* Service packages single column on tiny phones */
+  .service-packages {
+    grid-template-columns: 1fr;
+  }
+
+  /* Work tabs scroll horizontally if needed */
+  .tabs {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+  .tabs::-webkit-scrollbar { display: none; }
+  .tab { flex-shrink: 0; }
+
+  /* Form inputs sized so iOS doesn't auto-zoom */
+  .contact-form input,
+  .contact-form select,
+  .contact-form textarea {
+    font-size: 16px;
+  }
+}
+
+/* ============================================================
+   Tap-target hardening (all viewports)
+   ============================================================ */
+.acc-trigger,
+.tab,
+.stage-trigger,
+.button,
+.card-cta,
+.nav-links a,
+.theme-toggle,
+.nav-toggle {
+  min-height: 44px;
+}
