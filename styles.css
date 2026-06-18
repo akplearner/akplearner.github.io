@@ -687,6 +687,42 @@ a {
   border: 1px solid rgba(161, 65, 255, 0.30);
 }
 
+.status-tag.pending {
+  background: #f3f3f3;
+  color: #5a5a5a;
+  border: 1px solid var(--border);
+}
+
+.guild-grid {
+  display: grid;
+  gap: 24px;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+}
+
+.guild-grid-2 {
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  max-width: 760px;
+}
+
+.guild-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  padding: 26px;
+  box-shadow: var(--shadow);
+}
+
+.guild-card h4 {
+  margin: 0 0 12px;
+  font-size: 1.05rem;
+}
+
+.guild-card p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
 .platform-head {
   display: flex;
   align-items: center;
@@ -1044,8 +1080,57 @@ a {
 
 .step-body {
   display: grid;
-  gap: 10px;
+  gap: 14px;
   align-content: center;
+}
+
+.step-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 14px;
+  cursor: pointer;
+}
+
+.step-header > div {
+  display: grid;
+  gap: 6px;
+  flex: 1;
+  min-width: 0;
+}
+
+.step-toggle {
+  flex-shrink: 0;
+  width: 36px;
+  height: 36px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  background: #fff;
+  color: var(--text);
+  font-size: 1.2rem;
+  font-weight: 700;
+  line-height: 1;
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+  transition: background 0.18s ease, border-color 0.18s ease, color 0.18s ease;
+}
+
+.step-toggle:hover,
+.step-toggle:focus-visible {
+  background: rgba(161, 65, 255, 0.08);
+  border-color: rgba(161, 65, 255, 0.45);
+  color: var(--accent);
+  outline: none;
+}
+
+.step-detail {
+  display: none;
+  gap: 12px;
+}
+
+.step-card.expanded .step-detail {
+  display: grid;
 }
 
 .step-label {
