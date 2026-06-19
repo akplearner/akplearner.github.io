@@ -135,9 +135,9 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   /* ─── Scroll-spy active nav link ───────────────── */
-  const navLinks = Array.from(document.querySelectorAll('.nav-links a[href^="#"]'));
+  const spyLinks = Array.from(document.querySelectorAll('.nav-links a[href^="#"]'));
   const sectionMap = new Map();
-  navLinks.forEach(a => {
+  spyLinks.forEach(a => {
     const id = a.getAttribute('href').slice(1);
     const target = document.getElementById(id);
     if (target) sectionMap.set(target, a);
@@ -148,7 +148,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const link = sectionMap.get(e.target);
         if (!link) return;
         if (e.isIntersecting) {
-          navLinks.forEach(a => a.classList.remove('is-active'));
+          spyLinks.forEach(a => a.classList.remove('is-active'));
           link.classList.add('is-active');
         }
       });
@@ -319,5 +319,120 @@ document.addEventListener('DOMContentLoaded', () => {
         status.innerHTML = "Couldn't send. Reach me on <a href=\"https://www.linkedin.com/in/kerrypp/\" target=\"_blank\" rel=\"noopener\">LinkedIn</a> instead.";
       }
     });
+  }
+
+  /* ─── Cal.com inline embed (guarded by placeholder) ── */
+  const calEmbed = document.querySelector('.cal-embed[data-cal-link]');
+  if (calEmbed) {
+    const calLink = calEmbed.getAttribute('data-cal-link') || '';
+    const isPlaceholder = calLink.startsWith('REPLACE-') || calLink.indexOf('REPLACE-') !== -1;
+    if (isPlaceholder) {
+      calEmbed.setAttribute('data-cal-state', 'placeholder');
+    } else {
+      const namespace = calEmbed.getAttribute('data-cal-namespace') || 'briefing';
+      // Cal.com official embed snippet (inline).
+      (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if (typeof namespace === "string") { cal.ns[namespace] = cal.ns[namespace] || api; p(cal.ns[namespace], ar); p(cal, ["initNamespace", namespace]); } else p(cal, ar); return; } p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
+      window.Cal("init", namespace, { origin: "https://cal.com" });
+      window.Cal.ns[namespace]("inline", {
+        elementOrSelector: calEmbed,
+        config: { layout: "month_view" },
+        calLink: calLink
+      });
+      window.Cal.ns[namespace]("ui", {
+        theme: document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'light',
+        hideEventTypeDetails: false,
+        layout: "month_view"
+      });
+      calEmbed.setAttribute('data-cal-state', 'ready');
+    }
+  }
+
+  /* ─── Lead-magnet form (Web3Forms + instant download link) ── */
+  const lmForm = document.querySelector('.lead-magnet-form');
+  const lmStatus = document.getElementById('lm-status');
+  if (lmForm && lmStatus) {
+    const pdfPath = lmForm.getAttribute('data-pdf') || '#';
+    lmForm.addEventListener('submit', async event => {
+      event.preventDefault();
+      lmStatus.hidden = false;
+      lmStatus.className = 'lm-status';
+      lmStatus.textContent = 'Sending…';
+      try {
+        const res = await fetch(lmForm.action, {
+          method: 'POST',
+          body: new FormData(lmForm),
+          headers: { Accept: 'application/json' }
+        });
+        const data = await res.json().catch(() => ({}));
+        if (res.ok && data.success !== false) {
+          lmForm.reset();
+          lmStatus.className = 'lm-status';
+          lmStatus.innerHTML = 'Thanks — your copy is ready. <a href="' + pdfPath + '" download>Download the PDF →</a>';
+        } else {
+          lmStatus.className = 'lm-status error';
+          lmStatus.innerHTML = "Couldn't send. Email me directly and I'll forward it.";
+        }
+      } catch (err) {
+        lmStatus.className = 'lm-status error';
+        lmStatus.innerHTML = "Couldn't send. Email me directly and I'll forward it.";
+      }
+    });
+  }
+
+  /* ─── Sticky mobile CTA — show after hero, hide near #connect ── */
+  const stickyCta = document.getElementById('sticky-cta');
+  const connectSection = document.getElementById('connect');
+  if (stickyCta && connectSection) {
+    let connectInView = false;
+    const updateCta = () => {
+      const past = window.scrollY > window.innerHeight * 0.8;
+      stickyCta.classList.toggle('is-visible', past && !connectInView);
+    };
+    if ('IntersectionObserver' in window) {
+      const ctaSpy = new IntersectionObserver(entries => {
+        entries.forEach(e => { connectInView = e.isIntersecting; });
+        updateCta();
+      }, { rootMargin: '-15% 0px -15% 0px' });
+      ctaSpy.observe(connectSection);
+    }
+    window.addEventListener('scroll', updateCta, { passive: true });
+    updateCta();
+  }
+
+  /* ─── Testimonials — render from testimonials.json ── */
+  const testimonialContainer = document.querySelector('[data-testimonials]');
+  const testimonialFallback = document.getElementById('testimonial-fallback');
+  if (testimonialContainer) {
+    const showFallback = () => {
+      if (testimonialFallback && 'content' in testimonialFallback) {
+        testimonialContainer.appendChild(testimonialFallback.content.cloneNode(true));
+      }
+    };
+    const escapeHtml = str => String(str || '').replace(/[&<>"']/g, ch => ({
+      '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'
+    }[ch]));
+    const renderCard = entry => {
+      const card = document.createElement('blockquote');
+      card.className = 'testimonial-card';
+      let sourceLink = '';
+      if (entry.sourceUrl && entry.source) {
+        sourceLink = ' <a class="testimonial-source" href="' + encodeURI(entry.sourceUrl) + '" target="_blank" rel="noopener">' + escapeHtml(entry.source) + ' ↗</a>';
+      }
+      const contextLine = entry.context ? ' &middot; ' + escapeHtml(entry.context) : '';
+      card.innerHTML =
+        '<p class="testimonial-quote">' + escapeHtml(entry.quote) + '</p>' +
+        '<footer class="testimonial-author">' + escapeHtml(entry.author || '') + contextLine + sourceLink + '</footer>';
+      return card;
+    };
+    fetch('testimonials.json', { cache: 'no-cache' })
+      .then(res => res.ok ? res.json() : [])
+      .then(entries => {
+        if (Array.isArray(entries) && entries.length > 0) {
+          entries.forEach(entry => testimonialContainer.appendChild(renderCard(entry)));
+        } else {
+          showFallback();
+        }
+      })
+      .catch(() => showFallback());
   }
 });
