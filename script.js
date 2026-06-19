@@ -65,6 +65,27 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('.reveal').forEach(el => io.observe(el));
   }
 
+  /* ─── Stagger reveals for grid children ────────── */
+  if (!reduced) {
+    const staggerParents = [
+      '.metrics-strip',
+      '.audience-cards',
+      '.follow-grid',
+      '.guild-grid',
+      '.project-grid',
+      '.platform-grid',
+      '.skills-grid'
+    ];
+    staggerParents.forEach(sel => {
+      document.querySelectorAll(sel).forEach(parent => {
+        Array.from(parent.children).forEach((child, i) => {
+          child.style.transitionDelay = (i * 60) + 'ms';
+          child.classList.add('stagger-child');
+        });
+      });
+    });
+  }
+
   /* ─── Animated metric counters ─────────────────── */
   const counters = document.querySelectorAll('[data-count]');
   const animateCount = el => {
@@ -397,6 +418,82 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     window.addEventListener('scroll', updateCta, { passive: true });
     updateCta();
+  }
+
+  /* ─── Hero rotating value-prop ─────────────────── */
+  const rotator = document.querySelector('.hero-rotator[data-rotate]');
+  if (rotator && !reduced) {
+    let phrases = [];
+    try { phrases = JSON.parse(rotator.dataset.rotate); } catch (e) { phrases = []; }
+    if (Array.isArray(phrases) && phrases.length > 1) {
+      let idx = 0;
+      setInterval(() => {
+        idx = (idx + 1) % phrases.length;
+        rotator.classList.add('is-fading');
+        setTimeout(() => {
+          rotator.textContent = phrases[idx];
+          rotator.classList.remove('is-fading');
+        }, 280);
+      }, 3000);
+    }
+  }
+
+  /* ─── Sliding tab indicator ─────────────────────── */
+  const tabIndicator = document.querySelector('.tab-indicator');
+  const tablist = document.querySelector('.tabs');
+  if (tabIndicator && tablist) {
+    const moveIndicator = () => {
+      const active = tablist.querySelector('.tab.is-active');
+      if (!active) { tabIndicator.style.opacity = '0'; return; }
+      const tabRect = active.getBoundingClientRect();
+      const listRect = tablist.getBoundingClientRect();
+      tabIndicator.style.opacity = '1';
+      tabIndicator.style.width = tabRect.width + 'px';
+      tabIndicator.style.transform = 'translateX(' + (tabRect.left - listRect.left) + 'px)';
+    };
+    moveIndicator();
+    tablist.addEventListener('click', () => requestAnimationFrame(moveIndicator));
+    window.addEventListener('resize', moveIndicator);
+    // Re-position when tabs become visible via reveal animation
+    setTimeout(moveIndicator, 400);
+  }
+
+  /* ─── Form success checkmark animation ──────────── */
+  const successCheckHtml =
+    '<svg class="form-check" viewBox="0 0 24 24" aria-hidden="true">' +
+    '<path d="M4 12 L10 18 L20 6" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>' +
+    '</svg>';
+  document.querySelectorAll('.form-status').forEach(el => {
+    const obs = new MutationObserver(() => {
+      if (el.classList.contains('success') && !el.querySelector('.form-check')) {
+        el.innerHTML = successCheckHtml + '<span>' + el.textContent + '</span>';
+      }
+    });
+    obs.observe(el, { attributes: true, attributeFilter: ['class'] });
+  });
+
+  /* ─── Sticky funnel progress beads ──────────────── */
+  const beads = document.querySelector('.funnel-beads');
+  const funnel = document.querySelector('.funnel');
+  if (beads && funnel && 'IntersectionObserver' in window) {
+    const beadByStage = new Map();
+    beads.querySelectorAll('li[data-bead]').forEach(li => beadByStage.set(li.dataset.bead, li));
+    const stageObserver = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (!e.isIntersecting) return;
+        const stage = e.target.dataset.stage;
+        if (!stage) return;
+        beadByStage.forEach(li => li.classList.remove('is-active'));
+        const target = beadByStage.get(stage);
+        if (target) target.classList.add('is-active');
+      });
+    }, { rootMargin: '-40% 0px -50% 0px', threshold: 0 });
+    funnel.querySelectorAll('.funnel-stage[data-stage]').forEach(stage => stageObserver.observe(stage));
+
+    const funnelVisibilityObserver = new IntersectionObserver(entries => {
+      entries.forEach(e => beads.classList.toggle('is-visible', e.isIntersecting));
+    }, { threshold: 0 });
+    funnelVisibilityObserver.observe(funnel);
   }
 
   /* ─── Testimonials — render from testimonials.json ── */

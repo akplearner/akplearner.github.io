@@ -63,6 +63,7 @@
           <p class="eyebrow"><span class="pixel-dot"></span> Currently teaching, building, &amp; learning out loud</p>
           <h2>Engineer. Instructor. Building a <span class="grad-text">small community</span> of operators.</h2>
           <p class="hero-subtitle">I work across cloud, DevOps, and security &mdash; teaching what I know at CyberTex Institute and running HackersHideout (HHO), a small Discord community of engineers, peers, and students.</p>
+          <p class="hero-rotator-line">I help <span class="hero-rotator" data-rotate='["small teams ship cloud","students pass certs","operators build community"]' aria-live="polite">small teams ship cloud</span>.</p>
 
           <!-- Countdown — currently targets CISSP exam (first Friday of July 2026, 5pm CT). Retarget as milestones change. -->
           <div class="countdown" data-deadline="2026-07-03T17:00:00-05:00" role="timer" aria-label="Time until CISSP exam">
@@ -159,6 +160,13 @@
         </div>
 
         <!-- 5-stage funnel -->
+        <ol class="funnel-beads" aria-hidden="true">
+          <li data-bead="01"><span></span><b>01</b></li>
+          <li data-bead="02"><span></span><b>02</b></li>
+          <li data-bead="03"><span></span><b>03</b></li>
+          <li data-bead="04"><span></span><b>04</b></li>
+          <li data-bead="05"><span></span><b>05</b></li>
+        </ol>
         <ol class="funnel">
           <li class="funnel-stage is-open" data-stage="01">
             <div class="stage-rail"><span class="stage-num">01</span></div>
@@ -558,6 +566,7 @@
           <button class="tab is-active" type="button" role="tab" id="tab-built" aria-selected="true" aria-controls="panel-built" data-tab="built">Built</button>
           <button class="tab" type="button" role="tab" id="tab-platforms" aria-selected="false" aria-controls="panel-platforms" data-tab="platforms">Platforms</button>
           <button class="tab" type="button" role="tab" id="tab-guilds" aria-selected="false" aria-controls="panel-guilds" data-tab="guilds">Guilds</button>
+          <span class="tab-indicator" aria-hidden="true"></span>
         </div>
 
         <div class="tab-panels">
@@ -569,12 +578,39 @@
                   <div class="project-tag">Lab</div>
                   <h4>Cloud Security Automation Lab</h4>
                 </div>
+                <figure class="project-diagram" aria-label="Diagram: Terraform and Ansible deploy into AWS and Azure to produce cohort-ready labs.">
+                  <svg viewBox="0 0 320 90" xmlns="http://www.w3.org/2000/svg" role="img">
+                    <g fill="none" stroke="currentColor" stroke-width="1.5" opacity="0.9">
+                      <rect x="4" y="28" width="80" height="34" rx="8"/>
+                      <rect x="120" y="28" width="80" height="34" rx="8"/>
+                      <rect x="236" y="28" width="80" height="34" rx="8"/>
+                    </g>
+                    <g fill="currentColor" font-family="Inter, sans-serif" font-size="10" text-anchor="middle">
+                      <text x="44" y="50">Terraform</text>
+                      <text x="44" y="62" opacity="0.65" font-size="8">+ Ansible</text>
+                      <text x="160" y="50">AWS + Azure</text>
+                      <text x="160" y="62" opacity="0.65" font-size="8">isolated envs</text>
+                      <text x="276" y="50">Cohort-ready</text>
+                      <text x="276" y="62" opacity="0.65" font-size="8">labs</text>
+                    </g>
+                    <g stroke="var(--accent)" stroke-width="1.6" fill="none">
+                      <path d="M 86 45 L 116 45" marker-end="url(#arrowCSAL)"/>
+                      <path d="M 202 45 L 232 45" marker-end="url(#arrowCSAL)"/>
+                    </g>
+                    <defs>
+                      <marker id="arrowCSAL" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+                        <path d="M 0 0 L 10 5 L 0 10 z" fill="var(--accent)"/>
+                      </marker>
+                    </defs>
+                  </svg>
+                </figure>
                 <p class="project-summary">Terraform + Ansible environment used to teach baseline cloud security across AWS and Azure. Built for CyberTex coursework and small-group practice.</p>
                 <ul class="project-stats">
                   <li><span class="stat-label">Built with</span> Terraform &middot; Ansible &middot; AWS &middot; Azure</li>
                   <li><span class="stat-label">Used by</span> CyberTex cohorts &amp; HHO study groups</li>
                   <li><span class="stat-label">Status</span> Ongoing &mdash; rebuilt each cohort</li>
                 </ul>
+                <p class="project-outcome"><strong>Outcome:</strong> students leave the lab with hands on real cloud accounts, not slides.</p>
                 <ul class="project-roles" aria-label="Open roles">
                   <li class="project-role" data-role="mentor"><span>🧭</span> Mentor</li>
                   <li class="project-role" data-role="peer"><span>🤝</span> Peer</li>
@@ -588,12 +624,39 @@
                   <div class="project-tag">Lab</div>
                   <h4>Incident Response Practice Pipeline</h4>
                 </div>
+                <figure class="project-diagram" aria-label="Diagram: synthetic logs flow into a SIEM that students detect on and respond to.">
+                  <svg viewBox="0 0 320 90" xmlns="http://www.w3.org/2000/svg" role="img">
+                    <g fill="none" stroke="currentColor" stroke-width="1.5" opacity="0.9">
+                      <rect x="2" y="30" width="64" height="30" rx="8"/>
+                      <rect x="86" y="30" width="64" height="30" rx="8"/>
+                      <rect x="170" y="30" width="64" height="30" rx="8"/>
+                      <rect x="254" y="30" width="64" height="30" rx="8"/>
+                    </g>
+                    <g fill="currentColor" font-family="Inter, sans-serif" font-size="10" text-anchor="middle">
+                      <text x="34" y="49">Log gens</text>
+                      <text x="118" y="49">SIEM</text>
+                      <text x="202" y="49">Detect</text>
+                      <text x="286" y="49">Respond</text>
+                    </g>
+                    <g stroke="var(--accent)" stroke-width="1.6" fill="none">
+                      <path d="M 68 45 L 84 45" marker-end="url(#arrowIR)"/>
+                      <path d="M 152 45 L 168 45" marker-end="url(#arrowIR)"/>
+                      <path d="M 236 45 L 252 45" marker-end="url(#arrowIR)"/>
+                    </g>
+                    <defs>
+                      <marker id="arrowIR" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+                        <path d="M 0 0 L 10 5 L 0 10 z" fill="var(--accent)"/>
+                      </marker>
+                    </defs>
+                  </svg>
+                </figure>
                 <p class="project-summary">Python-driven simulation that runs students through detection-to-remediation workflows. Built so incident response becomes muscle memory.</p>
                 <ul class="project-stats">
                   <li><span class="stat-label">Built with</span> Python &middot; log generators &middot; lightweight SIEM</li>
                   <li><span class="stat-label">Used by</span> Classroom labs at CyberTex</li>
                   <li><span class="stat-label">Status</span> Active in current cohort</li>
                 </ul>
+                <p class="project-outcome"><strong>Outcome:</strong> students drill detect&rarr;respond live, not in a slide.</p>
                 <ul class="project-roles" aria-label="Open roles">
                   <li class="project-role" data-role="mentor"><span>🧭</span> Mentor</li>
                   <li class="project-role" data-role="peer"><span>🤝</span> Peer</li>
@@ -607,12 +670,41 @@
                   <div class="project-tag">Community Design</div>
                   <h4>HHO Community Framework</h4>
                 </div>
+                <figure class="project-diagram" aria-label="Diagram: the HHO Discord branches into four specialty guilds.">
+                  <svg viewBox="0 0 320 100" xmlns="http://www.w3.org/2000/svg" role="img">
+                    <g fill="none" stroke="currentColor" stroke-width="1.5" opacity="0.9">
+                      <rect x="120" y="6" width="80" height="28" rx="8"/>
+                    </g>
+                    <g fill="currentColor" font-family="Inter, sans-serif" font-size="10" text-anchor="middle">
+                      <text x="160" y="24">HHO Discord</text>
+                    </g>
+                    <g stroke="var(--accent)" stroke-width="1.4" fill="none" opacity="0.85">
+                      <path d="M 160 34 L 50 64"/>
+                      <path d="M 160 34 L 130 64"/>
+                      <path d="M 160 34 L 190 64"/>
+                      <path d="M 160 34 L 270 64"/>
+                    </g>
+                    <g fill="none" stroke="currentColor" stroke-width="1.5" opacity="0.9">
+                      <rect x="6" y="64" width="88" height="30" rx="8"/>
+                      <rect x="100" y="64" width="60" height="30" rx="8"/>
+                      <rect x="164" y="64" width="62" height="30" rx="8"/>
+                      <rect x="230" y="64" width="84" height="30" rx="8"/>
+                    </g>
+                    <g fill="currentColor" font-family="Inter, sans-serif" font-size="9" text-anchor="middle">
+                      <text x="50" y="83">Experts</text>
+                      <text x="130" y="83">Physical</text>
+                      <text x="195" y="83">Business</text>
+                      <text x="272" y="83">Spiritual</text>
+                    </g>
+                  </svg>
+                </figure>
                 <p class="project-summary">The structure behind HackersHideout &mdash; Discord roles, project tracks, and how mentors, peers, and students plug in.</p>
                 <ul class="project-stats">
                   <li><span class="stat-label">Built with</span> Discord &middot; structured channels &middot; simple norms</li>
                   <li><span class="stat-label">Used by</span> The HHO Discord community</li>
                   <li><span class="stat-label">Status</span> Live and evolving</li>
                 </ul>
+                <p class="project-outcome"><strong>Outcome:</strong> 97 members across 4 specialty guilds, learning out loud.</p>
                 <ul class="project-roles" aria-label="Open roles">
                   <li class="project-role" data-role="mentor"><span>🧭</span> Mentor</li>
                   <li class="project-role" data-role="peer"><span>🤝</span> Peer</li>
@@ -717,6 +809,64 @@
           </div>
         </div>
         <p class="section-foot">Want the full picture? <a href="#connect">Book a 20-minute call</a> and I'll walk you through it.</p>
+      </section>
+
+      <!-- PHASE 4.2 · STACK / SKILLS MATRIX -->
+      <section class="section skills" id="stack">
+        <div class="section-head">
+          <span>Stack</span>
+          <h3>The tools I work in &mdash; grouped how I think about them.</h3>
+        </div>
+        <div class="skills-grid">
+          <div class="skills-group">
+            <p class="skills-label">Cloud</p>
+            <ul class="skills-items">
+              <li>AWS</li>
+              <li>Azure</li>
+            </ul>
+          </div>
+          <div class="skills-group">
+            <p class="skills-label">IaC</p>
+            <ul class="skills-items">
+              <li>Terraform</li>
+              <li>Ansible</li>
+            </ul>
+          </div>
+          <div class="skills-group">
+            <p class="skills-label">Code</p>
+            <ul class="skills-items">
+              <li>Python</li>
+              <li>Bash</li>
+              <li>PowerShell</li>
+            </ul>
+          </div>
+          <div class="skills-group">
+            <p class="skills-label">Ops</p>
+            <ul class="skills-items">
+              <li>Docker</li>
+              <li>Kubernetes</li>
+              <li>Linux</li>
+            </ul>
+          </div>
+          <div class="skills-group">
+            <p class="skills-label">Security</p>
+            <ul class="skills-items">
+              <li>Wazuh</li>
+              <li>Velociraptor</li>
+              <li>Burp</li>
+              <li>Nessus</li>
+            </ul>
+          </div>
+          <div class="skills-group">
+            <p class="skills-label">Teaching</p>
+            <ul class="skills-items">
+              <li>CompTIA tracks</li>
+              <li>(ISC)&sup2; tracks</li>
+              <li>Cohort design</li>
+            </ul>
+          </div>
+        </div>
+        <p class="section-foot">Don't see what you need? <a href="#connect">Ask</a> &mdash; the list is shorter than what I actually touch.</p>
       </section>
 
       <!-- PHASE 4.25 · LEAD MAGNET (email gate for warm leads) -->
