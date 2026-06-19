@@ -3459,3 +3459,91 @@ textarea:focus-visible {
   font-size: 0.82rem;
   line-height: 1.35;
 }
+
+/* ─────────────────────────────────────────────────
+   Project diagrams + outcomes (Built tab)
+   ───────────────────────────────────────────────── */
+.project-diagram {
+  margin: 0 0 14px;
+  padding: 14px 16px;
+  background: rgba(var(--ink-rgb), 0.03);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  color: var(--ink);
+}
+
+.project-diagram svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 110px;
+}
+
+.project-outcome {
+  margin: 12px 0 14px;
+  padding: 10px 14px;
+  background: rgba(var(--accent-rgb), 0.06);
+  border-left: 3px solid rgba(var(--accent-rgb), 0.55);
+  border-radius: 0 10px 10px 0;
+  font-size: 0.92rem;
+  line-height: 1.45;
+  color: var(--ink);
+}
+
+.project-outcome strong {
+  color: var(--accent);
+  font-weight: 700;
+}
+
+/* ─────────────────────────────────────────────────
+   Skills / stack matrix
+   ───────────────────────────────────────────────── */
+.skills {
+  margin-top: 56px;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  margin: 0 0 18px;
+}
+
+@media (min-width: 720px) {
+  .skills-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+  }
+}
+
+.skills-group {
+  padding: 18px 18px 16px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+}
+
+.skills-label {
+  margin: 0 0 10px;
+  font-size: 0.74rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.skills-items {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 10px;
+}
+
+.skills-items li {
+  font-size: 0.92rem;
+  color: var(--ink);
+  background: rgba(var(--ink-rgb), 0.04);
+  padding: 4px 10px;
+  border-radius: 999px;
+}
