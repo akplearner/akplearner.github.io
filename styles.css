@@ -3547,3 +3547,160 @@ textarea:focus-visible {
   padding: 4px 10px;
   border-radius: 999px;
 }
+
+/* ─────────────────────────────────────────────────
+   Slice 3 — animation polish
+   ───────────────────────────────────────────────── */
+
+/* Hero rotating value-prop */
+.hero-rotator-line {
+  margin: 14px 0 6px;
+  font-size: 1.05rem;
+  color: var(--ink);
+  line-height: 1.5;
+}
+
+.hero-rotator {
+  display: inline-block;
+  font-weight: 700;
+  color: var(--accent);
+  transition: opacity 0.28s ease, transform 0.28s ease;
+  will-change: opacity, transform;
+}
+
+.hero-rotator.is-fading {
+  opacity: 0;
+  transform: translateY(-4px);
+}
+
+/* Stagger reveal children — the parent already animates via .reveal /
+   .is-visible. Children inherit the parent's visibility and just delay
+   their own opacity transition via inline transitionDelay set in JS. */
+.stagger-child {
+  transition: opacity 0.55s ease, transform 0.55s ease;
+}
+
+/* Sliding tab indicator */
+.tabs {
+  position: relative;
+}
+
+.tab-indicator {
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  height: 3px;
+  background: var(--accent);
+  border-radius: 999px;
+  transition: transform 0.32s cubic-bezier(0.32, 0.72, 0, 1), width 0.32s cubic-bezier(0.32, 0.72, 0, 1), opacity 0.18s ease;
+  pointer-events: none;
+  opacity: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tab-indicator { transition: none; }
+}
+
+/* Form success checkmark — replaces text on success */
+.form-status.success {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.form-check {
+  width: 22px;
+  height: 22px;
+  flex: 0 0 22px;
+  color: var(--accent);
+  stroke-dasharray: 36;
+  stroke-dashoffset: 36;
+  animation: checkDraw 0.6s cubic-bezier(0.32, 0.72, 0, 1) forwards;
+}
+
+@keyframes checkDraw {
+  to { stroke-dashoffset: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .form-check {
+    animation: none;
+    stroke-dashoffset: 0;
+  }
+}
+
+/* Sticky funnel progress beads */
+.funnel-beads {
+  position: fixed;
+  top: 50%;
+  left: 28px;
+  transform: translateY(-50%);
+  z-index: 40;
+  list-style: none;
+  margin: 0;
+  padding: 14px 10px;
+  display: none;
+  flex-direction: column;
+  gap: 18px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  box-shadow: var(--shadow);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.28s ease;
+}
+
+.funnel-beads.is-visible {
+  opacity: 1;
+}
+
+.funnel-beads li {
+  position: relative;
+  width: 14px;
+  height: 14px;
+}
+
+.funnel-beads li span {
+  position: absolute;
+  inset: 0;
+  border-radius: 999px;
+  background: rgba(var(--ink-rgb), 0.18);
+  transition: background 0.22s ease, transform 0.22s ease;
+}
+
+.funnel-beads li b {
+  position: absolute;
+  right: 22px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: var(--muted);
+  opacity: 0;
+  transition: opacity 0.22s ease;
+  background: var(--surface);
+  padding: 2px 7px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  white-space: nowrap;
+}
+
+.funnel-beads li.is-active span {
+  background: var(--accent);
+  transform: scale(1.4);
+  box-shadow: 0 0 0 4px rgba(var(--accent-rgb), 0.18);
+}
+
+.funnel-beads li.is-active b {
+  opacity: 1;
+}
+
+@media (min-width: 1100px) {
+  .funnel-beads { display: flex; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .funnel-beads { display: none !important; }
+}
