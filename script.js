@@ -135,9 +135,9 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   /* ─── Scroll-spy active nav link ───────────────── */
-  const navLinks = Array.from(document.querySelectorAll('.nav-links a[href^="#"]'));
+  const spyLinks = Array.from(document.querySelectorAll('.nav-links a[href^="#"]'));
   const sectionMap = new Map();
-  navLinks.forEach(a => {
+  spyLinks.forEach(a => {
     const id = a.getAttribute('href').slice(1);
     const target = document.getElementById(id);
     if (target) sectionMap.set(target, a);
@@ -148,7 +148,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const link = sectionMap.get(e.target);
         if (!link) return;
         if (e.isIntersecting) {
-          navLinks.forEach(a => a.classList.remove('is-active'));
+          spyLinks.forEach(a => a.classList.remove('is-active'));
           link.classList.add('is-active');
         }
       });
