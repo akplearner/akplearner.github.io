@@ -398,4 +398,41 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('scroll', updateCta, { passive: true });
     updateCta();
   }
+
+  /* ─── Testimonials — render from testimonials.json ── */
+  const testimonialContainer = document.querySelector('[data-testimonials]');
+  const testimonialFallback = document.getElementById('testimonial-fallback');
+  if (testimonialContainer) {
+    const showFallback = () => {
+      if (testimonialFallback && 'content' in testimonialFallback) {
+        testimonialContainer.appendChild(testimonialFallback.content.cloneNode(true));
+      }
+    };
+    const escapeHtml = str => String(str || '').replace(/[&<>"']/g, ch => ({
+      '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'
+    }[ch]));
+    const renderCard = entry => {
+      const card = document.createElement('blockquote');
+      card.className = 'testimonial-card';
+      let sourceLink = '';
+      if (entry.sourceUrl && entry.source) {
+        sourceLink = ' <a class="testimonial-source" href="' + encodeURI(entry.sourceUrl) + '" target="_blank" rel="noopener">' + escapeHtml(entry.source) + ' ↗</a>';
+      }
+      const contextLine = entry.context ? ' &middot; ' + escapeHtml(entry.context) : '';
+      card.innerHTML =
+        '<p class="testimonial-quote">' + escapeHtml(entry.quote) + '</p>' +
+        '<footer class="testimonial-author">' + escapeHtml(entry.author || '') + contextLine + sourceLink + '</footer>';
+      return card;
+    };
+    fetch('testimonials.json', { cache: 'no-cache' })
+      .then(res => res.ok ? res.json() : [])
+      .then(entries => {
+        if (Array.isArray(entries) && entries.length > 0) {
+          entries.forEach(entry => testimonialContainer.appendChild(renderCard(entry)));
+        } else {
+          showFallback();
+        }
+      })
+      .catch(() => showFallback());
+  }
 });

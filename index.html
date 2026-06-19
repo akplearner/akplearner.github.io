@@ -722,13 +722,15 @@
           <span>What people say</span>
           <h3>Real quotes will land here as students and peers opt in.</h3>
         </div>
-        <div class="testimonial-grid">
+        <!-- Rendered from /testimonials.json at runtime. Falls back to the collecting-state card below. -->
+        <div class="testimonial-grid" data-testimonials></div>
+        <template id="testimonial-fallback">
           <blockquote class="testimonial-card" data-state="collecting">
             <span class="testimonial-pill">Sample &middot; collecting now</span>
             <p class="testimonial-quote">A short, honest quote from a student, peer, or mentor will live here once the first one opts in to be named on the site.</p>
             <footer class="testimonial-author">Name &middot; role / context</footer>
           </blockquote>
-        </div>
+        </template>
       </section>
 
       <!-- PHASE 5 · CONVERT (Calendar + Form + Newsletter) -->
