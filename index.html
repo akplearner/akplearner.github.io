@@ -85,6 +85,11 @@
             <a href="#connect" class="button primary"><span class="btn-label">Reach Out</span><span class="btn-arrow" aria-hidden="true">→</span></a>
             <a href="#router" class="button secondary"><span class="btn-label">Find My Path</span><span class="btn-arrow" aria-hidden="true">↓</span></a>
           </div>
+
+          <figure class="hero-quote" data-state="collecting">
+            <blockquote>A short, honest quote from a student or peer will live here once the first one opts in to be named.</blockquote>
+            <figcaption>Collecting now &middot; <a href="#connect">add yours</a></figcaption>
+          </figure>
         </div>
         <a href="#router" class="scroll-cue" aria-label="Scroll to start">
           <span class="scroll-cue-dot"></span>
@@ -689,6 +694,28 @@
         <p class="section-foot">Want the full picture? <a href="#connect">Book a 20-minute call</a> and I'll walk you through it.</p>
       </section>
 
+      <!-- PHASE 4.25 · LEAD MAGNET (email gate for warm leads) -->
+      <section class="section lead-magnet" id="resources">
+        <div class="lead-magnet-card" data-glow>
+          <div class="lead-magnet-copy">
+            <p class="lm-eyebrow">Free download</p>
+            <h3>Cloud Security Quick-Start &mdash; 1 page, no fluff</h3>
+            <p>The exact checklist I hand to students before their first AWS or Azure deploy. Drop your email and the PDF is yours, plus the occasional monthly note.</p>
+          </div>
+          <form class="lead-magnet-form" action="https://api.web3forms.com/submit" method="POST" data-pdf="/assets/leads/cloud-security-quickstart.pdf">
+            <input type="hidden" name="access_key" value="REPLACE-WEB3FORMS-ACCESS-KEY" />
+            <input type="hidden" name="subject" value="Lead-magnet download — Cloud Security Quick-Start" />
+            <input type="hidden" name="from_name" value="Lead Magnet" />
+            <input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off" />
+            <label class="sr-only" for="lm-email">Email</label>
+            <input id="lm-email" type="email" name="email" placeholder="you@email.com" required />
+            <button type="submit" class="button primary">Send me the PDF</button>
+            <p class="lm-note">Unsubscribe anytime. The PDF link also appears on this page after you submit.</p>
+            <p class="lm-status" id="lm-status" role="status" aria-live="polite" hidden></p>
+          </form>
+        </div>
+      </section>
+
       <!-- PHASE 4.5 · WHAT PEOPLE SAY (scaffold) -->
       <section class="section testimonials" id="testimonials">
         <div class="section-head">
@@ -696,20 +723,32 @@
           <h3>Real quotes will land here as students and peers opt in.</h3>
         </div>
         <div class="testimonial-grid">
-          <blockquote class="testimonial-card">
-            <span class="testimonial-ribbon">Sample &middot; collecting real quotes now</span>
-            <p class="testimonial-quote">&ldquo;A short, honest quote from a student, peer, or mentor will live here once the first one opts in to be named on the site.&rdquo;</p>
-            <footer class="testimonial-author">&mdash; Name, role / context</footer>
+          <blockquote class="testimonial-card" data-state="collecting">
+            <span class="testimonial-pill">Sample &middot; collecting now</span>
+            <p class="testimonial-quote">A short, honest quote from a student, peer, or mentor will live here once the first one opts in to be named on the site.</p>
+            <footer class="testimonial-author">Name &middot; role / context</footer>
           </blockquote>
         </div>
       </section>
 
-      <!-- PHASE 5 · CONVERT (Connect + Newsletter merged) -->
+      <!-- PHASE 5 · CONVERT (Calendar + Form + Newsletter) -->
       <section class="section connect" id="connect">
         <div class="section-head">
           <span>Reach Out</span>
-          <h3>Send a note. I read every message.</h3>
+          <h3>Pick a time, send a note, or just stay in touch.</h3>
         </div>
+
+        <div class="connect-calendar" data-glow>
+          <div class="connect-calendar-copy">
+            <p class="connect-calendar-eyebrow">Warm lead &middot; pick a time</p>
+            <h4>Book a 20-minute briefing</h4>
+            <p>Land directly on my calendar. Bring one question or one project &mdash; we'll figure out the right next step together.</p>
+          </div>
+          <!-- Replace data-cal-link with your real Cal.com handle, e.g. "kerryp/briefing" -->
+          <div class="cal-embed" data-cal-link="REPLACE-CAL-USERNAME/briefing" data-cal-namespace="briefing"></div>
+          <noscript><p class="connect-calendar-note">Calendar requires JavaScript &mdash; use the form below instead.</p></noscript>
+        </div>
+
         <div class="connect-grid" id="connect-form">
           <div class="connect-panel">
             <p>Tell me what you're working on and what you'd like to do together. Keep it short &mdash; I'll reply when I can.</p>
@@ -783,6 +822,11 @@
       </section>
     </main>
 
+    <a href="#connect" class="sticky-cta" id="sticky-cta" aria-label="Book a call">
+      <span>Book a call</span>
+      <span aria-hidden="true">→</span>
+    </a>
+
     <footer class="footer">
       <div class="footer-grid">
         <div class="footer-col">
@@ -839,5 +883,6 @@
   </div>
 
   <script src="script.js"></script>
+  <!-- Cal.com embed loader — initialized by script.js only when data-cal-link is a real handle. -->
 </body>
 </html>

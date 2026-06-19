@@ -3060,3 +3060,335 @@ textarea:focus-visible {
 .nav-toggle {
   min-height: 44px;
 }
+
+/* ─────────────────────────────────────────────────
+   Hero quote — collecting-state slot above the fold
+   ───────────────────────────────────────────────── */
+.hero-quote {
+  margin: 28px 0 0;
+  padding: 18px 22px;
+  background: rgba(var(--ink-rgb), 0.03);
+  border-left: 3px solid rgba(var(--accent-rgb), 0.45);
+  border-radius: 0 14px 14px 0;
+  max-width: 640px;
+}
+
+.hero-quote[data-state="collecting"] {
+  opacity: 0.72;
+}
+
+.hero-quote blockquote {
+  margin: 0;
+  font-size: 0.98rem;
+  font-style: italic;
+  line-height: 1.5;
+  color: var(--ink);
+}
+
+.hero-quote figcaption {
+  margin-top: 10px;
+  font-size: 0.78rem;
+  color: var(--muted);
+  letter-spacing: 0.04em;
+}
+
+.hero-quote figcaption a {
+  color: var(--accent);
+  text-decoration: none;
+  border-bottom: 1px dashed rgba(var(--accent-rgb), 0.5);
+  padding-bottom: 1px;
+}
+
+.hero-quote figcaption a:hover {
+  color: var(--ink);
+}
+
+/* ─────────────────────────────────────────────────
+   Testimonial card refresh — drop ribbon, add pill
+   ───────────────────────────────────────────────── */
+.testimonial-card {
+  position: relative;
+  padding: 32px 28px 24px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 22px;
+  box-shadow: var(--shadow);
+  margin: 0;
+}
+
+.testimonial-card::before {
+  content: '\201C';
+  position: absolute;
+  top: 8px;
+  left: 18px;
+  font-family: Georgia, serif;
+  font-size: 4.2rem;
+  line-height: 1;
+  color: rgba(var(--accent-rgb), 0.25);
+  pointer-events: none;
+}
+
+.testimonial-card[data-state="collecting"] {
+  opacity: 0.85;
+}
+
+.testimonial-pill {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+  background: rgba(var(--ink-rgb), 0.04);
+  padding: 4px 10px;
+  border-radius: 999px;
+}
+
+.testimonial-quote {
+  position: relative;
+  margin: 18px 0 14px;
+  font-size: 1.02rem;
+  line-height: 1.55;
+  color: var(--ink);
+}
+
+.testimonial-author {
+  font-size: 0.85rem;
+  color: var(--muted);
+  letter-spacing: 0.02em;
+}
+
+/* Legacy ribbon style left for any old markup — harmless if unused. */
+.testimonial-ribbon { display: none; }
+
+/* ─────────────────────────────────────────────────
+   Connect calendar — Cal.com embed + fallback
+   ───────────────────────────────────────────────── */
+.connect-calendar {
+  margin: 0 0 32px;
+  padding: 28px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 22px;
+  box-shadow: var(--shadow);
+  display: grid;
+  gap: 20px;
+}
+
+.connect-calendar-copy h4 {
+  margin: 6px 0 8px;
+  font-size: 1.35rem;
+}
+
+.connect-calendar-copy p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.96rem;
+  line-height: 1.5;
+}
+
+.connect-calendar-eyebrow {
+  margin: 0;
+  font-size: 0.74rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.cal-embed {
+  min-height: 540px;
+  border-radius: 14px;
+  background: rgba(var(--ink-rgb), 0.03);
+  border: 1px dashed rgba(var(--ink-rgb), 0.12);
+  display: grid;
+  place-items: center;
+}
+
+/* Fallback state — shown until a real Cal.com handle is wired in. */
+.cal-embed[data-cal-state="placeholder"]::before {
+  content: 'Calendar coming soon — drop a real Cal.com handle into data-cal-link, or use the form below.';
+  display: block;
+  max-width: 380px;
+  padding: 28px;
+  text-align: center;
+  color: var(--muted);
+  font-size: 0.92rem;
+  line-height: 1.5;
+}
+
+.cal-embed[data-cal-state="ready"] {
+  background: transparent;
+  border: none;
+  min-height: 640px;
+}
+
+.connect-calendar-note {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.84rem;
+}
+
+@media (min-width: 720px) {
+  .connect-calendar {
+    grid-template-columns: 1fr 1.4fr;
+    align-items: start;
+    gap: 32px;
+  }
+}
+
+/* ─────────────────────────────────────────────────
+   Lead magnet — email-gated download card
+   ───────────────────────────────────────────────── */
+.lead-magnet {
+  margin-top: 56px;
+}
+
+.lead-magnet-card {
+  position: relative;
+  padding: 36px;
+  background: linear-gradient(180deg, var(--surface) 0%, rgba(var(--accent-rgb), 0.04) 100%);
+  border: 1px solid rgba(var(--accent-rgb), 0.18);
+  border-radius: 26px;
+  box-shadow: var(--shadow);
+  display: grid;
+  gap: 28px;
+}
+
+.lead-magnet-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 26px;
+  pointer-events: none;
+  background: radial-gradient(220px circle at var(--glow-x, 50%) var(--glow-y, 50%), rgba(var(--accent-rgb), 0.10), transparent 70%);
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+
+.lead-magnet-card:hover::after { opacity: 1; }
+
+.lm-eyebrow {
+  margin: 0;
+  font-size: 0.74rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.lead-magnet-copy h3 {
+  margin: 10px 0 12px;
+  font-size: clamp(1.35rem, 2.4vw, 1.7rem);
+}
+
+.lead-magnet-copy p {
+  margin: 0;
+  color: rgba(var(--ink-rgb), 0.78);
+  line-height: 1.55;
+  max-width: 56ch;
+}
+
+.lead-magnet-form {
+  display: grid;
+  gap: 12px;
+}
+
+.lead-magnet-form input[type="email"] {
+  padding: 14px 16px;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  background: var(--surface);
+  color: var(--ink);
+  font: inherit;
+  font-size: 16px;
+}
+
+.lead-magnet-form input[type="email"]:focus {
+  outline: none;
+  border-color: rgba(var(--accent-rgb), 0.45);
+  box-shadow: 0 0 0 3px rgba(var(--accent-rgb), 0.14);
+}
+
+.lead-magnet-form .button.primary {
+  justify-self: start;
+}
+
+.lm-note {
+  margin: 4px 0 0;
+  color: var(--muted);
+  font-size: 0.82rem;
+}
+
+.lm-status {
+  margin: 4px 0 0;
+  padding: 12px 14px;
+  border-radius: 12px;
+  background: rgba(var(--accent-rgb), 0.08);
+  border: 1px solid rgba(var(--accent-rgb), 0.22);
+  font-size: 0.92rem;
+  color: var(--ink);
+}
+
+.lm-status.error {
+  background: var(--ink);
+  color: var(--surface);
+  border-color: var(--ink);
+}
+
+.lm-status a {
+  color: var(--accent);
+  font-weight: 600;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(var(--accent-rgb), 0.4);
+}
+
+@media (min-width: 760px) {
+  .lead-magnet-card {
+    grid-template-columns: 1.2fr 1fr;
+    align-items: center;
+    gap: 40px;
+  }
+}
+
+/* ─────────────────────────────────────────────────
+   Sticky mobile CTA pill
+   ───────────────────────────────────────────────── */
+.sticky-cta {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 60;
+  display: none;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 20px;
+  min-height: 48px;
+  background: var(--ink);
+  color: var(--surface);
+  font-weight: 700;
+  font-size: 0.95rem;
+  text-decoration: none;
+  border-radius: 999px;
+  box-shadow: 0 18px 38px rgba(0, 0, 0, 0.22), 0 0 0 1px rgba(var(--accent-rgb), 0.35);
+  transform: translateY(140%);
+  opacity: 0;
+  transition: transform 0.3s cubic-bezier(0.32, 0.72, 0, 1), opacity 0.2s ease;
+}
+
+.sticky-cta.is-visible {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.sticky-cta:hover {
+  background: var(--accent);
+  color: var(--surface);
+}
+
+@media (max-width: 720px) {
+  .sticky-cta { display: inline-flex; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sticky-cta { transition: opacity 0.2s ease; transform: none; }
+}
