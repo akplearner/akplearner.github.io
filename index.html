@@ -8,7 +8,19 @@
 
   <link rel="icon" type="image/svg+xml" href="favicon.svg" />
   <link rel="canonical" href="https://akplearner.github.io/" />
-  <meta name="theme-color" content="#0F0F0F" />
+  <meta name="theme-color" content="#FAFAF9" />
+  <script>
+    (() => {
+      const root = document.documentElement;
+      const stored = (() => {
+        try { return localStorage.getItem('theme'); } catch (error) { return null; }
+      })();
+      const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+      const theme = stored || (prefersDark ? 'dark' : 'light');
+      root.setAttribute('data-theme', theme);
+      document.querySelector('meta[name="theme-color"]')?.setAttribute('content', theme === 'dark' ? '#101114' : '#FAFAF9');
+    })();
+  </script>
 
   <meta property="og:type" content="profile" />
   <meta property="og:title" content="Kerry P. — Cloud, DevOps & Security Engineer" />
@@ -95,7 +107,7 @@
         <a href="#services">Services</a>
         <a href="#work">Work</a>
         <a href="#connect" class="nav-cta">Reach Out</a>
-        <button type="button" class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode" aria-pressed="false" title="Toggle dark mode">
+        <button type="button" class="theme-toggle" id="theme-toggle" aria-label="Switch to dark mode" aria-pressed="false" title="Switch to dark mode">
           <span class="theme-icon" aria-hidden="true">☾</span>
         </button>
       </nav>

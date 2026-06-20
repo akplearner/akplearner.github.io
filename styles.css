@@ -3,17 +3,24 @@
   /* Three-color palette: surface, ink, accent. Everything else is an opacity of one of these. */
   --surface-rgb: 250, 250, 249;
   --ink-rgb: 10, 10, 10;
-  --accent-rgb: 161, 65, 255;
+  --accent-rgb: 150, 50, 245;
+  --panel-rgb: 255, 255, 255;
+  --panel-strong-rgb: 244, 244, 242;
 
   --surface: rgb(var(--surface-rgb));
   --ink: rgb(var(--ink-rgb));
   --accent: rgb(var(--accent-rgb));
+  --panel: rgb(var(--panel-rgb));
+  --panel-strong: rgb(var(--panel-strong-rgb));
 
   /* Compat aliases — every existing rule using these still works. */
   --bg: var(--surface);
   --text: var(--ink);
-  --muted: rgba(var(--ink-rgb), 0.58);
-  --border: rgba(var(--ink-rgb), 0.10);
+  --muted: rgba(var(--ink-rgb), 0.64);
+  --border: rgba(var(--ink-rgb), 0.14);
+  --border-strong: rgba(var(--ink-rgb), 0.24);
+  --field-bg: var(--panel);
+  --focus-ring: rgba(var(--accent-rgb), 0.22);
   --accent-green: var(--accent);
   --shadow: 0 24px 60px rgba(var(--ink-rgb), 0.08);
 }
@@ -2551,10 +2558,10 @@ textarea:focus-visible {
 .theme-toggle {
   display: inline-grid;
   place-items: center;
-  width: 38px;
-  height: 38px;
+  width: 44px;
+  height: 44px;
   margin-left: 6px;
-  background: transparent;
+  background: var(--panel);
   border: 1px solid var(--border);
   border-radius: 12px;
   cursor: pointer;
@@ -2574,11 +2581,15 @@ textarea:focus-visible {
 /* Dark mode — flip surface + ink, accent stays. Aliases derive from the RGB tokens. */
 :root[data-theme="dark"] {
   color-scheme: dark;
-  --surface-rgb: 12, 12, 14;
-  --ink-rgb: 245, 245, 245;
-  /* --accent-rgb stays */
-  --muted: rgba(var(--ink-rgb), 0.62);
-  --border: rgba(var(--ink-rgb), 0.14);
+  --surface-rgb: 16, 17, 20;
+  --ink-rgb: 246, 247, 248;
+  --panel-rgb: 25, 27, 32;
+  --panel-strong-rgb: 34, 37, 44;
+  --accent-rgb: 185, 120, 255;
+  --muted: rgba(var(--ink-rgb), 0.72);
+  --border: rgba(var(--ink-rgb), 0.18);
+  --border-strong: rgba(var(--ink-rgb), 0.32);
+  --field-bg: rgb(13, 14, 17);
   /* Shadow stays dark even in dark mode — depth cue, not brand color. */
   --shadow: 0 24px 60px rgba(0, 0, 0, 0.42);
 }
@@ -2591,7 +2602,7 @@ textarea:focus-visible {
 :root[data-theme="dark"] .contact-form input,
 :root[data-theme="dark"] .contact-form textarea,
 :root[data-theme="dark"] .contact-form select {
-  background: var(--surface);
+  background: var(--field-bg);
   color: var(--text);
   border-color: var(--border);
 }
@@ -2700,7 +2711,7 @@ textarea:focus-visible {
 /* Quickpick + mini-chips in dark mode — keep them legible */
 :root[data-theme="dark"] .quickpick-chip,
 :root[data-theme="dark"] .mini-chip {
-  background: var(--surface);
+  background: var(--panel-strong);
   color: var(--text);
   border-color: var(--border);
 }
@@ -3353,6 +3364,165 @@ textarea:focus-visible {
 /* ─────────────────────────────────────────────────
    Sticky mobile CTA pill
    ───────────────────────────────────────────────── */
+/* Theme contrast pass: explicit component layers for light and dark mode. */
+.hero,
+.metric-card,
+.bio-card,
+.diagram-card,
+.offer-card,
+.project-card,
+.skill-card,
+.timeline-item,
+.connect,
+.link-card,
+.security-card,
+.platform-card,
+.testimonial-card,
+.schedule-card,
+.impact-card,
+.path-card,
+.guild-card,
+.acc-item,
+.stage-main,
+.skills-group,
+.connect-calendar,
+.lead-magnet-card {
+  background-color: var(--panel);
+  border-color: var(--border);
+}
+
+.contact-form,
+.newsletter-card,
+.tabs,
+.metrics-strip,
+.quickpick,
+.project-diagram,
+.cal-embed,
+.hero-quote {
+  border-color: var(--border);
+}
+
+.contact-form,
+.tabs,
+.project-diagram,
+.cal-embed,
+.hero-quote {
+  background-color: var(--panel);
+}
+
+.metrics-strip,
+.quickpick,
+.skills-items li,
+.testimonial-pill,
+.countdown-unit {
+  background-color: var(--panel-strong);
+}
+
+.contact-form input,
+.contact-form textarea,
+.contact-form select,
+.lead-magnet-form input[type="email"],
+.newsletter-form input {
+  background: var(--field-bg);
+  color: var(--text);
+  border-color: var(--border-strong);
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder,
+.lead-magnet-form input[type="email"]::placeholder,
+.newsletter-form input::placeholder {
+  color: var(--muted);
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus,
+.contact-form select:focus,
+.lead-magnet-form input[type="email"]:focus,
+.newsletter-form input:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--focus-ring);
+}
+
+.tab {
+  color: var(--muted);
+}
+
+.tab:hover {
+  background: var(--panel-strong);
+  color: var(--text);
+}
+
+.tab.is-active {
+  color: var(--surface);
+}
+
+.quickpick-chip,
+.mini-chip,
+.endorse-pill,
+.role-chip,
+.status-tag.pending {
+  background: var(--panel-strong);
+  border-color: var(--border-strong);
+  color: var(--text);
+}
+
+.button.secondary {
+  background: var(--panel);
+  color: var(--text);
+  border-color: var(--border-strong);
+}
+
+.project-outcome,
+.service-outcome,
+.lm-status {
+  color: var(--text);
+}
+
+:root[data-theme="dark"] .hero,
+:root[data-theme="dark"] .skill-card.featured,
+:root[data-theme="dark"] .lead-magnet-card,
+:root[data-theme="dark"] .audience-card:hover,
+:root[data-theme="dark"] .audience-card:focus-visible,
+:root[data-theme="dark"] .acc-item.is-open {
+  background:
+    linear-gradient(180deg, rgba(var(--accent-rgb), 0.08), transparent 42%),
+    var(--panel);
+}
+
+:root[data-theme="dark"] .newsletter-card,
+:root[data-theme="dark"] .countdown {
+  background: var(--panel-strong);
+  color: var(--text);
+  border: 1px solid var(--border-strong);
+}
+
+:root[data-theme="dark"] .newsletter-card h3,
+:root[data-theme="dark"] .newsletter-form input,
+:root[data-theme="dark"] .countdown-value {
+  color: var(--text);
+}
+
+:root[data-theme="dark"] .newsletter-sub,
+:root[data-theme="dark"] .newsletter-note,
+:root[data-theme="dark"] .countdown-key {
+  color: var(--muted);
+}
+
+:root[data-theme="dark"] .button.primary,
+:root[data-theme="dark"] .nav-links .nav-cta,
+:root[data-theme="dark"] .sticky-cta {
+  background: var(--text);
+  color: var(--bg);
+}
+
+:root[data-theme="dark"] .tab.is-active,
+:root[data-theme="dark"] .nav-links .nav-cta:hover,
+:root[data-theme="dark"] .sticky-cta:hover {
+  background: var(--accent);
+  color: var(--bg);
+}
+
 .sticky-cta {
   position: fixed;
   bottom: 20px;
@@ -3599,6 +3769,48 @@ textarea:focus-visible {
 
 @media (prefers-reduced-motion: reduce) {
   .tab-indicator { transition: none; }
+}
+
+/* Final theme safeguards: keep late-added components readable in both modes. */
+.audience-card,
+.project-diagram,
+.skills-group,
+.skills-items li,
+.hero-quote,
+.cal-embed {
+  background-color: var(--panel);
+  border-color: var(--border);
+  color: var(--text);
+}
+
+.skills-items li,
+.testimonial-pill,
+.countdown-unit,
+.quickpick,
+.metrics-strip {
+  background-color: var(--panel-strong);
+}
+
+:root[data-theme="dark"] .audience-card,
+:root[data-theme="dark"] .project-diagram,
+:root[data-theme="dark"] .hero-quote,
+:root[data-theme="dark"] .cal-embed {
+  background-color: var(--panel);
+  border-color: var(--border-strong);
+}
+
+:root[data-theme="dark"] .project-diagram text {
+  fill: var(--text);
+}
+
+:root[data-theme="dark"] .project-diagram [fill="#fff"],
+:root[data-theme="dark"] .project-diagram [fill="#ffffff"] {
+  fill: var(--panel-strong);
+}
+
+:root[data-theme="dark"] .project-diagram [stroke="#111"],
+:root[data-theme="dark"] .project-diagram [stroke="#0F0F0F"] {
+  stroke: var(--text);
 }
 
 /* Form success checkmark — replaces text on success */

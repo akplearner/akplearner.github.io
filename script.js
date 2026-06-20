@@ -290,11 +290,19 @@ document.addEventListener('DOMContentLoaded', () => {
   const root = document.documentElement;
   const themeToggle = document.getElementById('theme-toggle');
   const themeIcon = themeToggle ? themeToggle.querySelector('.theme-icon') : null;
+  const themeColorMeta = document.querySelector('meta[name="theme-color"]');
 
   const applyTheme = theme => {
     root.setAttribute('data-theme', theme);
-    if (themeToggle) themeToggle.setAttribute('aria-pressed', theme === 'dark' ? 'true' : 'false');
-    if (themeIcon) themeIcon.textContent = theme === 'dark' ? '☼' : '☾';
+    const isDark = theme === 'dark';
+    if (themeToggle) {
+      const label = isDark ? 'Switch to light mode' : 'Switch to dark mode';
+      themeToggle.setAttribute('aria-pressed', isDark ? 'true' : 'false');
+      themeToggle.setAttribute('aria-label', label);
+      themeToggle.setAttribute('title', label);
+    }
+    if (themeIcon) themeIcon.textContent = isDark ? '☼' : '☾';
+    if (themeColorMeta) themeColorMeta.setAttribute('content', isDark ? '#101114' : '#FAFAF9');
   };
 
   const stored = (() => { try { return localStorage.getItem('theme'); } catch (e) { return null; } })();
