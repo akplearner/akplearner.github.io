@@ -7,29 +7,74 @@
   <meta name="description" content="Kerry P. — cloud, DevOps, and security engineer. Instructor at CyberTex. Building HackersHideout (HHO) — a small operators' community in Austin, TX." />
 
   <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <link rel="canonical" href="https://akplearner.github.io/" />
+  <meta name="theme-color" content="#0F0F0F" />
 
   <meta property="og:type" content="profile" />
   <meta property="og:title" content="Kerry P. — Cloud, DevOps & Security Engineer" />
   <meta property="og:description" content="Instructor, engineer, and builder. Currently teaching at CyberTex and running HackersHideout." />
-  <meta property="og:image" content="og-image.svg" />
+  <meta property="og:image" content="https://akplearner.github.io/og-image.png" />
+  <meta property="og:image:type" content="image/png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Kerry P. — Cloud · DevOps · Security · Instructor · Builder · Austin, TX" />
   <meta property="og:url" content="https://akplearner.github.io/" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Kerry P. — Cloud, DevOps & Security Engineer" />
   <meta name="twitter:description" content="Instructor, engineer, and builder." />
-  <meta name="twitter:image" content="og-image.svg" />
+  <meta name="twitter:image" content="https://akplearner.github.io/og-image.png" />
+  <meta name="twitter:image:alt" content="Kerry P. — Cloud · DevOps · Security · Instructor · Builder · Austin, TX" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Press+Start+2P&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
 
-  <!-- Google Analytics 4 — replace G-REPLACE-MEASUREMENT-ID with your real ID -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-REPLACE-MEASUREMENT-ID"></script>
+  <!-- Google Analytics 4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-BDSKMJDWXR"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-    gtag('config', 'G-REPLACE-MEASUREMENT-ID');
+    gtag('config', 'G-BDSKMJDWXR');
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Person",
+        "@id": "https://akplearner.github.io/#person",
+        "name": "Kerry P.",
+        "jobTitle": "Cloud, DevOps & Security Engineer · Instructor",
+        "url": "https://akplearner.github.io/",
+        "image": "https://akplearner.github.io/og-image.png",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Austin",
+          "addressRegion": "TX",
+          "addressCountry": "US"
+        },
+        "worksFor": {
+          "@type": "EducationalOrganization",
+          "name": "CyberTex Institute of Technology"
+        },
+        "sameAs": [
+          "https://www.linkedin.com/in/kerrypp/"
+        ]
+      },
+      {
+        "@type": "Organization",
+        "@id": "https://akplearner.github.io/#hackershideout",
+        "name": "HackersHideout",
+        "alternateName": "HHO",
+        "description": "A small Discord community of cloud, DevOps, and security operators in Austin, TX.",
+        "url": "https://akplearner.github.io/",
+        "founder": { "@id": "https://akplearner.github.io/#person" }
+      }
+    ]
+  }
   </script>
 </head>
 <body>
@@ -42,12 +87,15 @@
         <p class="brand-label">KP</p>
         <h1>Kerry P.</h1>
       </div>
-      <nav class="nav-links" aria-label="Primary">
+      <button type="button" class="nav-toggle" id="nav-toggle" aria-controls="primary-nav" aria-expanded="false" aria-label="Open menu">
+        <span class="nav-toggle-bar" aria-hidden="true"></span>
+      </button>
+      <nav class="nav-links" id="primary-nav" aria-label="Primary">
         <a href="#router">Start</a>
         <a href="#services">Services</a>
         <a href="#work">Work</a>
         <a href="#connect" class="nav-cta">Reach Out</a>
-        <button type="button" class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode" aria-pressed="false">
+        <button type="button" class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode" aria-pressed="false" title="Toggle dark mode">
           <span class="theme-icon" aria-hidden="true">☾</span>
         </button>
       </nav>
@@ -60,10 +108,11 @@
           <p class="eyebrow"><span class="pixel-dot"></span> Currently teaching, building, &amp; learning out loud</p>
           <h2>Engineer. Instructor. Building a <span class="grad-text">small community</span> of operators.</h2>
           <p class="hero-subtitle">I work across cloud, DevOps, and security &mdash; teaching what I know at CyberTex Institute and running HackersHideout (HHO), a small Discord community of engineers, peers, and students.</p>
+          <p class="hero-rotator-line">I help <span class="hero-rotator" data-rotate='["small teams ship cloud","students pass certs","operators build community"]' aria-live="polite">small teams ship cloud</span>.</p>
 
-          <!-- Countdown — retarget data-deadline + label to your next milestone (HHO CertPrep launch, etc.) -->
-          <div class="countdown" data-deadline="2026-12-31T23:59:59-06:00" role="timer" aria-label="Time until next milestone">
-            <p class="countdown-label"><span class="pulse-dot"></span> Time to next milestone</p>
+          <!-- Countdown — currently targets CISSP exam (first Friday of July 2026, 5pm CT). Retarget as milestones change. -->
+          <div class="countdown" data-deadline="2026-07-03T17:00:00-05:00" role="timer" aria-label="Time until CISSP exam">
+            <p class="countdown-label"><span class="pulse-dot"></span> Time to CISSP exam</p>
             <div class="countdown-grid">
               <div class="countdown-unit"><span class="countdown-value" data-unit="days">—</span><span class="countdown-key">days</span></div>
               <div class="countdown-unit"><span class="countdown-value" data-unit="hours">—</span><span class="countdown-key">hrs</span></div>
@@ -82,6 +131,11 @@
             <a href="#connect" class="button primary"><span class="btn-label">Reach Out</span><span class="btn-arrow" aria-hidden="true">→</span></a>
             <a href="#router" class="button secondary"><span class="btn-label">Find My Path</span><span class="btn-arrow" aria-hidden="true">↓</span></a>
           </div>
+
+          <figure class="hero-quote" data-state="collecting">
+            <blockquote>A short, honest quote from a student or peer will live here once the first one opts in to be named.</blockquote>
+            <figcaption>Collecting now &middot; <a href="#connect">add yours</a></figcaption>
+          </figure>
         </div>
         <a href="#router" class="scroll-cue" aria-label="Scroll to start">
           <span class="scroll-cue-dot"></span>
@@ -92,12 +146,12 @@
       <section class="section router" id="router">
         <div class="metrics-strip">
           <div class="metric-chip">
-            <span class="metric-value" data-count="10" data-suffix="+">0+</span>
+            <span class="metric-value" data-count="12" data-suffix="+">0+</span>
             <p>Years across IT &amp; infrastructure</p>
           </div>
           <div class="metric-chip">
-            <span class="metric-value" data-count="4">0</span>
-            <p>HHO specialty guilds</p>
+            <span class="metric-value" data-count="97">0</span>
+            <p>HHO members</p>
           </div>
           <div class="metric-chip">
             <span class="metric-value">Now</span>
@@ -115,17 +169,49 @@
         </div>
         <p class="journey-intro">Five steps, one clear action each. Start at the top and move at your pace &mdash; or jump straight to what you need.</p>
 
-        <!-- Folded-in audience router -->
-        <div class="quickpick">
-          <span class="quickpick-label">I'm here because&hellip;</span>
-          <a href="#services" class="quickpick-chip">🏢 IT / security help</a>
-          <a href="#work" class="quickpick-chip" data-open-tab="platforms">🎓 Learn + earn certs</a>
-          <a href="#services" class="quickpick-chip">🛠️ Consulting / DevOps</a>
-          <a href="#work" class="quickpick-chip" data-open-tab="guilds">⚔️ Community</a>
-          <a href="#work" class="quickpick-chip" data-open-tab="built">💼 Hiring / partner</a>
+        <!-- Folded-in audience router (card-table layout) -->
+        <p class="audience-cards-label">I'm here because&hellip;</p>
+        <div class="audience-cards" role="list" aria-label="Pick the path that fits you">
+          <a href="#services" class="audience-card" role="listitem">
+            <span class="audience-icon" aria-hidden="true">🏢</span>
+            <span class="audience-title">IT / security help</span>
+            <span class="audience-sub">Cloud, DevOps, audits</span>
+          </a>
+          <a href="#work" class="audience-card" role="listitem" data-open-tab="platforms">
+            <span class="audience-icon" aria-hidden="true">🎓</span>
+            <span class="audience-title">Learn + earn certs</span>
+            <span class="audience-sub">Tutoring, cohorts, study plans</span>
+          </a>
+          <a href="#services" class="audience-card" role="listitem">
+            <span class="audience-icon" aria-hidden="true">🛠️</span>
+            <span class="audience-title">Consulting / DevOps</span>
+            <span class="audience-sub">Audits, builds, retainers</span>
+          </a>
+          <a href="#work" class="audience-card" role="listitem" data-open-tab="guilds">
+            <span class="audience-icon" aria-hidden="true">⚔️</span>
+            <span class="audience-title">Community</span>
+            <span class="audience-sub">HHO Guilds + Discord</span>
+          </a>
+          <a href="#work" class="audience-card" role="listitem" data-open-tab="built">
+            <span class="audience-icon" aria-hidden="true">💼</span>
+            <span class="audience-title">Hiring / partner</span>
+            <span class="audience-sub">Built work + open roles</span>
+          </a>
+          <a href="#connect" class="audience-card" role="listitem">
+            <span class="audience-icon" aria-hidden="true">🤔</span>
+            <span class="audience-title">Just exploring</span>
+            <span class="audience-sub">No rush &mdash; say hi</span>
+          </a>
         </div>
 
         <!-- 5-stage funnel -->
+        <ol class="funnel-beads" aria-hidden="true">
+          <li data-bead="01"><span></span><b>01</b></li>
+          <li data-bead="02"><span></span><b>02</b></li>
+          <li data-bead="03"><span></span><b>03</b></li>
+          <li data-bead="04"><span></span><b>04</b></li>
+          <li data-bead="05"><span></span><b>05</b></li>
+        </ol>
         <ol class="funnel">
           <li class="funnel-stage is-open" data-stage="01">
             <div class="stage-rail"><span class="stage-num">01</span></div>
@@ -145,31 +231,31 @@
                       <span class="follow-icon">in</span>
                       <div><h4>LinkedIn</h4><p>Career frameworks, technical posts, professional wins.</p></div>
                     </a>
-                    <a href="#REPLACE-INSTAGRAM-URL" target="_blank" rel="noopener" class="follow-card">
+                    <a href="https://www.instagram.com/" data-pending="true" target="_blank" rel="noopener" class="follow-card">
                       <span class="follow-icon">IG</span>
                       <div><h4>Instagram</h4><p>Behind the labs and community life.</p></div>
                     </a>
-                    <a href="#REPLACE-YOUTUBE-URL" target="_blank" rel="noopener" class="follow-card">
+                    <a href="https://www.youtube.com/" data-pending="true" target="_blank" rel="noopener" class="follow-card">
                       <span class="follow-icon">YT</span>
                       <div><h4>YouTube</h4><p>Tutorials, walkthroughs, framework deep dives.</p></div>
                     </a>
-                    <a href="#REPLACE-X-TWITTER-URL" target="_blank" rel="noopener" class="follow-card">
+                    <a href="https://x.com/" data-pending="true" target="_blank" rel="noopener" class="follow-card">
                       <span class="follow-icon">X</span>
                       <div><h4>X / Twitter</h4><p>Short takes on cloud, DevOps, and security.</p></div>
                     </a>
-                    <a href="#REPLACE-TIKTOK-URL" target="_blank" rel="noopener" class="follow-card">
+                    <a href="https://www.tiktok.com/" data-pending="true" target="_blank" rel="noopener" class="follow-card">
                       <span class="follow-icon">TT</span>
                       <div><h4>TikTok</h4><p>30&ndash;60 second tech tips and quick demos.</p></div>
                     </a>
-                    <a href="#REPLACE-GITHUB-URL" target="_blank" rel="noopener" class="follow-card">
+                    <a href="https://github.com/" data-pending="true" target="_blank" rel="noopener" class="follow-card">
                       <span class="follow-icon">GH</span>
                       <div><h4>GitHub</h4><p>Terraform modules, scripts, and lab repos.</p></div>
                     </a>
-                    <a href="#REPLACE-SUBSTACK-URL" target="_blank" rel="noopener" class="follow-card">
+                    <a href="https://substack.com/" data-pending="true" target="_blank" rel="noopener" class="follow-card">
                       <span class="follow-icon">SS</span>
                       <div><h4>Substack</h4><p>Longer essays on the work.</p></div>
                     </a>
-                    <a href="#REPLACE-HHO-DISCORD-INVITE-URL" target="_blank" rel="noopener" class="follow-card">
+                    <a href="https://discord.gg/KGTpT6whS" target="_blank" rel="noopener" class="follow-card">
                       <span class="follow-icon">DC</span>
                       <div><h4>HHO Discord</h4><p>Live community &mdash; ask, ship, get feedback the same day.</p></div>
                     </a>
@@ -197,20 +283,20 @@
                       <p class="endorse-col-label">Start Here &middot; Highest Leverage</p>
                       <div class="endorse-list">
                         <a href="https://www.linkedin.com/in/kerrypp/" target="_blank" rel="noopener" class="endorse-pill priority">LinkedIn Recommendation</a>
-                        <a href="#REPLACE-GOOGLE-BUSINESS-REVIEW-URL" target="_blank" rel="noopener" class="endorse-pill priority">Google Business</a>
-                        <a href="#REPLACE-RATEMYPROFESSOR-URL" target="_blank" rel="noopener" class="endorse-pill priority">RateMyProfessor</a>
+                        <a href="https://www.google.com/maps" data-pending="true" target="_blank" rel="noopener" class="endorse-pill priority">Google Business</a>
+                        <a href="https://www.ratemyprofessors.com/" data-pending="true" target="_blank" rel="noopener" class="endorse-pill priority">RateMyProfessor</a>
                       </div>
                     </div>
                     <div class="endorse-col">
                       <p class="endorse-col-label">Also Helpful</p>
                       <div class="endorse-list">
-                        <a href="#REPLACE-YELP-URL" target="_blank" rel="noopener" class="endorse-pill">Yelp</a>
-                        <a href="#REPLACE-CLUTCH-URL" target="_blank" rel="noopener" class="endorse-pill">Clutch.co</a>
-                        <a href="#REPLACE-G2-URL" target="_blank" rel="noopener" class="endorse-pill">G2</a>
-                        <a href="#REPLACE-TRUSTPILOT-URL" target="_blank" rel="noopener" class="endorse-pill">Trustpilot</a>
-                        <a href="#REPLACE-FACEBOOK-URL" target="_blank" rel="noopener" class="endorse-pill">Facebook</a>
-                        <a href="#REPLACE-FIVERR-URL" target="_blank" rel="noopener" class="endorse-pill">Fiverr</a>
-                        <a href="#REPLACE-UPWORK-URL" target="_blank" rel="noopener" class="endorse-pill">Upwork</a>
+                        <a href="https://www.yelp.com/" data-pending="true" target="_blank" rel="noopener" class="endorse-pill">Yelp</a>
+                        <a href="https://clutch.co/" data-pending="true" target="_blank" rel="noopener" class="endorse-pill">Clutch.co</a>
+                        <a href="https://www.g2.com/" data-pending="true" target="_blank" rel="noopener" class="endorse-pill">G2</a>
+                        <a href="https://www.trustpilot.com/" data-pending="true" target="_blank" rel="noopener" class="endorse-pill">Trustpilot</a>
+                        <a href="https://www.facebook.com/" data-pending="true" target="_blank" rel="noopener" class="endorse-pill">Facebook</a>
+                        <a href="https://www.fiverr.com/" data-pending="true" target="_blank" rel="noopener" class="endorse-pill">Fiverr</a>
+                        <a href="https://www.upwork.com/" data-pending="true" target="_blank" rel="noopener" class="endorse-pill">Upwork</a>
                       </div>
                     </div>
                   </div>
@@ -238,7 +324,7 @@
                     <a href="#work" class="mini-chip" data-open-tab="guilds">💼 Business &amp; Investment</a>
                     <a href="#work" class="mini-chip" data-open-tab="guilds">✨ Spiritual Leadership</a>
                   </div>
-                  <a href="#REPLACE-HHO-DISCORD-INVITE-URL" target="_blank" rel="noopener" class="button secondary small stage-cta">Join the HHO Discord</a>
+                  <a href="https://discord.gg/KGTpT6whS" target="_blank" rel="noopener" class="button secondary small stage-cta">Join the HHO Discord</a>
                 </div>
               </div>
             </div>
@@ -301,123 +387,216 @@
       <section class="section services-accordion" id="services">
         <div class="section-head">
           <span>Services</span>
-          <h3>Six things I'm available for &mdash; ordered from broad to specific.</h3>
+          <h3>Six things I'm available for &mdash; by category.</h3>
         </div>
-        <div class="accordion">
-          <div class="acc-item is-open" data-glow>
-            <button class="acc-trigger" type="button" aria-expanded="true">
-              <span class="acc-icon">🧭</span>
-              <span class="acc-heading">Consulting</span>
-              <span class="acc-chevron" aria-hidden="true">▾</span>
-            </button>
-            <div class="acc-panel">
-              <div class="acc-panel-inner">
-                <p>Short-engagement advisory for teams trying to figure out what to build, what to fix, or what to retire.</p>
-                <ul class="feature-list">
-                  <li>Architecture &amp; tooling reviews</li>
-                  <li>Cloud &amp; DevOps roadmap planning</li>
-                  <li>Second-opinion sessions for technical leads</li>
-                </ul>
-                <a href="#connect" class="card-cta">Start a conversation <span aria-hidden="true">→</span></a>
-              </div>
-            </div>
-          </div>
 
-          <div class="acc-item" data-glow>
-            <button class="acc-trigger" type="button" aria-expanded="false">
-              <span class="acc-icon">☁️</span>
-              <span class="acc-heading">Cloud &amp; Infrastructure</span>
-              <span class="acc-chevron" aria-hidden="true">▾</span>
-            </button>
-            <div class="acc-panel">
-              <div class="acc-panel-inner">
-                <p>Stand up clean, repeatable cloud environments and tighten existing ones.</p>
-                <ul class="feature-list">
-                  <li>AWS &amp; Azure environments</li>
-                  <li>Terraform &amp; infrastructure as code</li>
-                  <li>Networking, observability, baseline hardening</li>
-                </ul>
-                <a href="#connect" class="card-cta">Scope a cloud build <span aria-hidden="true">→</span></a>
-              </div>
-            </div>
-          </div>
+        <div class="acc-group" data-group="strategic">
+          <p class="acc-group-label">Strategic</p>
+          <div class="accordion">
+            <div class="acc-item is-open" data-glow>
+              <button class="acc-trigger" type="button" aria-expanded="true">
+                <span class="acc-icon">🧭</span>
+                <span class="acc-heading">Consulting</span>
+                <span class="acc-chevron" aria-hidden="true">▾</span>
+              </button>
+              <div class="acc-panel">
+                <div class="acc-panel-inner">
+                  <p class="service-summary">Short-engagement advisory for teams trying to figure out what to build, what to fix, or what to retire.</p>
 
-          <div class="acc-item" data-glow>
-            <button class="acc-trigger" type="button" aria-expanded="false">
-              <span class="acc-icon">⚙️</span>
-              <span class="acc-heading">DevOps &amp; Code</span>
-              <span class="acc-chevron" aria-hidden="true">▾</span>
-            </button>
-            <div class="acc-panel">
-              <div class="acc-panel-inner">
-                <p>CI/CD, scripting, and automation work that turns one-off effort into repeatable systems.</p>
-                <ul class="feature-list">
-                  <li>Pipelines (GitHub Actions, GitLab CI)</li>
-                  <li>Python &amp; shell automation</li>
-                  <li>Ansible playbooks, GitOps workflows</li>
-                </ul>
-                <a href="#connect" class="card-cta">Automate a workflow <span aria-hidden="true">→</span></a>
-              </div>
-            </div>
-          </div>
+                  <p class="service-block-label">Engagement options</p>
+                  <ul class="service-packages">
+                    <li><span class="pkg-name">Quick Consult</span><span class="pkg-shape">1&ndash;2 sessions</span></li>
+                    <li><span class="pkg-name">Focused Project</span><span class="pkg-shape">2&ndash;6 weeks</span></li>
+                    <li><span class="pkg-name">Retainer</span><span class="pkg-shape">Ongoing</span></li>
+                  </ul>
 
-          <div class="acc-item" data-glow>
-            <button class="acc-trigger" type="button" aria-expanded="false">
-              <span class="acc-icon">🤖</span>
-              <span class="acc-heading">AIOps &amp; Automation</span>
-              <span class="acc-chevron" aria-hidden="true">▾</span>
-            </button>
-            <div class="acc-panel">
-              <div class="acc-panel-inner">
-                <p>Practical AI-assisted ops work &mdash; small agents and workflows that take repetitive tasks off your plate.</p>
-                <ul class="feature-list">
-                  <li>Agentic workflow prototypes</li>
-                  <li>Operational alerting &amp; triage helpers</li>
-                  <li>LLM-assisted scripts and tooling</li>
-                </ul>
-                <a href="#connect" class="card-cta">Map an AIOps pilot <span aria-hidden="true">→</span></a>
-              </div>
-            </div>
-          </div>
+                  <p class="service-block-label">How it works</p>
+                  <ol class="service-pipeline">
+                    <li><span class="step-tag">01</span><span>Discovery call &mdash; you describe the situation</span></li>
+                    <li><span class="step-tag">02</span><span>Written scope &mdash; what we'll cover, in plain language</span></li>
+                    <li><span class="step-tag">03</span><span>Working sessions &mdash; review, decisions, next steps</span></li>
+                    <li><span class="step-tag">04</span><span>Recap doc + recommendations you can act on</span></li>
+                  </ol>
 
-          <div class="acc-item" data-glow>
-            <button class="acc-trigger" type="button" aria-expanded="false">
-              <span class="acc-icon">🏗️</span>
-              <span class="acc-heading">Physical Security</span>
-              <span class="acc-chevron" aria-hidden="true">▾</span>
-            </button>
-            <div class="acc-panel">
-              <div class="acc-panel-inner">
-                <p>On-the-ground design and install for small commercial and residential builds.</p>
-                <ul class="feature-list">
-                  <li>IP cameras &amp; PoE wiring</li>
-                  <li>Access control &amp; structured cabling</li>
-                  <li>Network closets &amp; site walkthroughs</li>
-                </ul>
-                <a href="#connect" class="card-cta">Request a site walkthrough <span aria-hidden="true">→</span></a>
-              </div>
-            </div>
-          </div>
+                  <p class="service-outcome"><strong>You walk away with:</strong> a written perspective on what's working, what isn't, and what to do next &mdash; from someone outside the room.</p>
 
-          <div class="acc-item" data-glow>
-            <button class="acc-trigger" type="button" aria-expanded="false">
-              <span class="acc-icon">🎓</span>
-              <span class="acc-heading">Tutoring &amp; Instruction</span>
-              <span class="acc-chevron" aria-hidden="true">▾</span>
-            </button>
-            <div class="acc-panel">
-              <div class="acc-panel-inner">
-                <p>1:1 and small-group teaching for cloud, IT, and security learners. Cohort-style or async.</p>
-                <ul class="feature-list">
-                  <li>Career-switcher &amp; cert-prep coaching</li>
-                  <li>Custom lab walkthroughs</li>
-                  <li>Resume / interview support for IT roles</li>
-                </ul>
-                <a href="#connect" class="card-cta">Book a session <span aria-hidden="true">→</span></a>
+                  <a href="#connect" class="card-cta">Start a conversation <span aria-hidden="true">→</span></a>
+                </div>
               </div>
             </div>
           </div>
         </div>
+
+        <div class="acc-group" data-group="engineering">
+          <p class="acc-group-label">Engineering</p>
+          <div class="accordion">
+            <div class="acc-item" data-glow>
+              <button class="acc-trigger" type="button" aria-expanded="false">
+                <span class="acc-icon">☁️</span>
+                <span class="acc-heading">Cloud &amp; Infrastructure</span>
+                <span class="acc-chevron" aria-hidden="true">▾</span>
+              </button>
+              <div class="acc-panel">
+                <div class="acc-panel-inner">
+                  <p class="service-summary">Stand up clean, repeatable cloud environments and tighten existing ones across AWS and Azure.</p>
+
+                  <p class="service-block-label">Engagement options</p>
+                  <ul class="service-packages">
+                    <li><span class="pkg-name">Audit &amp; Plan</span><span class="pkg-shape">1&ndash;2 weeks</span></li>
+                    <li><span class="pkg-name">Build &amp; Ship</span><span class="pkg-shape">4&ndash;8 weeks</span></li>
+                    <li><span class="pkg-name">Retainer</span><span class="pkg-shape">Ongoing</span></li>
+                  </ul>
+
+                  <p class="service-block-label">How it works</p>
+                  <ol class="service-pipeline">
+                    <li><span class="step-tag">01</span><span>Audit current state &mdash; accounts, networking, baseline gaps</span></li>
+                    <li><span class="step-tag">02</span><span>Architecture plan with Terraform / IaC structure</span></li>
+                    <li><span class="step-tag">03</span><span>Build &amp; ship &mdash; environments, modules, CI hooks</span></li>
+                    <li><span class="step-tag">04</span><span>Documentation + handoff to your team</span></li>
+                  </ol>
+
+                  <p class="service-outcome"><strong>You walk away with:</strong> a working, version-controlled cloud foundation your team can extend without me.</p>
+
+                  <a href="#connect" class="card-cta">Scope a cloud build <span aria-hidden="true">→</span></a>
+                </div>
+              </div>
+            </div>
+
+            <div class="acc-item" data-glow>
+              <button class="acc-trigger" type="button" aria-expanded="false">
+                <span class="acc-icon">⚙️</span>
+                <span class="acc-heading">DevOps &amp; Code</span>
+                <span class="acc-chevron" aria-hidden="true">▾</span>
+              </button>
+              <div class="acc-panel">
+                <div class="acc-panel-inner">
+                  <p class="service-summary">CI/CD, scripting, and automation work that turns one-off effort into repeatable systems.</p>
+
+                  <p class="service-block-label">Engagement options</p>
+                  <ul class="service-packages">
+                    <li><span class="pkg-name">Pipeline Setup</span><span class="pkg-shape">1&ndash;3 weeks</span></li>
+                    <li><span class="pkg-name">Automation Project</span><span class="pkg-shape">3&ndash;6 weeks</span></li>
+                    <li><span class="pkg-name">Retainer</span><span class="pkg-shape">Ongoing</span></li>
+                  </ul>
+
+                  <p class="service-block-label">How it works</p>
+                  <ol class="service-pipeline">
+                    <li><span class="step-tag">01</span><span>Map the manual work that's slowing things down</span></li>
+                    <li><span class="step-tag">02</span><span>Design pipelines, scripts, or playbooks</span></li>
+                    <li><span class="step-tag">03</span><span>Build, test, and roll out incrementally</span></li>
+                    <li><span class="step-tag">04</span><span>Runbook + walkthrough for your team</span></li>
+                  </ol>
+
+                  <p class="service-outcome"><strong>You walk away with:</strong> automation that survives the person who wrote it &mdash; documented, owned by your team.</p>
+
+                  <a href="#connect" class="card-cta">Automate a workflow <span aria-hidden="true">→</span></a>
+                </div>
+              </div>
+            </div>
+
+            <div class="acc-item" data-glow>
+              <button class="acc-trigger" type="button" aria-expanded="false">
+                <span class="acc-icon">🤖</span>
+                <span class="acc-heading">AIOps &amp; Automation</span>
+                <span class="acc-chevron" aria-hidden="true">▾</span>
+              </button>
+              <div class="acc-panel">
+                <div class="acc-panel-inner">
+                  <p class="service-summary">Practical AI-assisted ops &mdash; small agents and workflows that take repetitive tasks off your plate.</p>
+
+                  <p class="service-block-label">Engagement options</p>
+                  <ul class="service-packages">
+                    <li><span class="pkg-name">Pilot</span><span class="pkg-shape">2&ndash;4 weeks</span></li>
+                    <li><span class="pkg-name">Production Build</span><span class="pkg-shape">4&ndash;8 weeks</span></li>
+                    <li><span class="pkg-name">Retainer</span><span class="pkg-shape">Ongoing</span></li>
+                  </ul>
+
+                  <p class="service-block-label">How it works</p>
+                  <ol class="service-pipeline">
+                    <li><span class="step-tag">01</span><span>Pick one painful, repeatable workflow</span></li>
+                    <li><span class="step-tag">02</span><span>Prototype an AI-assisted version</span></li>
+                    <li><span class="step-tag">03</span><span>Measure: time saved, error rate, handoff fit</span></li>
+                    <li><span class="step-tag">04</span><span>Ship the keepers, drop the rest</span></li>
+                  </ol>
+
+                  <p class="service-outcome"><strong>You walk away with:</strong> a working AI workflow that solves a specific problem &mdash; not a demo.</p>
+
+                  <a href="#connect" class="card-cta">Map an AIOps pilot <span aria-hidden="true">→</span></a>
+                </div>
+              </div>
+            </div>
+
+            <div class="acc-item" data-glow>
+              <button class="acc-trigger" type="button" aria-expanded="false">
+                <span class="acc-icon">🏗️</span>
+                <span class="acc-heading">Physical Security</span>
+                <span class="acc-chevron" aria-hidden="true">▾</span>
+              </button>
+              <div class="acc-panel">
+                <div class="acc-panel-inner">
+                  <p class="service-summary">On-the-ground design and install for small commercial and residential builds.</p>
+
+                  <p class="service-block-label">Engagement options</p>
+                  <ul class="service-packages">
+                    <li><span class="pkg-name">Site Walkthrough</span><span class="pkg-shape">Half day</span></li>
+                    <li><span class="pkg-name">Design &amp; Install</span><span class="pkg-shape">1&ndash;3 weeks</span></li>
+                    <li><span class="pkg-name">Maintenance Plan</span><span class="pkg-shape">Ongoing</span></li>
+                  </ul>
+
+                  <p class="service-block-label">How it works</p>
+                  <ol class="service-pipeline">
+                    <li><span class="step-tag">01</span><span>Walk the site &mdash; access points, coverage, gaps</span></li>
+                    <li><span class="step-tag">02</span><span>Design: cameras, cabling, access control</span></li>
+                    <li><span class="step-tag">03</span><span>Install &amp; configure on-site</span></li>
+                    <li><span class="step-tag">04</span><span>Handoff with labeled diagrams + access docs</span></li>
+                  </ol>
+
+                  <p class="service-outcome"><strong>You walk away with:</strong> a clean, labeled physical security setup with the diagrams to maintain it.</p>
+
+                  <a href="#connect" class="card-cta">Request a site walkthrough <span aria-hidden="true">→</span></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="acc-group" data-group="education">
+          <p class="acc-group-label">Education</p>
+          <div class="accordion">
+            <div class="acc-item" data-glow>
+              <button class="acc-trigger" type="button" aria-expanded="false">
+                <span class="acc-icon">🎓</span>
+                <span class="acc-heading">Tutoring &amp; Instruction</span>
+                <span class="acc-chevron" aria-hidden="true">▾</span>
+              </button>
+              <div class="acc-panel">
+                <div class="acc-panel-inner">
+                  <p class="service-summary">1:1 and small-group teaching for cloud, IT, and security learners. Cohort-style or async.</p>
+
+                  <p class="service-block-label">Engagement options</p>
+                  <ul class="service-packages">
+                    <li><span class="pkg-name">Single Session</span><span class="pkg-shape">60&ndash;90 min</span></li>
+                    <li><span class="pkg-name">Cert Sprint</span><span class="pkg-shape">4&ndash;8 weeks</span></li>
+                    <li><span class="pkg-name">Ongoing Coaching</span><span class="pkg-shape">Monthly</span></li>
+                  </ul>
+
+                  <p class="service-block-label">How it works</p>
+                  <ol class="service-pipeline">
+                    <li><span class="step-tag">01</span><span>Intake &mdash; your goal, current level, study time</span></li>
+                    <li><span class="step-tag">02</span><span>Custom plan with milestones</span></li>
+                    <li><span class="step-tag">03</span><span>Sessions + labs + accountability</span></li>
+                    <li><span class="step-tag">04</span><span>Review and re-plan as you progress</span></li>
+                  </ol>
+
+                  <p class="service-outcome"><strong>You walk away with:</strong> a clear study plan, real hands-on practice, and someone in your corner.</p>
+
+                  <a href="#connect" class="card-cta">Book a session <span aria-hidden="true">→</span></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
         <p class="section-foot">Not sure which fits? <a href="#connect">Send a one-line note</a> and I'll route you.</p>
       </section>
 
@@ -432,6 +611,7 @@
           <button class="tab is-active" type="button" role="tab" id="tab-built" aria-selected="true" aria-controls="panel-built" data-tab="built">Built</button>
           <button class="tab" type="button" role="tab" id="tab-platforms" aria-selected="false" aria-controls="panel-platforms" data-tab="platforms">Platforms</button>
           <button class="tab" type="button" role="tab" id="tab-guilds" aria-selected="false" aria-controls="panel-guilds" data-tab="guilds">Guilds</button>
+          <span class="tab-indicator" aria-hidden="true"></span>
         </div>
 
         <div class="tab-panels">
@@ -439,24 +619,142 @@
           <div class="tab-panel is-active" id="panel-built" role="tabpanel" aria-labelledby="tab-built" data-panel="built">
             <div class="project-grid">
               <article class="project-card" data-glow>
-                <div class="project-tag">Lab</div>
-                <h4>Cloud Security Automation Lab</h4>
-                <p>Terraform and Ansible environment used to teach baseline cloud security across AWS and Azure tenants. Built for CyberTex coursework and small-group practice.</p>
-                <p class="project-footnote">Repeatable per cohort. Always evolving.</p>
+                <div class="project-card-head">
+                  <div class="project-tag">Lab</div>
+                  <h4>Cloud Security Automation Lab</h4>
+                </div>
+                <figure class="project-diagram" aria-label="Diagram: Terraform and Ansible deploy into AWS and Azure to produce cohort-ready labs.">
+                  <svg viewBox="0 0 320 90" xmlns="http://www.w3.org/2000/svg" role="img">
+                    <g fill="none" stroke="currentColor" stroke-width="1.5" opacity="0.9">
+                      <rect x="4" y="28" width="80" height="34" rx="8"/>
+                      <rect x="120" y="28" width="80" height="34" rx="8"/>
+                      <rect x="236" y="28" width="80" height="34" rx="8"/>
+                    </g>
+                    <g fill="currentColor" font-family="Inter, sans-serif" font-size="10" text-anchor="middle">
+                      <text x="44" y="50">Terraform</text>
+                      <text x="44" y="62" opacity="0.65" font-size="8">+ Ansible</text>
+                      <text x="160" y="50">AWS + Azure</text>
+                      <text x="160" y="62" opacity="0.65" font-size="8">isolated envs</text>
+                      <text x="276" y="50">Cohort-ready</text>
+                      <text x="276" y="62" opacity="0.65" font-size="8">labs</text>
+                    </g>
+                    <g stroke="var(--accent)" stroke-width="1.6" fill="none">
+                      <path d="M 86 45 L 116 45" marker-end="url(#arrowCSAL)"/>
+                      <path d="M 202 45 L 232 45" marker-end="url(#arrowCSAL)"/>
+                    </g>
+                    <defs>
+                      <marker id="arrowCSAL" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+                        <path d="M 0 0 L 10 5 L 0 10 z" fill="var(--accent)"/>
+                      </marker>
+                    </defs>
+                  </svg>
+                </figure>
+                <p class="project-summary">Terraform + Ansible environment used to teach baseline cloud security across AWS and Azure. Built for CyberTex coursework and small-group practice.</p>
+                <ul class="project-stats">
+                  <li><span class="stat-label">Built with</span> Terraform &middot; Ansible &middot; AWS &middot; Azure</li>
+                  <li><span class="stat-label">Used by</span> CyberTex cohorts &amp; HHO study groups</li>
+                  <li><span class="stat-label">Status</span> Ongoing &mdash; rebuilt each cohort</li>
+                </ul>
+                <p class="project-outcome"><strong>Outcome:</strong> students leave the lab with hands on real cloud accounts, not slides.</p>
+                <ul class="project-roles" aria-label="Open roles">
+                  <li class="project-role" data-role="mentor"><span>🧭</span> Mentor</li>
+                  <li class="project-role" data-role="peer"><span>🤝</span> Peer</li>
+                  <li class="project-role" data-role="student"><span>🌱</span> Student</li>
+                </ul>
                 <a href="#connect" class="card-cta">Request a walkthrough <span aria-hidden="true">→</span></a>
               </article>
+
               <article class="project-card" data-glow>
-                <div class="project-tag">Lab</div>
-                <h4>Incident Response Practice Pipeline</h4>
-                <p>A Python-driven simulation that runs students through detection-to-remediation workflows. Used in classroom labs to build incident-response muscle memory.</p>
-                <p class="project-footnote">From alert to action in a guided environment.</p>
+                <div class="project-card-head">
+                  <div class="project-tag">Lab</div>
+                  <h4>Incident Response Practice Pipeline</h4>
+                </div>
+                <figure class="project-diagram" aria-label="Diagram: synthetic logs flow into a SIEM that students detect on and respond to.">
+                  <svg viewBox="0 0 320 90" xmlns="http://www.w3.org/2000/svg" role="img">
+                    <g fill="none" stroke="currentColor" stroke-width="1.5" opacity="0.9">
+                      <rect x="2" y="30" width="64" height="30" rx="8"/>
+                      <rect x="86" y="30" width="64" height="30" rx="8"/>
+                      <rect x="170" y="30" width="64" height="30" rx="8"/>
+                      <rect x="254" y="30" width="64" height="30" rx="8"/>
+                    </g>
+                    <g fill="currentColor" font-family="Inter, sans-serif" font-size="10" text-anchor="middle">
+                      <text x="34" y="49">Log gens</text>
+                      <text x="118" y="49">SIEM</text>
+                      <text x="202" y="49">Detect</text>
+                      <text x="286" y="49">Respond</text>
+                    </g>
+                    <g stroke="var(--accent)" stroke-width="1.6" fill="none">
+                      <path d="M 68 45 L 84 45" marker-end="url(#arrowIR)"/>
+                      <path d="M 152 45 L 168 45" marker-end="url(#arrowIR)"/>
+                      <path d="M 236 45 L 252 45" marker-end="url(#arrowIR)"/>
+                    </g>
+                    <defs>
+                      <marker id="arrowIR" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+                        <path d="M 0 0 L 10 5 L 0 10 z" fill="var(--accent)"/>
+                      </marker>
+                    </defs>
+                  </svg>
+                </figure>
+                <p class="project-summary">Python-driven simulation that runs students through detection-to-remediation workflows. Built so incident response becomes muscle memory.</p>
+                <ul class="project-stats">
+                  <li><span class="stat-label">Built with</span> Python &middot; log generators &middot; lightweight SIEM</li>
+                  <li><span class="stat-label">Used by</span> Classroom labs at CyberTex</li>
+                  <li><span class="stat-label">Status</span> Active in current cohort</li>
+                </ul>
+                <p class="project-outcome"><strong>Outcome:</strong> students drill detect&rarr;respond live, not in a slide.</p>
+                <ul class="project-roles" aria-label="Open roles">
+                  <li class="project-role" data-role="mentor"><span>🧭</span> Mentor</li>
+                  <li class="project-role" data-role="peer"><span>🤝</span> Peer</li>
+                  <li class="project-role" data-role="student"><span>🌱</span> Student</li>
+                </ul>
                 <a href="#connect" class="card-cta">See the pipeline <span aria-hidden="true">→</span></a>
               </article>
+
               <article class="project-card" data-glow>
-                <div class="project-tag">Community Design</div>
-                <h4>HHO Community Framework</h4>
-                <p>The structure behind HackersHideout &mdash; Discord roles, project tracks, and how mentors, peers, and students plug in together.</p>
-                <p class="project-footnote">Community as a small, deliberate system.</p>
+                <div class="project-card-head">
+                  <div class="project-tag">Community Design</div>
+                  <h4>HHO Community Framework</h4>
+                </div>
+                <figure class="project-diagram" aria-label="Diagram: the HHO Discord branches into four specialty guilds.">
+                  <svg viewBox="0 0 320 100" xmlns="http://www.w3.org/2000/svg" role="img">
+                    <g fill="none" stroke="currentColor" stroke-width="1.5" opacity="0.9">
+                      <rect x="120" y="6" width="80" height="28" rx="8"/>
+                    </g>
+                    <g fill="currentColor" font-family="Inter, sans-serif" font-size="10" text-anchor="middle">
+                      <text x="160" y="24">HHO Discord</text>
+                    </g>
+                    <g stroke="var(--accent)" stroke-width="1.4" fill="none" opacity="0.85">
+                      <path d="M 160 34 L 50 64"/>
+                      <path d="M 160 34 L 130 64"/>
+                      <path d="M 160 34 L 190 64"/>
+                      <path d="M 160 34 L 270 64"/>
+                    </g>
+                    <g fill="none" stroke="currentColor" stroke-width="1.5" opacity="0.9">
+                      <rect x="6" y="64" width="88" height="30" rx="8"/>
+                      <rect x="100" y="64" width="60" height="30" rx="8"/>
+                      <rect x="164" y="64" width="62" height="30" rx="8"/>
+                      <rect x="230" y="64" width="84" height="30" rx="8"/>
+                    </g>
+                    <g fill="currentColor" font-family="Inter, sans-serif" font-size="9" text-anchor="middle">
+                      <text x="50" y="83">Experts</text>
+                      <text x="130" y="83">Physical</text>
+                      <text x="195" y="83">Business</text>
+                      <text x="272" y="83">Spiritual</text>
+                    </g>
+                  </svg>
+                </figure>
+                <p class="project-summary">The structure behind HackersHideout &mdash; Discord roles, project tracks, and how mentors, peers, and students plug in.</p>
+                <ul class="project-stats">
+                  <li><span class="stat-label">Built with</span> Discord &middot; structured channels &middot; simple norms</li>
+                  <li><span class="stat-label">Used by</span> The HHO Discord community</li>
+                  <li><span class="stat-label">Status</span> Live and evolving</li>
+                </ul>
+                <p class="project-outcome"><strong>Outcome:</strong> 97 members across 4 specialty guilds, learning out loud.</p>
+                <ul class="project-roles" aria-label="Open roles">
+                  <li class="project-role" data-role="mentor"><span>🧭</span> Mentor</li>
+                  <li class="project-role" data-role="peer"><span>🤝</span> Peer</li>
+                  <li class="project-role" data-role="student"><span>🌱</span> Student</li>
+                </ul>
                 <a href="#connect" class="card-cta">Get the framework brief <span aria-hidden="true">→</span></a>
               </article>
             </div>
@@ -477,7 +775,7 @@
                   <li>Project-of-the-month threads</li>
                   <li>Open to anyone serious about the craft</li>
                 </ul>
-                <a href="#REPLACE-HHO-DISCORD-INVITE-URL" target="_blank" rel="noopener" class="button secondary small">Join the Discord</a>
+                <a href="https://discord.gg/KGTpT6whS" target="_blank" rel="noopener" class="button secondary small">Join the Discord</a>
               </article>
               <article class="platform-card">
                 <div class="platform-head">
@@ -558,33 +856,126 @@
         <p class="section-foot">Want the full picture? <a href="#connect">Book a 20-minute call</a> and I'll walk you through it.</p>
       </section>
 
+      <!-- PHASE 4.2 · STACK / SKILLS MATRIX -->
+      <section class="section skills" id="stack">
+        <div class="section-head">
+          <span>Stack</span>
+          <h3>The tools I work in &mdash; grouped how I think about them.</h3>
+        </div>
+        <div class="skills-grid">
+          <div class="skills-group">
+            <p class="skills-label">Cloud</p>
+            <ul class="skills-items">
+              <li>AWS</li>
+              <li>Azure</li>
+            </ul>
+          </div>
+          <div class="skills-group">
+            <p class="skills-label">IaC</p>
+            <ul class="skills-items">
+              <li>Terraform</li>
+              <li>Ansible</li>
+            </ul>
+          </div>
+          <div class="skills-group">
+            <p class="skills-label">Code</p>
+            <ul class="skills-items">
+              <li>Python</li>
+              <li>Bash</li>
+              <li>PowerShell</li>
+            </ul>
+          </div>
+          <div class="skills-group">
+            <p class="skills-label">Ops</p>
+            <ul class="skills-items">
+              <li>Docker</li>
+              <li>Kubernetes</li>
+              <li>Linux</li>
+            </ul>
+          </div>
+          <div class="skills-group">
+            <p class="skills-label">Security</p>
+            <ul class="skills-items">
+              <li>Wazuh</li>
+              <li>Velociraptor</li>
+              <li>Burp</li>
+              <li>Nessus</li>
+            </ul>
+          </div>
+          <div class="skills-group">
+            <p class="skills-label">Teaching</p>
+            <ul class="skills-items">
+              <li>CompTIA tracks</li>
+              <li>(ISC)&sup2; tracks</li>
+              <li>Cohort design</li>
+            </ul>
+          </div>
+        </div>
+        <p class="section-foot">Don't see what you need? <a href="#connect">Ask</a> &mdash; the list is shorter than what I actually touch.</p>
+      </section>
+
+      <!-- PHASE 4.25 · LEAD MAGNET (email gate for warm leads) -->
+      <section class="section lead-magnet" id="resources">
+        <div class="lead-magnet-card" data-glow>
+          <div class="lead-magnet-copy">
+            <p class="lm-eyebrow">Free download</p>
+            <h3>Cloud Security Quick-Start &mdash; 1 page, no fluff</h3>
+            <p>The exact checklist I hand to students before their first AWS or Azure deploy. Drop your email and the PDF is yours, plus the occasional monthly note.</p>
+          </div>
+          <form class="lead-magnet-form" action="https://api.web3forms.com/submit" method="POST" data-pdf="/assets/leads/cloud-security-quickstart.pdf">
+            <input type="hidden" name="access_key" value="REPLACE-WEB3FORMS-ACCESS-KEY" />
+            <input type="hidden" name="subject" value="Lead-magnet download — Cloud Security Quick-Start" />
+            <input type="hidden" name="from_name" value="Lead Magnet" />
+            <input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off" />
+            <label class="sr-only" for="lm-email">Email</label>
+            <input id="lm-email" type="email" name="email" placeholder="you@email.com" required />
+            <button type="submit" class="button primary">Send me the PDF</button>
+            <p class="lm-note">Unsubscribe anytime. The PDF link also appears on this page after you submit.</p>
+            <p class="lm-status" id="lm-status" role="status" aria-live="polite" hidden></p>
+          </form>
+        </div>
+      </section>
+
       <!-- PHASE 4.5 · WHAT PEOPLE SAY (scaffold) -->
       <section class="section testimonials" id="testimonials">
         <div class="section-head">
           <span>What people say</span>
           <h3>Real quotes will land here as students and peers opt in.</h3>
         </div>
-        <div class="testimonial-grid">
-          <blockquote class="testimonial-card">
-            <span class="testimonial-ribbon">Sample &middot; collecting real quotes now</span>
-            <p class="testimonial-quote">&ldquo;A short, honest quote from a student, peer, or mentor will live here once the first one opts in to be named on the site.&rdquo;</p>
-            <footer class="testimonial-author">&mdash; Name, role / context</footer>
+        <!-- Rendered from /testimonials.json at runtime. Falls back to the collecting-state card below. -->
+        <div class="testimonial-grid" data-testimonials></div>
+        <template id="testimonial-fallback">
+          <blockquote class="testimonial-card" data-state="collecting">
+            <span class="testimonial-pill">Sample &middot; collecting now</span>
+            <p class="testimonial-quote">A short, honest quote from a student, peer, or mentor will live here once the first one opts in to be named on the site.</p>
+            <footer class="testimonial-author">Name &middot; role / context</footer>
           </blockquote>
-        </div>
+        </template>
       </section>
 
-      <!-- PHASE 5 · CONVERT (Connect + Newsletter merged) -->
+      <!-- PHASE 5 · CONVERT (Calendar + Form + Newsletter) -->
       <section class="section connect" id="connect">
         <div class="section-head">
           <span>Reach Out</span>
-          <h3>Send a note. I read every message.</h3>
+          <h3>Pick a time, send a note, or just stay in touch.</h3>
         </div>
+
+        <div class="connect-calendar" data-glow>
+          <div class="connect-calendar-copy">
+            <p class="connect-calendar-eyebrow">Warm lead &middot; pick a time</p>
+            <h4>Book a 20-minute briefing</h4>
+            <p>Land directly on my calendar. Bring one question or one project &mdash; we'll figure out the right next step together.</p>
+          </div>
+          <div class="cal-embed" data-cal-link="kerry-p" data-cal-namespace="briefing"></div>
+          <noscript><p class="connect-calendar-note">Calendar requires JavaScript &mdash; use the form below instead.</p></noscript>
+        </div>
+
         <div class="connect-grid" id="connect-form">
           <div class="connect-panel">
             <p>Tell me what you're working on and what you'd like to do together. Keep it short &mdash; I'll reply when I can.</p>
             <div class="connect-links">
               <a href="https://www.linkedin.com/in/kerrypp/" target="_blank" rel="noopener">Connect on LinkedIn</a>
-              <a href="https://discord.gg/HXv9VpXeM" target="_blank" rel="noopener">HHO Discord</a>
+              <a href="https://discord.gg/KGTpT6whS" target="_blank" rel="noopener">HHO Discord</a>
             </div>
             <p class="hero-note">Usually replies within a few days. No tracking pixels in this form.</p>
           </div>
@@ -604,17 +995,24 @@
               <input type="email" name="email" placeholder="you@email.com" required />
             </label>
             <label>
-              What's this about?
-              <select name="focus">
+              Who are you?
+              <select name="role" required>
                 <option value="">Pick one&hellip;</option>
-                <option>Consulting</option>
-                <option>Cloud &amp; Infrastructure</option>
-                <option>DevOps &amp; Code</option>
-                <option>AIOps &amp; Automation</option>
-                <option>Physical Security</option>
-                <option>Tutoring &amp; Instruction</option>
-                <option>HHO community</option>
+                <option>Apprentice / Student</option>
+                <option>Peer / Collaborator</option>
+                <option>Partner / Sponsor</option>
+                <option>Mentor / Advisor</option>
                 <option>Other</option>
+              </select>
+            </label>
+            <label>
+              Looking for
+              <select name="focus" required>
+                <option value="">Pick one&hellip;</option>
+                <option>Community / HHO Guild</option>
+                <option>Services (Cloud / DevOps / AIOps / Security)</option>
+                <option>Tutoring / Consulting</option>
+                <option>Just exploring</option>
               </select>
             </label>
             <label>
@@ -644,6 +1042,11 @@
       </section>
     </main>
 
+    <a href="#connect" class="sticky-cta" id="sticky-cta" aria-label="Book a call">
+      <span>Book a call</span>
+      <span aria-hidden="true">→</span>
+    </a>
+
     <footer class="footer">
       <div class="footer-grid">
         <div class="footer-col">
@@ -659,26 +1062,26 @@
           <p class="footer-col-label">Follow</p>
           <ul class="footer-links">
             <li><a href="https://www.linkedin.com/in/kerrypp/" target="_blank" rel="noopener">LinkedIn</a></li>
-            <li><a href="#REPLACE-INSTAGRAM-URL" target="_blank" rel="noopener">Instagram</a></li>
-            <li><a href="#REPLACE-YOUTUBE-URL" target="_blank" rel="noopener">YouTube</a></li>
-            <li><a href="#REPLACE-X-TWITTER-URL" target="_blank" rel="noopener">X / Twitter</a></li>
-            <li><a href="#REPLACE-TIKTOK-URL" target="_blank" rel="noopener">TikTok</a></li>
-            <li><a href="#REPLACE-GITHUB-URL" target="_blank" rel="noopener">GitHub</a></li>
-            <li><a href="#REPLACE-SUBSTACK-URL" target="_blank" rel="noopener">Substack</a></li>
-            <li><a href="#REPLACE-HHO-DISCORD-INVITE-URL" target="_blank" rel="noopener">HHO Discord</a></li>
+            <li><a href="https://www.instagram.com/" data-pending="true" target="_blank" rel="noopener">Instagram</a></li>
+            <li><a href="https://www.youtube.com/" data-pending="true" target="_blank" rel="noopener">YouTube</a></li>
+            <li><a href="https://x.com/" data-pending="true" target="_blank" rel="noopener">X / Twitter</a></li>
+            <li><a href="https://www.tiktok.com/" data-pending="true" target="_blank" rel="noopener">TikTok</a></li>
+            <li><a href="https://github.com/" data-pending="true" target="_blank" rel="noopener">GitHub</a></li>
+            <li><a href="https://substack.com/" data-pending="true" target="_blank" rel="noopener">Substack</a></li>
+            <li><a href="https://discord.gg/KGTpT6whS" target="_blank" rel="noopener">HHO Discord</a></li>
           </ul>
         </div>
         <div class="footer-col" id="endorse">
           <p class="footer-col-label">Endorse</p>
           <ul class="footer-links">
             <li><a href="https://www.linkedin.com/in/kerrypp/" target="_blank" rel="noopener">LinkedIn Recommendation</a></li>
-            <li><a href="#REPLACE-GOOGLE-BUSINESS-REVIEW-URL" target="_blank" rel="noopener">Google Business</a></li>
-            <li><a href="#REPLACE-RATEMYPROFESSOR-URL" target="_blank" rel="noopener">RateMyProfessor</a></li>
-            <li><a href="#REPLACE-CLUTCH-URL" target="_blank" rel="noopener">Clutch.co</a></li>
-            <li><a href="#REPLACE-G2-URL" target="_blank" rel="noopener">G2</a></li>
-            <li><a href="#REPLACE-TRUSTPILOT-URL" target="_blank" rel="noopener">Trustpilot</a></li>
-            <li><a href="#REPLACE-FIVERR-URL" target="_blank" rel="noopener">Fiverr</a></li>
-            <li><a href="#REPLACE-UPWORK-URL" target="_blank" rel="noopener">Upwork</a></li>
+            <li><a href="https://www.google.com/maps" data-pending="true" target="_blank" rel="noopener">Google Business</a></li>
+            <li><a href="https://www.ratemyprofessors.com/" data-pending="true" target="_blank" rel="noopener">RateMyProfessor</a></li>
+            <li><a href="https://clutch.co/" data-pending="true" target="_blank" rel="noopener">Clutch.co</a></li>
+            <li><a href="https://www.g2.com/" data-pending="true" target="_blank" rel="noopener">G2</a></li>
+            <li><a href="https://www.trustpilot.com/" data-pending="true" target="_blank" rel="noopener">Trustpilot</a></li>
+            <li><a href="https://www.fiverr.com/" data-pending="true" target="_blank" rel="noopener">Fiverr</a></li>
+            <li><a href="https://www.upwork.com/" data-pending="true" target="_blank" rel="noopener">Upwork</a></li>
           </ul>
         </div>
         <div class="footer-col">
@@ -700,5 +1103,6 @@
   </div>
 
   <script src="script.js"></script>
+  <!-- Cal.com embed loader — initialized by script.js only when data-cal-link is a real handle. -->
 </body>
 </html>
