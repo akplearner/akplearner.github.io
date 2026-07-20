@@ -3,6 +3,34 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
+  /* ─── GA4 event tracking ───────────────────────── */
+  const track = (name, params) => {
+    if (typeof window.gtag !== 'function') return;
+    window.gtag('event', name, params || {});
+  };
+
+  // Delegated click tracking: [data-track="name|k=v|k=v"] + outbound-link auto-track
+  document.addEventListener('click', event => {
+    const trackEl = event.target.closest('[data-track]');
+    if (trackEl) {
+      const [name, ...pairs] = trackEl.dataset.track.split('|');
+      const params = {};
+      pairs.forEach(p => {
+        const idx = p.indexOf('=');
+        if (idx > 0) params[p.slice(0, idx)] = p.slice(idx + 1);
+      });
+      track(name, params);
+    }
+    const anchor = event.target.closest('a[href]');
+    if (anchor) {
+      const href = anchor.getAttribute('href') || '';
+      const location = anchor.closest('[id]')?.id || 'unknown';
+      if (href.startsWith('https://discord.gg/')) track('discord_click', { location });
+      else if (/linkedin\.com\/in\//.test(href)) track('linkedin_click', { location });
+      else if (href.endsWith('.pdf') || anchor.hasAttribute('download')) track('pdf_download', { path: href });
+    }
+  });
+
   /* ─── Sticky nav state ─────────────────────────── */
   const topbar = document.getElementById('topbar');
   if (topbar) {
@@ -205,6 +233,8 @@ document.addEventListener('DOMContentLoaded', () => {
       if (willOpen) {
         item.classList.add('is-open');
         trigger.setAttribute('aria-expanded', 'true');
+        const label = (trigger.textContent || '').trim().slice(0, 60);
+        track('accordion_open', { service: label });
       }
     });
   });
@@ -227,6 +257,7 @@ document.addEventListener('DOMContentLoaded', () => {
       if (on) panel.removeAttribute('hidden');
       else panel.setAttribute('hidden', '');
     });
+    track('tab_switch', { tab: name });
   };
   tabs.forEach(tab => {
     tab.addEventListener('click', () => activateTab(tab.dataset.tab));
@@ -244,6 +275,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const willOpen = !stage.classList.contains('is-open');
       stage.classList.toggle('is-open', willOpen);
       trigger.setAttribute('aria-expanded', willOpen ? 'true' : 'false');
+      if (willOpen) track('funnel_stage_open', { stage: stage.dataset.stage || 'unknown' });
     });
   });
 
@@ -252,10 +284,11 @@ document.addEventListener('DOMContentLoaded', () => {
   const navLinks = document.getElementById('primary-nav');
 
   if (navToggle && navLinks) {
-    const closeNav = () => {
+    const closeNav = ({ returnFocus = false } = {}) => {
       navLinks.classList.remove('is-open');
       navToggle.setAttribute('aria-expanded', 'false');
       navToggle.setAttribute('aria-label', 'Open menu');
+      if (returnFocus) navToggle.focus();
     };
     const openNav = () => {
       navLinks.classList.add('is-open');
@@ -275,7 +308,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // close on ESC
     window.addEventListener('keydown', event => {
-      if (event.key === 'Escape' && navLinks.classList.contains('is-open')) closeNav();
+      if (event.key === 'Escape' && navLinks.classList.contains('is-open')) closeNav({ returnFocus: true });
     });
 
     // close on outside click
@@ -339,6 +372,7 @@ document.addEventListener('DOMContentLoaded', () => {
           form.reset();
           status.className = 'form-status success';
           status.textContent = "Got it — I'll reply when I can.";
+          track('contact_submit', {});
         } else {
           status.className = 'form-status error';
           status.innerHTML = "Couldn't send. Reach me on <a href=\"https://www.linkedin.com/in/kerrypp/\" target=\"_blank\" rel=\"noopener\">LinkedIn</a> instead.";
@@ -373,6 +407,17 @@ document.addEventListener('DOMContentLoaded', () => {
         layout: "month_view"
       });
       calEmbed.setAttribute('data-cal-state', 'ready');
+      if ('IntersectionObserver' in window) {
+        const calSpy = new IntersectionObserver((entries, obs) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              track('calendar_view', {});
+              obs.disconnect();
+            }
+          });
+        }, { threshold: 0.4 });
+        calSpy.observe(calEmbed);
+      }
     }
   }
 
@@ -397,6 +442,7 @@ document.addEventListener('DOMContentLoaded', () => {
           lmForm.reset();
           lmStatus.className = 'lm-status';
           lmStatus.innerHTML = 'Thanks — your copy is ready. <a href="' + pdfPath + '" download>Download the PDF →</a>';
+          track('lead_magnet_submit', {});
         } else {
           lmStatus.className = 'lm-status error';
           lmStatus.innerHTML = "Couldn't send. Email me directly and I'll forward it.";
