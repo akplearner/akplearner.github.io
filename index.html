@@ -51,6 +51,31 @@
     gtag('config', 'G-BDSKMJDWXR');
   </script>
 
+  <!-- Retargeting pixels — scaffolds only. Uncomment and paste real IDs when campaigns start.
+       LinkedIn Insight Tag: replace 000000 with your Partner ID from LinkedIn Campaign Manager.
+       Meta Pixel: replace 000000000000000 with your Pixel ID from Meta Events Manager. -->
+  <!--
+  <script type="text/javascript">
+    _linkedin_partner_id = "000000";
+    window._linkedin_data_partner_ids = window._linkedin_data_partner_ids || [];
+    window._linkedin_data_partner_ids.push(_linkedin_partner_id);
+  </script>
+  <script type="text/javascript">
+    (function(l){if(!l){window.lintrk=function(a,b){window.lintrk.q.push([a,b])};window.lintrk.q=[]};
+    var s=document.getElementsByTagName("script")[0];var b=document.createElement("script");
+    b.type="text/javascript";b.async=true;b.src="https://snap.licdn.com/li.lms-analytics/insight.min.js";
+    s.parentNode.insertBefore(b,s);})(window.lintrk);
+  </script>
+
+  <script>
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init','000000000000000');
+    fbq('track','PageView');
+  </script>
+  -->
+
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -90,6 +115,7 @@
   </script>
 </head>
 <body>
+  <a class="skip-link" href="#about">Skip to content</a>
   <div class="bg-mesh" aria-hidden="true"></div>
   <div class="scroll-progress" aria-hidden="true"><span></span></div>
 
@@ -106,7 +132,7 @@
         <a href="#router">Start</a>
         <a href="#services">Services</a>
         <a href="#work">Work</a>
-        <a href="#connect" class="nav-cta">Reach Out</a>
+        <a href="#connect" class="nav-cta" data-track="cta_click|cta=nav_reach_out">Reach Out</a>
         <button type="button" class="theme-toggle" id="theme-toggle" aria-label="Switch to dark mode" aria-pressed="false" title="Switch to dark mode">
           <span class="theme-icon" aria-hidden="true">☾</span>
         </button>
@@ -122,16 +148,22 @@
           <p class="hero-subtitle">I work across cloud, DevOps, and security &mdash; teaching what I know at CyberTex Institute and running HackersHideout (HHO), a small Discord community of engineers, peers, and students.</p>
           <p class="hero-rotator-line">I help <span class="hero-rotator" data-rotate='["small teams ship cloud","students pass certs","operators build community"]' aria-live="polite">small teams ship cloud</span>.</p>
 
-          <!-- Countdown — currently targets CISSP exam (first Friday of July 2026, 5pm CT). Retarget as milestones change. -->
-          <div class="countdown" data-deadline="2026-07-03T17:00:00-05:00" role="timer" aria-label="Time until CISSP exam">
-            <p class="countdown-label"><span class="pulse-dot"></span> Time to CISSP exam</p>
+          <!-- Countdown hidden — previous CISSP-exam deadline (2026-07-03) has passed.
+               To restore: pick a new future milestone (next cert exam, cohort start, launch),
+               drop the surrounding HTML-comment markers below, and update `data-deadline`
+               (ISO 8601 with timezone) + the "Time to X" label. Drop `role="timer"` — it's
+               not a valid ARIA role. `aria-label` on the container is sufficient. -->
+          <!--
+          <div class="countdown" data-deadline="YYYY-MM-DDTHH:MM:SS-05:00" aria-label="Time until MILESTONE">
+            <p class="countdown-label"><span class="pulse-dot"></span> Time to MILESTONE</p>
             <div class="countdown-grid">
-              <div class="countdown-unit"><span class="countdown-value" data-unit="days">—</span><span class="countdown-key">days</span></div>
-              <div class="countdown-unit"><span class="countdown-value" data-unit="hours">—</span><span class="countdown-key">hrs</span></div>
-              <div class="countdown-unit"><span class="countdown-value" data-unit="minutes">—</span><span class="countdown-key">min</span></div>
-              <div class="countdown-unit"><span class="countdown-value" data-unit="seconds">—</span><span class="countdown-key">sec</span></div>
+              <div class="countdown-unit"><span class="countdown-value" data-unit="days" aria-live="off">—</span><span class="countdown-key">days</span></div>
+              <div class="countdown-unit"><span class="countdown-value" data-unit="hours" aria-live="off">—</span><span class="countdown-key">hrs</span></div>
+              <div class="countdown-unit"><span class="countdown-value" data-unit="minutes" aria-live="off">—</span><span class="countdown-key">min</span></div>
+              <div class="countdown-unit"><span class="countdown-value" data-unit="seconds" aria-live="off">—</span><span class="countdown-key">sec</span></div>
             </div>
           </div>
+          -->
 
           <div class="hero-roles">
             <span class="role-chip">Instructor · CyberTex</span>
@@ -140,8 +172,8 @@
             <span class="role-chip">Builder · Austin, TX</span>
           </div>
           <div class="hero-actions">
-            <a href="#connect" class="button primary"><span class="btn-label">Reach Out</span><span class="btn-arrow" aria-hidden="true">→</span></a>
-            <a href="#router" class="button secondary"><span class="btn-label">Find My Path</span><span class="btn-arrow" aria-hidden="true">↓</span></a>
+            <a href="#connect" class="button primary" data-track="cta_click|cta=hero_book_call"><span class="btn-label">Book a 20-min call</span><span class="btn-arrow" aria-hidden="true">→</span></a>
+            <a href="#router" class="button secondary" data-track="cta_click|cta=hero_find_path"><span class="btn-label">Find My Path</span><span class="btn-arrow" aria-hidden="true">↓</span></a>
           </div>
 
           <figure class="hero-quote" data-state="collecting">
@@ -243,34 +275,14 @@
                       <span class="follow-icon">in</span>
                       <div><h4>LinkedIn</h4><p>Career frameworks, technical posts, professional wins.</p></div>
                     </a>
-                    <a href="https://www.instagram.com/" data-pending="true" target="_blank" rel="noopener" class="follow-card">
-                      <span class="follow-icon">IG</span>
-                      <div><h4>Instagram</h4><p>Behind the labs and community life.</p></div>
-                    </a>
-                    <a href="https://www.youtube.com/" data-pending="true" target="_blank" rel="noopener" class="follow-card">
-                      <span class="follow-icon">YT</span>
-                      <div><h4>YouTube</h4><p>Tutorials, walkthroughs, framework deep dives.</p></div>
-                    </a>
-                    <a href="https://x.com/" data-pending="true" target="_blank" rel="noopener" class="follow-card">
-                      <span class="follow-icon">X</span>
-                      <div><h4>X / Twitter</h4><p>Short takes on cloud, DevOps, and security.</p></div>
-                    </a>
-                    <a href="https://www.tiktok.com/" data-pending="true" target="_blank" rel="noopener" class="follow-card">
-                      <span class="follow-icon">TT</span>
-                      <div><h4>TikTok</h4><p>30&ndash;60 second tech tips and quick demos.</p></div>
-                    </a>
-                    <a href="https://github.com/" data-pending="true" target="_blank" rel="noopener" class="follow-card">
-                      <span class="follow-icon">GH</span>
-                      <div><h4>GitHub</h4><p>Terraform modules, scripts, and lab repos.</p></div>
-                    </a>
-                    <a href="https://substack.com/" data-pending="true" target="_blank" rel="noopener" class="follow-card">
-                      <span class="follow-icon">SS</span>
-                      <div><h4>Substack</h4><p>Longer essays on the work.</p></div>
-                    </a>
                     <a href="https://discord.gg/KGTpT6whS" target="_blank" rel="noopener" class="follow-card">
                       <span class="follow-icon">DC</span>
                       <div><h4>HHO Discord</h4><p>Live community &mdash; ask, ship, get feedback the same day.</p></div>
                     </a>
+                    <!-- Additional follow cards (Instagram, YouTube, X, TikTok, GitHub, Substack) removed
+                         until real handles are supplied. Restore by pasting <a class="follow-card" href="…">…</a>
+                         blocks and swapping the href for the real profile URL. -->
+
                   </div>
                 </div>
               </div>
@@ -292,25 +304,14 @@
                   <p>This isn't about me &mdash; it's about the next person searching before deciding. Start with the highest-leverage platform for what we did together.</p>
                   <div class="endorse-columns">
                     <div class="endorse-col">
-                      <p class="endorse-col-label">Start Here &middot; Highest Leverage</p>
+                      <p class="endorse-col-label">Highest Leverage</p>
                       <div class="endorse-list">
                         <a href="https://www.linkedin.com/in/kerrypp/" target="_blank" rel="noopener" class="endorse-pill priority">LinkedIn Recommendation</a>
-                        <a href="https://www.google.com/maps" data-pending="true" target="_blank" rel="noopener" class="endorse-pill priority">Google Business</a>
-                        <a href="https://www.ratemyprofessors.com/" data-pending="true" target="_blank" rel="noopener" class="endorse-pill priority">RateMyProfessor</a>
                       </div>
                     </div>
-                    <div class="endorse-col">
-                      <p class="endorse-col-label">Also Helpful</p>
-                      <div class="endorse-list">
-                        <a href="https://www.yelp.com/" data-pending="true" target="_blank" rel="noopener" class="endorse-pill">Yelp</a>
-                        <a href="https://clutch.co/" data-pending="true" target="_blank" rel="noopener" class="endorse-pill">Clutch.co</a>
-                        <a href="https://www.g2.com/" data-pending="true" target="_blank" rel="noopener" class="endorse-pill">G2</a>
-                        <a href="https://www.trustpilot.com/" data-pending="true" target="_blank" rel="noopener" class="endorse-pill">Trustpilot</a>
-                        <a href="https://www.facebook.com/" data-pending="true" target="_blank" rel="noopener" class="endorse-pill">Facebook</a>
-                        <a href="https://www.fiverr.com/" data-pending="true" target="_blank" rel="noopener" class="endorse-pill">Fiverr</a>
-                        <a href="https://www.upwork.com/" data-pending="true" target="_blank" rel="noopener" class="endorse-pill">Upwork</a>
-                      </div>
-                    </div>
+                    <!-- Additional endorse pills (Google Business, RateMyProfessor, Yelp, Clutch, G2, Trustpilot,
+                         Facebook, Fiverr, Upwork) removed until real profile URLs exist. Restore each as
+                         <a class="endorse-pill" href="…">…</a> inside a new <div class="endorse-col">. -->
                   </div>
                 </div>
               </div>
@@ -940,7 +941,7 @@
             <input type="hidden" name="from_name" value="Lead Magnet" />
             <input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off" />
             <label class="sr-only" for="lm-email">Email</label>
-            <input id="lm-email" type="email" name="email" placeholder="you@email.com" required />
+            <input id="lm-email" type="email" name="email" placeholder="you@email.com" autocomplete="email" required />
             <button type="submit" class="button primary">Send me the PDF</button>
             <p class="lm-note">Unsubscribe anytime. The PDF link also appears on this page after you submit.</p>
             <p class="lm-status" id="lm-status" role="status" aria-live="polite" hidden></p>
@@ -1000,15 +1001,15 @@
 
             <label>
               Name *
-              <input type="text" name="name" placeholder="Your name" required />
+              <input type="text" name="name" placeholder="Your name" autocomplete="name" required />
             </label>
             <label>
               Email *
-              <input type="email" name="email" placeholder="you@email.com" required />
+              <input type="email" name="email" placeholder="you@email.com" autocomplete="email" required />
             </label>
             <label>
               Who are you?
-              <select name="role" required>
+              <select name="role">
                 <option value="">Pick one&hellip;</option>
                 <option>Apprentice / Student</option>
                 <option>Peer / Collaborator</option>
@@ -1019,7 +1020,7 @@
             </label>
             <label>
               Looking for
-              <select name="focus" required>
+              <select name="focus">
                 <option value="">Pick one&hellip;</option>
                 <option>Community / HHO Guild</option>
                 <option>Services (Cloud / DevOps / AIOps / Security)</option>
@@ -1031,7 +1032,7 @@
               Your note
               <textarea name="goal" placeholder="A couple of sentences is plenty." rows="4"></textarea>
             </label>
-            <button type="submit" class="button primary">Send</button>
+            <button type="submit" class="button primary">Send my note</button>
             <p class="form-status" id="form-status" role="status" aria-live="polite" hidden></p>
           </form>
         </div>
@@ -1059,7 +1060,7 @@
       </section>
     </main>
 
-    <a href="#connect" class="sticky-cta" id="sticky-cta" aria-label="Book a call">
+    <a href="#connect" class="sticky-cta" id="sticky-cta" aria-label="Book a call" data-track="cta_click|cta=sticky_book_call">
       <span>Book a call</span>
       <span aria-hidden="true">→</span>
     </a>
@@ -1079,12 +1080,6 @@
           <p class="footer-col-label">Follow</p>
           <ul class="footer-links">
             <li><a href="https://www.linkedin.com/in/kerrypp/" target="_blank" rel="noopener">LinkedIn</a></li>
-            <li><a href="https://www.instagram.com/" data-pending="true" target="_blank" rel="noopener">Instagram</a></li>
-            <li><a href="https://www.youtube.com/" data-pending="true" target="_blank" rel="noopener">YouTube</a></li>
-            <li><a href="https://x.com/" data-pending="true" target="_blank" rel="noopener">X / Twitter</a></li>
-            <li><a href="https://www.tiktok.com/" data-pending="true" target="_blank" rel="noopener">TikTok</a></li>
-            <li><a href="https://github.com/" data-pending="true" target="_blank" rel="noopener">GitHub</a></li>
-            <li><a href="https://substack.com/" data-pending="true" target="_blank" rel="noopener">Substack</a></li>
             <li><a href="https://discord.gg/KGTpT6whS" target="_blank" rel="noopener">HHO Discord</a></li>
           </ul>
         </div>
@@ -1092,13 +1087,6 @@
           <p class="footer-col-label">Endorse</p>
           <ul class="footer-links">
             <li><a href="https://www.linkedin.com/in/kerrypp/" target="_blank" rel="noopener">LinkedIn Recommendation</a></li>
-            <li><a href="https://www.google.com/maps" data-pending="true" target="_blank" rel="noopener">Google Business</a></li>
-            <li><a href="https://www.ratemyprofessors.com/" data-pending="true" target="_blank" rel="noopener">RateMyProfessor</a></li>
-            <li><a href="https://clutch.co/" data-pending="true" target="_blank" rel="noopener">Clutch.co</a></li>
-            <li><a href="https://www.g2.com/" data-pending="true" target="_blank" rel="noopener">G2</a></li>
-            <li><a href="https://www.trustpilot.com/" data-pending="true" target="_blank" rel="noopener">Trustpilot</a></li>
-            <li><a href="https://www.fiverr.com/" data-pending="true" target="_blank" rel="noopener">Fiverr</a></li>
-            <li><a href="https://www.upwork.com/" data-pending="true" target="_blank" rel="noopener">Upwork</a></li>
           </ul>
         </div>
         <div class="footer-col">
