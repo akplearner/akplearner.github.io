@@ -1,80 +1,32 @@
-# Kerry P. | Cloud & DevOps Portfolio
+# Kerry P. | Cloud, DevOps & Security Engineer
 
-A modern, animated portfolio website showcasing Kerry P.'s expertise in cloud infrastructure, cybersecurity, and DevOps with an innovative funnel-based design.
+A responsive profile and portfolio site for Kerry P., instructor and community builder in Austin, Texas. It presents CMMC-aligned engineering and learning goals, certification preparation, practical capstones, community, consulting, and collaboration opportunities.
 
-## 🎨 Design Features
+## Five-step funnel
 
-- **Modern Glassy Morphism**: Frosted glass aesthetic with backdrop blur effects
-- **3-Color Palette**: Purple (#c084fc), Cyan (#06b6d4), and Pink (#ec4899) for a candy-crush inspired look
-- **Pixelated Animations**: Smooth transitions, floating elements, and bounce effects
-- **Funnel Structure**: Clear progression through About → Communities → Services → Contact
-- **Fully Responsive**: Optimized for mobile, tablet, and desktop viewing
+1. **Connect** on LinkedIn and join the [HHO Experts Guild Discord](https://discord.gg/2Y4vXTmpZb).
+2. **Endorse** with an honest recommendation or review.
+3. **Join** HHO, workshops, meetups, study groups, and upcoming guilds.
+4. **Consult** on CMMC readiness, cloud, DevOps, automation, physical security, and instruction.
+5. **Collaborate** on project pipeline work, freelance projects, startups, and shared community efforts.
 
-## 📂 Files
+Yelp, RateMyProfessor, Eventbrite, Meetup, and other profile-specific links should be added when the correct profile URLs are available; the site intentionally does not point those names to generic or unverified pages.
 
-- **index.html** – Complete page structure with semantic sections
-- **styles.css** – Modern CSS with glassmorphism, animations, and responsive design
-- **script.js** – Interactive behaviors: form handling, smooth scrolling, card animations
-- **README.md** – This file
+## Learning platforms
 
-## 🚀 Getting Started
+- **Certification preparation:** [HatchCerts](https://hatchcerts.com/)
+- **Hands-on capstones:** [Capstone projects](https://capstone-static-site.vercel.app/)
+- **Professional network:** [LinkedIn](https://www.linkedin.com/in/kerrypp)
+- **Discord:** [Join the HHO Experts Guild](https://discord.gg/2Y4vXTmpZb)
 
-1. Open `index.html` in any modern web browser
-2. No build process or dependencies required – pure HTML, CSS, and JavaScript
-3. All assets are optimized for instant loading
+The top-of-page selector lets visitors choose **Training**, **Consulting**, or **Services**. Service inquiries can be categorized using the selector; CMMC readiness is explicitly marked pending.
 
-## 📋 Sections
+The learning approach emphasizes realistic environment cases, architecture understanding, meaningful build metrics, and PKI-backed records learners can use to track and showcase their work.
 
-1. **Hero** – Eye-catching introduction with key stats
-2. **About** – Kerry's background, experience, and certifications
-3. **Skills** – Technical stack across cloud, security, automation, and development
-4. **Communities** – HackersHideout, InfraRange, and Multi-Tutor Platform
-5. **Services** – Certification training, security labs, mentorship, and community
-6. **Contact** – Form + direct contact information
+## Files
 
-## 🎯 Call-to-Action Funnel
+- `index.html` — semantic page content, funnel, goals, and links
+- `profile.css` — responsive white and navy visual theme with a small terminal-inspired accent
+- `script.js` — accessible mobile navigation and dynamic copyright year
 
-- **Primary CTA**: Join communities and explore labs
-- **Secondary CTAs**: Get early access, learn more, and connect
-- **Contact Form**: Capture interest by use case (HHO, InfraRange, Training, Mentorship, Collaboration)
-
-## 🔧 Customization
-
-Edit the following to personalize:
-
-- **Name & Title**: Line 15 in index.html
-- **Contact Info**: Line 269-271
-- **Color Palette**: CSS variables in styles.css (lines 1-14)
-- **Social Links**: Update href values in footer and contact section
-
-## 📱 Features
-
-✨ Smooth scroll animations  
-🎨 Gradient text effects  
-🔤 Press Start 2P pixelated font option  
-💫 Pulsing logo animation  
-🎯 Interactive form with validation  
-⚡ Hardware-accelerated transitions  
-📊 Staggered animation delays  
-
-## 🌐 Deployment
-
-Ready to deploy anywhere:
-- GitHub Pages (free)
-- Netlify (free)
-- Vercel (free)
-- Traditional hosting (any provider)
-
-Simply upload the three files to your hosting provider.
-
-## 📞 Contact & Links
-
-- **Email**: kerry.p.pro@gmail.com
-- **LinkedIn**: linkedin.com/in/kerrypp
-- **Discord**: HackersHideout Community
-- **Location**: Austin, TX • Remote
-
----
-
-**© 2026 Kerry P.** – Cloud, DevOps & Cybersecurity Specialist
-
+The site uses plain HTML, CSS, and JavaScript. Open `index.html` in a modern browser or deploy the files to GitHub Pages, Netlify, Vercel, or another static host.

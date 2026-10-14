@@ -3,653 +3,272 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Kerry P. — Strategic Architect of Integrated Defense | Austin, TX</title>
+  <meta name="theme-color" content="#f7f9fc" />
+  <meta name="description" content="Kerry P. — Cloud, DevOps & Security Engineer, instructor, and Austin community builder. CMMC-aligned engineering, certification prep, real-world capstones, and collaboration." />
+  <title>Kerry P. | Cloud, DevOps &amp; Security Engineer</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Press+Start+2P&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="profile.css" />
 </head>
 <body>
-  <div class="bg-mesh" aria-hidden="true"></div>
-  <div class="scroll-progress" aria-hidden="true"><span></span></div>
-
-  <div class="page-shell">
-    <header class="topbar" id="topbar">
-      <div class="brand">
-        <p class="brand-label">KP</p>
-        <h1>Strategic Architect of Integrated Defense</h1>
-      </div>
-      <nav class="nav-links" aria-label="Primary">
-        <a href="#router">Start</a>
-        <a href="#services">Services</a>
-        <a href="#work">Work</a>
-        <a href="#connect" class="nav-cta">Book a Call</a>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="#top" aria-label="Kerry P. home">
+        <span class="brand-mark" aria-hidden="true">KP</span>
+        <span class="brand-name">Kerry P.<span>Cloud · DevOps · Security</span></span>
+      </a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-nav">
+        <span class="sr-only">Toggle navigation</span>
+        <span></span><span></span>
+      </button>
+      <nav class="primary-nav" id="primary-nav" data-open="false" aria-label="Main navigation">
+        <a href="#platforms">Learning platforms</a>
+        <a href="#focus">Current focus</a>
+        <a href="#journey">Connect &amp; work together</a>
+        <a class="nav-cta" href="https://www.linkedin.com/in/kerrypp" target="_blank" rel="noopener noreferrer">Connect on LinkedIn <span aria-hidden="true">↗</span></a>
       </nav>
-    </header>
+    </div>
+  </header>
 
-    <main>
-      <!-- PHASE 1 · HOOK -->
-      <section class="hero" id="about">
-        <div class="hero-copy">
-          <p class="eyebrow"><span class="pixel-dot"></span> CMMC 2.0 Deadline · November 10, 2026</p>
-          <h2>Architect of <span class="grad-text">Integrated Defense</span>.<br />Cybersecurity. AI-Ops. Compliance.</h2>
-          <p class="hero-subtitle">10+ years of infrastructure and security — now preparing the Austin–Elgin Defense Industrial Base for the November 2026 deadline.</p>
-
-          <div class="countdown" data-deadline="2026-11-10T00:00:00-06:00" role="timer" aria-label="Time until CMMC 2.0 contract gate">
-            <p class="countdown-label"><span class="pulse-dot"></span> Time to CMMC contract gate</p>
-            <div class="countdown-grid">
-              <div class="countdown-unit"><span class="countdown-value" data-unit="days">—</span><span class="countdown-key">days</span></div>
-              <div class="countdown-unit"><span class="countdown-value" data-unit="hours">—</span><span class="countdown-key">hrs</span></div>
-              <div class="countdown-unit"><span class="countdown-value" data-unit="minutes">—</span><span class="countdown-key">min</span></div>
-              <div class="countdown-unit"><span class="countdown-value" data-unit="seconds">—</span><span class="countdown-key">sec</span></div>
+  <main id="main">
+    <section class="hero page-width" id="top">
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="eyebrow-line" aria-hidden="true"></span> Austin, Texas · Instructor · Community builder</p>
+        <h1>Turn IT knowledge into <span>work you can show.</span></h1>
+        <p class="identity-line">Kerry P. — Cloud, DevOps &amp; Security Engineer · Instructor</p>
+        <p class="hero-intro">CMMC-aligned engineering, DevOps pipelines, automation, and community leadership. I help people prepare for certifications and build practical cloud and security projects—so your skills go beyond the practice test and into work you can explain to employers.</p>
+        <div class="role-chips" aria-label="Professional focus">
+          <span>Lead Instructor · CyberTex</span>
+          <span>10+ years · infrastructure &amp; security</span>
+          <span>Cloud · DevOps · AIOps</span>
+          <span>CMMC readiness · pending</span>
+        </div>
+        <div class="path-picker">
+          <p class="path-picker-label">What are you looking for?</p>
+          <div class="path-tabs" role="tablist" aria-label="Choose a learning or service path">
+            <button class="path-tab is-active" type="button" role="tab" id="path-tab-training" aria-selected="true" aria-controls="path-panel-training" tabindex="0" data-path="training">Training</button>
+            <button class="path-tab" type="button" role="tab" id="path-tab-consulting" aria-selected="false" aria-controls="path-panel-consulting" tabindex="-1" data-path="consulting">Consulting</button>
+            <button class="path-tab" type="button" role="tab" id="path-tab-services" aria-selected="false" aria-controls="path-panel-services" tabindex="-1" data-path="services">Services</button>
+          </div>
+          <div class="path-panels">
+            <div class="path-panel is-active" id="path-panel-training" role="tabpanel" aria-labelledby="path-tab-training" data-path-panel="training">
+              <p>Prepare for certifications or turn your knowledge into an employer-ready build.</p>
+              <div class="path-actions">
+                <a class="path-link path-link-primary" href="https://hatchcerts.com/" target="_blank" rel="noopener noreferrer">Explore HatchCerts <span aria-hidden="true">↗</span></a>
+                <a class="path-link" href="https://capstone-static-site.vercel.app/" target="_blank" rel="noopener noreferrer">Build a capstone <span aria-hidden="true">↗</span></a>
+              </div>
+            </div>
+            <div class="path-panel" id="path-panel-consulting" role="tabpanel" aria-labelledby="path-tab-consulting" data-path-panel="consulting" hidden>
+              <p>Talk through a challenge, scope a project, or map your next technical step.</p>
+              <div class="path-actions">
+                <a class="path-link path-link-primary" href="mailto:kerry.p.pro@gmail.com?subject=Consultation%20Request">Request a consultation <span aria-hidden="true">→</span></a>
+                <a class="path-link" href="#journey">See how we can work together <span aria-hidden="true">↓</span></a>
+              </div>
+            </div>
+            <div class="path-panel" id="path-panel-services" role="tabpanel" aria-labelledby="path-tab-services" data-path-panel="services" hidden>
+              <p>Choose the kind of help you need and send a focused inquiry.</p>
+              <div class="service-picker-row">
+                <label class="sr-only" for="service-type">Select a service</label>
+                <select id="service-type">
+                  <option value="" selected disabled>Choose a service…</option>
+                  <option value="Cloud architecture and infrastructure">Cloud architecture &amp; infrastructure</option>
+                  <option value="DevOps, CI/CD, and automation">DevOps, CI/CD &amp; automation</option>
+                  <option value="Security advisory">Security advisory</option>
+                  <option value="CMMC readiness (pending)">CMMC readiness — pending</option>
+                  <option value="AIOps and workflow automation">AIOps &amp; workflow automation</option>
+                  <option value="Physical security systems">Physical security systems</option>
+                  <option value="Tutoring and certification coaching">Tutoring &amp; certification coaching</option>
+                  <option value="Project or startup collaboration">Project / startup collaboration</option>
+                </select>
+                <a class="path-link path-link-primary is-disabled" id="service-contact-link" href="mailto:kerry.p.pro@gmail.com?subject=Service%20inquiry" aria-disabled="true" tabindex="-1">Choose service first <span aria-hidden="true">→</span></a>
+              </div>
             </div>
           </div>
-
-          <div class="hero-roles">
-            <span class="role-chip">Lead Instructor · CyberTex</span>
-            <span class="role-chip">Cloud + AIOps Architect</span>
-            <span class="role-chip">HHO Guild Network</span>
-            <span class="role-chip">CMMC CCP · 2026</span>
-          </div>
-          <div class="hero-actions">
-            <a href="#connect" class="button primary"><span class="btn-label">Request a CMMC Readiness Briefing</span><span class="btn-arrow" aria-hidden="true">→</span></a>
-            <a href="#router" class="button secondary"><span class="btn-label">Find My Path</span><span class="btn-arrow" aria-hidden="true">↓</span></a>
-          </div>
-          <p class="hero-note">By November 10, 2026, CMMC Level 2 becomes a condition of contract award for DoD solicitations. Position your organization now.</p>
         </div>
-        <a href="#router" class="scroll-cue" aria-label="Scroll to start">
-          <span class="scroll-cue-dot"></span>
-        </a>
-      </section>
+        <p class="hero-footnote">Follow → Review → Join → Consult → Build together</p>
+      </div>
 
-      <!-- PHASE 2 · PROOF STRIP + ROUTE (merged) -->
-      <section class="section router" id="router">
-        <div class="metrics-strip">
-          <div class="metric-chip">
-            <span class="metric-value" data-count="10" data-suffix="+">0+</span>
-            <p>Years infra &amp; security</p>
-          </div>
-          <div class="metric-chip">
-            <span class="metric-value" data-count="110">0</span>
-            <p>NIST 800-171 practices mapped</p>
-          </div>
-          <div class="metric-chip">
-            <span class="metric-value" data-count="4">0</span>
-            <p>HHO specialty guilds</p>
-          </div>
-          <div class="metric-chip">
-            <span class="metric-value">2026</span>
-            <p>CMMC CCP sprint target</p>
-          </div>
+      <aside class="proof-panel" aria-label="Example project verification output">
+        <div class="terminal-top">
+          <span class="terminal-dots" aria-hidden="true"><i></i><i></i><i></i></span>
+          <span>portfolio-proof.log</span>
+          <span class="terminal-status"><span aria-hidden="true"></span> verified</span>
         </div>
-
-        <div class="section-head">
-          <span>Start Here</span>
-          <h3>Your journey with me &mdash; follow, endorse, join, then work together.</h3>
+        <div class="terminal-content">
+          <p><span class="terminal-prompt">$</span> project verify --evidence</p>
+          <p class="terminal-muted">checking build record and measurements…</p>
+          <div class="terminal-result">
+            <span class="terminal-check" aria-hidden="true">✓</span>
+            <span><strong>Build evidence</strong><small>Architecture · implementation · results</small></span>
+          </div>
+          <div class="terminal-result">
+            <span class="terminal-check" aria-hidden="true">✓</span>
+            <span><strong>PKI-backed record</strong><small>Track work. Share verifiable proof.</small></span>
+          </div>
+          <div class="terminal-footer"><span>REAL SCENARIOS</span><span>MEASURED BUILDS</span></div>
         </div>
-        <p class="journey-intro">Five steps, one clear action each. Start at the top and move at your pace &mdash; or jump straight to what you need.</p>
+      </aside>
+    </section>
 
-        <!-- Folded-in audience router -->
-        <div class="quickpick">
-          <span class="quickpick-label">I'm here because&hellip;</span>
-          <a href="#services" class="quickpick-chip">🏢 CMMC-ready by 2026</a>
-          <a href="#work" class="quickpick-chip" data-open-tab="platforms">🎓 Learn + earn certs</a>
-          <a href="#services" class="quickpick-chip">🛠️ IT / security help</a>
-          <a href="#work" class="quickpick-chip" data-open-tab="guilds">⚔️ Community</a>
-          <a href="#work" class="quickpick-chip" data-open-tab="built">💼 Hiring / partner</a>
+    <section class="focus-section section-space" id="focus">
+      <div class="page-width focus-layout">
+        <div class="focus-copy">
+          <p class="eyebrow">Current goals</p>
+          <h2>Build capability that holds up in the real world.</h2>
+          <p>Focused on practical readiness, systems that work, and stronger pathways from learning into employment and collaboration.</p>
         </div>
+        <div class="focus-grid">
+          <article class="focus-item">
+            <span class="focus-tag focus-tag-pending">PENDING</span>
+            <h3>CMMC readiness</h3>
+            <p>CMMC readiness services are pending. The learning focus includes NIST SP 800-171, secure architecture, evidence, and repeatable operations.</p>
+            <span class="focus-detail">Status · Pending</span>
+          </article>
+          <article class="focus-item">
+            <span class="focus-tag">BUILDING</span>
+            <h3>Cloud, DevOps &amp; automation</h3>
+            <p>Design and build cloud infrastructure, DevOps pipelines, security automation, and measurable operational improvements.</p>
+            <span class="focus-detail">AWS · Azure · IaC · CI/CD · AIOps</span>
+          </article>
+          <article class="focus-item">
+            <span class="focus-tag">GROWING</span>
+            <h3>Learning &amp; community</h3>
+            <p>Make hands-on education, workshops, and peer support more accessible—and connect learners with meaningful project work.</p>
+            <span class="focus-detail">HatchCerts · Capstones · HHO</span>
+          </article>
+        </div>
+      </div>
+    </section>
 
-        <!-- 5-stage funnel -->
+    <section class="platform-section section-space" id="platforms">
+      <div class="page-width">
+        <div class="section-heading">
+          <p class="eyebrow">Choose your next step</p>
+          <h2>Two ways to move your skills forward.</h2>
+          <p>Start with the goal you have today. Build toward skills you can confidently demonstrate tomorrow.</p>
+        </div>
+        <div class="platform-grid">
+          <article class="platform-card cert-card">
+            <div class="card-kicker"><span class="card-icon" aria-hidden="true">01</span><span>Prepare with purpose</span></div>
+            <h3>Certification test prep</h3>
+            <p>Get ready for certification exams by connecting the concepts to realistic environment cases—not just memorizing answers.</p>
+            <ul class="feature-list">
+              <li>Scenario-based practice</li>
+              <li>Understand the “why” behind each answer</li>
+              <li>Build confidence for exam day and beyond</li>
+            </ul>
+            <a class="card-link" href="https://hatchcerts.com/" target="_blank" rel="noopener noreferrer">Visit HatchCerts <span aria-hidden="true">↗</span></a>
+          </article>
+
+          <article class="platform-card capstone-card">
+            <div class="card-kicker"><span class="card-icon" aria-hidden="true">02</span><span>Build beyond the lab</span></div>
+            <h3>Employer-ready capstones</h3>
+            <p>Turn learning into real builds. Practice architecture decisions, implementation, and the metrics that make project outcomes clear.</p>
+            <ul class="feature-list">
+              <li>Real-world cloud and security cases</li>
+              <li>Architecture you can explain and defend</li>
+              <li>PKI-backed records to track and showcase your work</li>
+            </ul>
+            <a class="card-link" href="https://capstone-static-site.vercel.app/" target="_blank" rel="noopener noreferrer">Explore capstone projects <span aria-hidden="true">↗</span></a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="journey-section section-space" id="journey">
+      <div class="page-width">
+        <div class="section-heading">
+          <p class="eyebrow">A clear path to work together</p>
+          <h2>Connect. Contribute. Build together.</h2>
+          <p>Start wherever you are—follow along, join the community, get support, or collaborate on what comes next.</p>
+        </div>
         <ol class="funnel">
-          <li class="funnel-stage is-open" data-stage="01">
-            <div class="stage-rail"><span class="stage-num">01</span></div>
-            <div class="stage-main" data-glow>
-              <button class="stage-trigger" type="button" aria-expanded="true">
-                <span class="stage-headings">
-                  <span class="stage-label">Follow</span>
-                  <span class="stage-title">Stay in my world &mdash; pick the platform you use</span>
-                </span>
-                <span class="stage-chevron" aria-hidden="true">▾</span>
-              </button>
-              <div class="stage-panel">
-                <div class="stage-panel-inner">
-                  <p>Different platforms, different content. Follow where you already spend time.</p>
-                  <div class="follow-grid">
-                    <a href="https://www.linkedin.com/in/kerrypp/" target="_blank" rel="noopener" class="follow-card">
-                      <span class="follow-icon">in</span>
-                      <div><h4>LinkedIn</h4><p>Career frameworks, CMMC commentary, professional wins.</p></div>
-                    </a>
-                    <a href="#REPLACE-INSTAGRAM-URL" target="_blank" rel="noopener" class="follow-card">
-                      <span class="follow-icon">IG</span>
-                      <div><h4>Instagram</h4><p>Behind the labs, community life, Austin&ndash;Elgin moments.</p></div>
-                    </a>
-                    <a href="#REPLACE-YOUTUBE-URL" target="_blank" rel="noopener" class="follow-card">
-                      <span class="follow-icon">YT</span>
-                      <div><h4>YouTube</h4><p>Full tutorials, lab walkthroughs, framework deep dives.</p></div>
-                    </a>
-                    <a href="#REPLACE-X-TWITTER-URL" target="_blank" rel="noopener" class="follow-card">
-                      <span class="follow-icon">X</span>
-                      <div><h4>X / Twitter</h4><p>Real-time takes on cyber, AIOps, and the DIB beat.</p></div>
-                    </a>
-                    <a href="#REPLACE-TIKTOK-URL" target="_blank" rel="noopener" class="follow-card">
-                      <span class="follow-icon">TT</span>
-                      <div><h4>TikTok</h4><p>30&ndash;60 second tech tips, camera placement, AI workflow.</p></div>
-                    </a>
-                    <a href="#REPLACE-GITHUB-URL" target="_blank" rel="noopener" class="follow-card">
-                      <span class="follow-icon">GH</span>
-                      <div><h4>GitHub</h4><p>Terraform modules, Ansible playbooks, lab repos.</p></div>
-                    </a>
-                    <a href="#REPLACE-SUBSTACK-URL" target="_blank" rel="noopener" class="follow-card">
-                      <span class="follow-icon">SS</span>
-                      <div><h4>Substack</h4><p>Long-form essays on building integrated defense.</p></div>
-                    </a>
-                    <a href="mailto:kerry.p.pro@gmail.com?subject=HHO%20Discord%20Invite" class="follow-card">
-                      <span class="follow-icon">DC</span>
-                      <div><h4>HHO Discord</h4><p>Live community &mdash; ask, ship, get feedback the same day.</p></div>
-                    </a>
-                  </div>
-                </div>
+          <li class="funnel-step">
+            <span class="funnel-number">01</span>
+            <div class="funnel-content">
+              <p class="funnel-label">Follow</p>
+              <h3>Connect with me</h3>
+              <p>Keep up with professional updates, classes, events, community, and the work in progress.</p>
+              <div class="funnel-links">
+                <a href="https://www.linkedin.com/in/kerrypp" target="_blank" rel="noopener noreferrer">LinkedIn <span aria-hidden="true">↗</span></a>
+                <a href="https://discord.gg/2Y4vXTmpZb" target="_blank" rel="noopener noreferrer">Experts Guild on Discord <span aria-hidden="true">↗</span></a>
               </div>
+              <p class="profile-note">Yelp · RateMyProfessor · Eventbrite · Meetup · other socials — profile links can be added here when available.</p>
             </div>
           </li>
-
-          <li class="funnel-stage is-open" data-stage="02">
-            <div class="stage-rail"><span class="stage-num">02</span></div>
-            <div class="stage-main" data-glow>
-              <button class="stage-trigger" type="button" aria-expanded="true">
-                <span class="stage-headings">
-                  <span class="stage-label">Endorse</span>
-                  <span class="stage-title">Helped you? Leave a 2-minute review or recommendation</span>
-                </span>
-                <span class="stage-chevron" aria-hidden="true">▾</span>
-              </button>
-              <div class="stage-panel">
-                <div class="stage-panel-inner">
-                  <p>This isn't about me &mdash; it's about the next contractor or engineer searching before deciding. Start with the highest-leverage platform for what we did together.</p>
-                  <div class="endorse-columns">
-                    <div class="endorse-col">
-                      <p class="endorse-col-label">Start Here &middot; Highest Leverage</p>
-                      <div class="endorse-list">
-                        <a href="https://www.linkedin.com/in/kerrypp/" target="_blank" rel="noopener" class="endorse-pill priority">LinkedIn Recommendation</a>
-                        <a href="#REPLACE-GOOGLE-BUSINESS-REVIEW-URL" target="_blank" rel="noopener" class="endorse-pill priority">Google Business</a>
-                        <a href="#REPLACE-RATEMYPROFESSOR-URL" target="_blank" rel="noopener" class="endorse-pill priority">RateMyProfessor</a>
-                      </div>
-                    </div>
-                    <div class="endorse-col">
-                      <p class="endorse-col-label">Also Helpful</p>
-                      <div class="endorse-list">
-                        <a href="#REPLACE-YELP-URL" target="_blank" rel="noopener" class="endorse-pill">Yelp</a>
-                        <a href="#REPLACE-CLUTCH-URL" target="_blank" rel="noopener" class="endorse-pill">Clutch.co</a>
-                        <a href="#REPLACE-G2-URL" target="_blank" rel="noopener" class="endorse-pill">G2</a>
-                        <a href="#REPLACE-TRUSTPILOT-URL" target="_blank" rel="noopener" class="endorse-pill">Trustpilot</a>
-                        <a href="#REPLACE-FACEBOOK-URL" target="_blank" rel="noopener" class="endorse-pill">Facebook</a>
-                        <a href="#REPLACE-FIVERR-URL" target="_blank" rel="noopener" class="endorse-pill">Fiverr</a>
-                        <a href="#REPLACE-UPWORK-URL" target="_blank" rel="noopener" class="endorse-pill">Upwork</a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+          <li class="funnel-step">
+            <span class="funnel-number">02</span>
+            <div class="funnel-content">
+              <p class="funnel-label">Recommend</p>
+              <h3>Leave a review or recommendation</h3>
+              <p>Your honest feedback helps future students, clients, and collaborators decide whether my work is right for them.</p>
+              <div class="funnel-links">
+                <a href="https://www.linkedin.com/in/kerrypp" target="_blank" rel="noopener noreferrer">LinkedIn recommendation <span aria-hidden="true">↗</span></a>
+                <a href="mailto:kerry.p.pro@gmail.com?subject=Review%20and%20Recommendation%20Links">Request Yelp / RateMyProfessor review links <span aria-hidden="true">→</span></a>
               </div>
+              <p class="profile-note">You can also share feedback after a Discord session, workshop, or meetup.</p>
             </div>
           </li>
-
-          <li class="funnel-stage" data-stage="03">
-            <div class="stage-rail"><span class="stage-num">03</span></div>
-            <div class="stage-main" data-glow>
-              <button class="stage-trigger" type="button" aria-expanded="false">
-                <span class="stage-headings">
-                  <span class="stage-label">Join</span>
-                  <span class="stage-title">Plug into the HHO Community Guilds</span>
-                </span>
-                <span class="stage-chevron" aria-hidden="true">▾</span>
-              </button>
-              <div class="stage-panel">
-                <div class="stage-panel-inner">
-                  <p>Discord is free. Real engineers, real labs, structured progression. Then pick a guild &mdash; you don't grow alone.</p>
-                  <div class="chip-row">
-                    <a href="#work" class="mini-chip" data-open-tab="guilds">🧠 Expert Guild</a>
-                    <a href="#work" class="mini-chip" data-open-tab="guilds">🛡️ Physical Elite</a>
-                    <a href="#work" class="mini-chip" data-open-tab="guilds">💼 Business &amp; Investment</a>
-                    <a href="#work" class="mini-chip" data-open-tab="guilds">✨ Spiritual Leadership</a>
-                  </div>
-                  <a href="mailto:kerry.p.pro@gmail.com?subject=HHO%20Discord%20Invite" class="button secondary small stage-cta">Request Discord invite</a>
-                </div>
+          <li class="funnel-step">
+            <span class="funnel-number">03</span>
+            <div class="funnel-content">
+              <p class="funnel-label">Join</p>
+              <h3>Find your community</h3>
+              <p>Join HHO, learn alongside peers, and take part in workshops, study groups, meetups, and community projects.</p>
+              <div class="guild-grid">
+                <article class="guild-card guild-card-live"><span class="guild-status">JOIN NOW</span><h4>Experts Guild</h4><p>Cybersecurity, CMMC, AI, and litigation.</p><a href="https://discord.gg/2Y4vXTmpZb" target="_blank" rel="noopener noreferrer">Join on Discord ↗</a></article>
+                <article class="guild-card"><span class="guild-status">COMING SOON</span><h4>Physical Elite Guild</h4><p>Military experience, survival, and physical security.</p></article>
+                <article class="guild-card"><span class="guild-status">COMING SOON</span><h4>Business &amp; Investment Guild</h4><p>Founders, operators, investors, and builders.</p></article>
+                <article class="guild-card"><span class="guild-status">COMING SOON</span><h4>Spiritual Leadership Guild</h4><p>Ethics, alignment, and protecting the vulnerable.</p></article>
               </div>
+              <a class="funnel-cta" href="https://discord.gg/2Y4vXTmpZb" target="_blank" rel="noopener noreferrer">Join the Experts Guild on Discord <span aria-hidden="true">↗</span></a>
             </div>
           </li>
-
-          <li class="funnel-stage" data-stage="04">
-            <div class="stage-rail"><span class="stage-num">04</span></div>
-            <div class="stage-main" data-glow>
-              <button class="stage-trigger" type="button" aria-expanded="false">
-                <span class="stage-headings">
-                  <span class="stage-label">Services</span>
-                  <span class="stage-title">Need it done? Here's what I deliver</span>
-                </span>
-                <span class="stage-chevron" aria-hidden="true">▾</span>
-              </button>
-              <div class="stage-panel">
-                <div class="stage-panel-inner">
-                  <p>Six integrated capabilities that secure your organization end-to-end.</p>
-                  <div class="chip-row">
-                    <a href="#services" class="mini-chip">🔐 CMMC &amp; NIST</a>
-                    <a href="#services" class="mini-chip">☁️ Cloud + Infra</a>
-                    <a href="#services" class="mini-chip">🤖 AIOps</a>
-                    <a href="#services" class="mini-chip">🏗️ Physical Security</a>
-                    <a href="#services" class="mini-chip">⚙️ DevOps</a>
-                    <a href="#services" class="mini-chip">🎯 L2 Auditing</a>
-                  </div>
-                  <a href="#services" class="button secondary small stage-cta">See full services &darr;</a>
-                </div>
+          <li class="funnel-step">
+            <span class="funnel-number">04</span>
+            <div class="funnel-content">
+              <p class="funnel-label">Get support</p>
+              <h3>Start with a consultation</h3>
+              <p>Start with one or two sessions to clarify the challenge, scope a project, or get CMMC readiness and cloud / DevOps security advice. Continue into project work or ongoing support when it makes sense.</p>
+              <div class="service-grid">
+                <span>CMMC readiness · pending</span><span>Cloud architecture · Terraform · IaC</span>
+                <span>DevOps · CI/CD · scripting</span><span>AIOps · workflow automation</span>
+                <span>Cameras · access control · cabling</span><span>Tutoring · cert prep · coaching · labs</span>
               </div>
+              <a class="funnel-cta" href="mailto:kerry.p.pro@gmail.com?subject=Consultation%20Request">Discuss a consultation <span aria-hidden="true">→</span></a>
             </div>
           </li>
-
-          <li class="funnel-stage" data-stage="05">
-            <div class="stage-rail"><span class="stage-num">05</span></div>
-            <div class="stage-main" data-glow>
-              <button class="stage-trigger" type="button" aria-expanded="false">
-                <span class="stage-headings">
-                  <span class="stage-label">Work With Me</span>
-                  <span class="stage-title">Book a briefing &mdash; or pick another path</span>
-                </span>
-                <span class="stage-chevron" aria-hidden="true">▾</span>
-              </button>
-              <div class="stage-panel">
-                <div class="stage-panel-inner">
-                  <p>Free 20&ndash;30 minute call. You leave with a clear next step &mdash; readiness, training, or partnership.</p>
-                  <div class="chip-row">
-                    <a href="#connect" class="mini-chip">📅 Book a readiness call</a>
-                    <a href="#connect" class="mini-chip">📨 The Weekly Rep newsletter</a>
-                    <a href="mailto:kerry.p.pro@gmail.com?subject=Partnership%20%2F%20Referral" class="mini-chip">🤝 Recruiter / partner</a>
-                  </div>
-                  <a href="#connect" class="button primary small stage-cta">Book a call &darr;</a>
-                </div>
+          <li class="funnel-step">
+            <span class="funnel-number">05</span>
+            <div class="funnel-content">
+              <p class="funnel-label">Collaborate</p>
+              <h3>Build work that grows into more</h3>
+              <p>Join the project pipeline, collaborate on freelance work, support startups, share opportunities, and help grow the HHO ecosystem.</p>
+              <div class="service-grid">
+                <span>Freelance projects &amp; referrals</span><span>Startup cloud / DevOps / security</span>
+                <span>Build CMMC-aligned systems</span><span>Contribute to guild projects</span>
               </div>
+              <a class="funnel-cta" href="mailto:kerry.p.pro@gmail.com?subject=Project%20Pipeline%20and%20Collaboration">Share an opportunity or collaborate <span aria-hidden="true">→</span></a>
             </div>
           </li>
         </ol>
-      </section>
-
-      <!-- PHASE 3 · WHAT I DO (accordion) -->
-      <section class="section services-accordion" id="services">
-        <div class="section-head">
-          <span>Total Spectrum Security</span>
-          <h3>Six integrated capabilities that secure your organization end-to-end.</h3>
-        </div>
-        <div class="accordion">
-          <div class="acc-item is-open" data-glow>
-            <button class="acc-trigger" type="button" aria-expanded="true">
-              <span class="acc-icon">🔐</span>
-              <span class="acc-heading">CMMC &amp; NIST Readiness</span>
-              <span class="status-tag current">Current</span>
-              <span class="acc-chevron" aria-hidden="true">▾</span>
-            </button>
-            <div class="acc-panel">
-              <div class="acc-panel-inner">
-                <p>Gap analysis, control mapping, and remediation roadmaps for organizations preparing for CMMC Level 2 — backed by Terraform, Ansible, and AIOps automation.</p>
-                <ul class="feature-list">
-                  <li>NIST SP 800-171 gap assessments</li>
-                  <li>Control mapping &amp; remediation roadmaps</li>
-                  <li>Pre-audit documentation packages</li>
-                  <li>Continuous compliance via AIOps</li>
-                </ul>
-                <a href="mailto:kerry.p.pro@gmail.com?subject=CMMC%20Readiness%20Briefing" class="card-cta">Book a readiness briefing <span aria-hidden="true">→</span></a>
-              </div>
-            </div>
-          </div>
-
-          <div class="acc-item" data-glow>
-            <button class="acc-trigger" type="button" aria-expanded="false">
-              <span class="acc-icon">☁️</span>
-              <span class="acc-heading">Cloud + Infrastructure</span>
-              <span class="acc-chevron" aria-hidden="true">▾</span>
-            </button>
-            <div class="acc-panel">
-              <div class="acc-panel-inner">
-                <p>Build secure, scalable cloud systems with confidence and delivery speed.</p>
-                <ul class="feature-list">
-                  <li>AWS &amp; Azure architecture</li>
-                  <li>Terraform + infrastructure as code</li>
-                  <li>Kubernetes, CI/CD, observability</li>
-                </ul>
-                <a href="mailto:kerry.p.pro@gmail.com?subject=Cloud%20Architecture%20Review" class="card-cta">Scope a cloud build <span aria-hidden="true">→</span></a>
-              </div>
-            </div>
-          </div>
-
-          <div class="acc-item" data-glow>
-            <button class="acc-trigger" type="button" aria-expanded="false">
-              <span class="acc-icon">🤖</span>
-              <span class="acc-heading">AIOps + Agentic Systems</span>
-              <span class="acc-chevron" aria-hidden="true">▾</span>
-            </button>
-            <div class="acc-panel">
-              <div class="acc-panel-inner">
-                <p>Leverage AI for intelligent automation and self-healing infrastructure.</p>
-                <ul class="feature-list">
-                  <li>OpenClaw automation frameworks</li>
-                  <li>Agentic workflows and AI-driven ops</li>
-                  <li>Predictive monitoring and remediation</li>
-                </ul>
-                <a href="mailto:kerry.p.pro@gmail.com?subject=AIOps%20Automation%20Engagement" class="card-cta">Map an AIOps pilot <span aria-hidden="true">→</span></a>
-              </div>
-            </div>
-          </div>
-
-          <div class="acc-item" data-glow>
-            <button class="acc-trigger" type="button" aria-expanded="false">
-              <span class="acc-icon">🏗️</span>
-              <span class="acc-heading">Physical Security + Wiring</span>
-              <span class="acc-chevron" aria-hidden="true">▾</span>
-            </button>
-            <div class="acc-panel">
-              <div class="acc-panel-inner">
-                <p>Design complete physical security systems from cameras to access control.</p>
-                <ul class="feature-list">
-                  <li>IP camera &amp; PoE wiring systems</li>
-                  <li>Badge &amp; multi-factor access control</li>
-                  <li>Network closets &amp; perimeter planning</li>
-                </ul>
-                <a href="mailto:kerry.p.pro@gmail.com?subject=Physical%20Security%20Walkthrough" class="card-cta">Request a site walkthrough <span aria-hidden="true">→</span></a>
-              </div>
-            </div>
-          </div>
-
-          <div class="acc-item" data-glow>
-            <button class="acc-trigger" type="button" aria-expanded="false">
-              <span class="acc-icon">⚙️</span>
-              <span class="acc-heading">Automation + DevOps</span>
-              <span class="acc-chevron" aria-hidden="true">▾</span>
-            </button>
-            <div class="acc-panel">
-              <div class="acc-panel-inner">
-                <p>Turn manual work into repeatable systems that scale under pressure.</p>
-                <ul class="feature-list">
-                  <li>Ansible, Python, shell automation</li>
-                  <li>GitOps workflows and pipeline design</li>
-                  <li>Infrastructure repeatability + reliability</li>
-                </ul>
-                <a href="mailto:kerry.p.pro@gmail.com?subject=DevOps%20Automation%20Engagement" class="card-cta">Automate a workflow <span aria-hidden="true">→</span></a>
-              </div>
-            </div>
-          </div>
-
-          <div class="acc-item" data-glow>
-            <button class="acc-trigger" type="button" aria-expanded="false">
-              <span class="acc-icon">🎯</span>
-              <span class="acc-heading">Certified Level 2 Auditing</span>
-              <span class="status-tag soon">Q3 2027</span>
-              <span class="acc-chevron" aria-hidden="true">▾</span>
-            </button>
-            <div class="acc-panel">
-              <div class="acc-panel-inner">
-                <p>Pursuing CCP (2026) and CCA certification to provide official Level 2 audits via C3PAO partnership.</p>
-                <ul class="feature-list">
-                  <li>CCP exam target: Q3 2026</li>
-                  <li>CCA training &amp; background check: 2027</li>
-                  <li>Early-access list for assessment slots</li>
-                </ul>
-                <a href="mailto:kerry.p.pro@gmail.com?subject=L2%20Audit%20Early%20Access" class="card-cta">Join the early-access list <span aria-hidden="true">→</span></a>
-              </div>
-            </div>
-          </div>
-        </div>
-        <p class="section-foot">Not sure which fits? <a href="#connect">Send a one-line note</a> and I'll route you.</p>
-      </section>
-
-      <!-- PHASE 4 · PROOF OF WORK (tabs: Built / Platforms / Guilds) -->
-      <section class="section work" id="work">
-        <div class="section-head">
-          <span>Proof of Work</span>
-          <h3>What I've built, what I'm shipping, and the network behind it.</h3>
-        </div>
-
-        <div class="tabs" role="tablist" aria-label="Proof of work categories">
-          <button class="tab is-active" type="button" role="tab" id="tab-built" aria-selected="true" aria-controls="panel-built" data-tab="built">Built</button>
-          <button class="tab" type="button" role="tab" id="tab-platforms" aria-selected="false" aria-controls="panel-platforms" data-tab="platforms">Platforms</button>
-          <button class="tab" type="button" role="tab" id="tab-guilds" aria-selected="false" aria-controls="panel-guilds" data-tab="guilds">Guilds</button>
-        </div>
-
-        <div class="tab-panels">
-          <!-- BUILT -->
-          <div class="tab-panel is-active" id="panel-built" role="tabpanel" aria-labelledby="tab-built" data-panel="built">
-            <div class="project-grid">
-              <article class="project-card" data-glow>
-                <div class="project-tag">Lab</div>
-                <h4>CMMC Automation Lab (PENDING)</h4>
-                <p>Terraform and Ansible environment mapping NIST SP 800-171 practices across Azure and AWS tenants. Designed for CyberTex curriculum and InfraRange early access.</p>
-                <p class="project-footnote">Compliance-as-code, repeatable per cohort.</p>
-                <a href="mailto:kerry.p.pro@gmail.com?subject=CMMC%20Lab%20Walkthrough" class="card-cta">Request a walkthrough <span aria-hidden="true">→</span></a>
-              </article>
-              <article class="project-card" data-glow>
-                <div class="project-tag">Lab</div>
-                <h4>AIOps Incident Response Pipeline</h4>
-                <p>Wazuh and Python-driven automation pipeline that reduces MTTR for simulated incidents. Used in instructor-led cohorts to teach detection-to-remediation workflows.</p>
-                <p class="project-footnote">From alert to remediation in a guided lab environment.</p>
-                <a href="mailto:kerry.p.pro@gmail.com?subject=AIOps%20Pipeline%20Demo" class="card-cta">See the pipeline <span aria-hidden="true">→</span></a>
-              </article>
-              <article class="project-card" data-glow>
-                <div class="project-tag">Community Groups</div>
-                <h4>HHO Framework for the Community </h4>
-                <p>Architected a high-trust Discord guild network with structured roles, four specialty guilds, and progression paths for engineers, veterans, and domain experts.</p>
-                <p class="project-footnote">Community as infrastructure — disciplined, scalable, mission-aligned goals and projects.</p>
-                <a href="mailto:kerry.p.pro@gmail.com?subject=HHO%20Framework%20Brief" class="card-cta">Get the framework brief <span aria-hidden="true">→</span></a>
-              </article>
-            </div>
-          </div>
-
-          <!-- PLATFORMS -->
-          <div class="tab-panel" id="panel-platforms" role="tabpanel" aria-labelledby="tab-platforms" data-panel="platforms" hidden>
-            <div class="platform-grid">
-              <article class="platform-card">
-                <div class="platform-head">
-                  <span class="platform-icon">🧑‍💻</span>
-                  <span class="status-tag live">Live</span>
-                </div>
-                <h4>HHO-CertPrep</h4>
-                <p>Certification preparation platform for cybersecurity professionals, Cloud, and other IT professionals.</p>
-                <ul class="feature-list">
-                  <li>Multiplechoice questions and PBQs</li>
-                  <li>PBQ review and question banks breakdowns</li>
-                </ul>
-                <a href="mailto:kerry.p.pro@gmail.com?subject=HHO%20Discord%20Invite" class="button secondary small">Join the Discord</a>
-              </article>
-              <article class="platform-card">
-                <div class="platform-head">
-                  <span class="platform-icon">🏗️</span>
-                  <span class="status-tag soon">Early Access — 2026</span>
-                </div>
-                <h4>InfraRange</h4>
-                <p>Hands-on lab platform under active development. Engineers will build CMMC-aligned infrastructure across Azure and AWS and earn skill badges tied to NIST 800-171 controls.</p>
-                <ul class="feature-list">
-                  <li>Guided Terraform &amp; Ansible labs</li>
-                  <li>Compliance-as-code scenarios</li>
-                  <li>Badge-based progression</li>
-                </ul>
-                <a href="#connect" class="button secondary small">Join the Waitlist</a>
-              </article>
-              <article class="platform-card">
-                <div class="platform-head">
-                  <span class="platform-icon">👥</span>
-                  <span class="status-tag soon">Coming 2027</span>
-                </div>
-                <h4>Multi-Tutor</h4>
-                <p>Live workshop and recruiting platform connecting cohort-trained engineers to organizations needing high-readiness security talent in the DIB.</p>
-                <ul class="feature-list">
-                  <li>Instructor-led cohorts at scale</li>
-                  <li>Vetted talent pipeline from HHO Guild</li>
-                  <li>Practice-led, employer-aligned curriculum</li>
-                </ul>
-                <a href="#connect" class="button secondary small">Get Notified</a>
-              </article>
-            </div>
-          </div>
-
-          <!-- GUILDS -->
-          <div class="tab-panel" id="panel-guilds" role="tabpanel" aria-labelledby="tab-guilds" data-panel="guilds" hidden>
-            <div class="guild-grid">
-              <article class="guild-card" data-glow>
-                <span class="guild-icon">🧠</span>
-                <h4>Experts Guild</h4>
-                <p>A brain trust of Cybersecurity, AI, and Litigation experts protecting corporate assets and intellectual property.</p>
-                <a href="mailto:kerry.p.pro@gmail.com?subject=Expert%20Guild%20Application" class="card-cta">Apply to the Expert Guild <span aria-hidden="true">→</span></a>
-              </article>
-              <article class="guild-card" data-glow>
-                <span class="guild-icon">🛡️</span>
-                <h4>Physical Elite</h4>
-                <p>Ex-military and survivalist professionals securing the physical perimeter and critical infrastructure.</p>
-                <a href="mailto:kerry.p.pro@gmail.com?subject=Physical%20Elite%20Application" class="card-cta">Apply to Physical Elite <span aria-hidden="true">→</span></a>
-              </article>
-              <article class="guild-card" data-glow>
-                <span class="guild-icon">💼</span>
-                <h4>Business &amp; Investment</h4>
-                <p>Strategic partners driving growth and market advantage in the Austin tech corridor and beyond.</p>
-                <a href="mailto:kerry.p.pro@gmail.com?subject=Business%20%26%20Investment%20Guild" class="card-cta">Open a partnership <span aria-hidden="true">→</span></a>
-              </article>
-              <article class="guild-card" data-glow>
-                <span class="guild-icon">✨</span>
-                <h4>Spiritual Leadership</h4>
-                <p>A core group of dedicated men ensuring moral alignment and the protection of the marginalized.</p>
-                <a href="mailto:kerry.p.pro@gmail.com?subject=Spiritual%20Leadership%20Circle" class="card-cta">Join the circle <span aria-hidden="true">→</span></a>
-              </article>
-            </div>
-            <p class="ecosystem-partners">
-              <strong>Actively engaged with:</strong>
-              <span class="partner-marquee">
-                <span>Austin Technology Council</span>
-                <span>Austin AI Alliance</span>
-                <span>Elgin City Leadership</span>
-                <span>CyberTex Institute</span>
-                <span>HHO Guild Network</span>
-                <span>Austin Technology Council</span>
-                <span>Austin AI Alliance</span>
-                <span>Elgin City Leadership</span>
-                <span>CyberTex Institute</span>
-                <span>HHO Guild Network</span>
-              </span>
-            </p>
-          </div>
-        </div>
-        <p class="section-foot">Want the full picture? <a href="#connect">Book a 20-minute call</a> and I'll walk you through it.</p>
-      </section>
-
-      <!-- PHASE 5 · CONVERT (Connect + Newsletter merged) -->
-      <section class="section connect" id="connect">
-        <div class="section-head">
-          <span>Work With Me</span>
-          <h3>Tell me the outcome you want. I'll route your request with clarity.</h3>
-        </div>
-        <div class="connect-grid" id="connect-form">
-          <div class="connect-panel">
-            <p>Readiness assessment, community access, or partnership — name the outcome and I'll send back the next step.</p>
-            <div class="connect-links">
-              <a href="mailto:kerry.p.pro@gmail.com">Email: kerry.p.pro@gmail.com</a>
-              <a href="https://www.linkedin.com/in/kerrypp/" target="_blank" rel="noopener">LinkedIn</a>
-            </div>
-            <p class="hero-note">Response: usually within 24–48 hours. Action-oriented guidance only, no noise.</p>
-          </div>
-          <form class="contact-form">
-            <label>
-              Name or Organization *
-              <input type="text" name="name" placeholder="You or your organization" required />
-            </label>
-            <label>
-              Email *
-              <input type="email" name="email" placeholder="your@email.com" required />
-            </label>
-            <label>
-              I'm contacting you for:
-              <select name="focus">
-                <option>Choose your focus...</option>
-                <option>CMMC readiness &amp; gap analysis</option>
-                <option>AIOps &amp; security automation</option>
-                <option>Physical security design</option>
-                <option>HHO community membership</option>
-                <option>Strategic partnership / referral</option>
-              </select>
-            </label>
-            <label>
-              Your goal
-              <textarea name="goal" placeholder="The outcome I want is..." rows="4"></textarea>
-            </label>
-            <button type="submit" class="button primary">Send request</button>
-          </form>
-        </div>
-
-        <div class="newsletter-card">
-          <div>
-            <p class="newsletter-label">The Weekly Rep</p>
-            <h3>One email. Every week. What I'm building, breaking, and shipping.</h3>
-            <p class="newsletter-sub">CMMC field notes, automation patterns, HHO Guild milestones, and the labs landing in InfraRange. No noise.</p>
-          </div>
-          <form class="newsletter-form" action="#REPLACE-NEWSLETTER-ACTION-URL" method="post">
-            <label class="sr-only" for="newsletter-name">First name</label>
-            <input id="newsletter-name" name="first_name" type="text" placeholder="First name" required />
-            <label class="sr-only" for="newsletter-email">Email</label>
-            <input id="newsletter-email" name="email" type="email" placeholder="you@email.com" required />
-            <button type="submit" class="button primary">Get the Weekly Rep</button>
-            <p class="newsletter-note">5-email onboarding starts the moment you join. Unsubscribe anytime.</p>
-          </form>
-        </div>
-      </section>
-    </main>
-
-    <footer class="footer">
-      <div class="footer-grid">
-        <div class="footer-col">
-          <p class="footer-col-label">Site</p>
-          <ul class="footer-links">
-            <li><a href="#router">Start Here</a></li>
-            <li><a href="#services">Services</a></li>
-            <li><a href="#work">Work</a></li>
-            <li><a href="#connect">Book a Call</a></li>
-          </ul>
-        </div>
-        <div class="footer-col" id="follow">
-          <p class="footer-col-label">Follow</p>
-          <ul class="footer-links">
-            <li><a href="https://www.linkedin.com/in/kerrypp/" target="_blank" rel="noopener">LinkedIn</a></li>
-            <li><a href="#REPLACE-INSTAGRAM-URL" target="_blank" rel="noopener">Instagram</a></li>
-            <li><a href="#REPLACE-YOUTUBE-URL" target="_blank" rel="noopener">YouTube</a></li>
-            <li><a href="#REPLACE-X-TWITTER-URL" target="_blank" rel="noopener">X / Twitter</a></li>
-            <li><a href="#REPLACE-TIKTOK-URL" target="_blank" rel="noopener">TikTok</a></li>
-            <li><a href="#REPLACE-GITHUB-URL" target="_blank" rel="noopener">GitHub</a></li>
-            <li><a href="#REPLACE-SUBSTACK-URL" target="_blank" rel="noopener">Substack</a></li>
-            <li><a href="mailto:kerry.p.pro@gmail.com?subject=HHO%20Discord%20Invite">HHO Discord</a></li>
-          </ul>
-        </div>
-        <div class="footer-col" id="endorse">
-          <p class="footer-col-label">Endorse</p>
-          <ul class="footer-links">
-            <li><a href="https://www.linkedin.com/in/kerrypp/" target="_blank" rel="noopener">LinkedIn Recommendation</a></li>
-            <li><a href="#REPLACE-GOOGLE-BUSINESS-REVIEW-URL" target="_blank" rel="noopener">Google Business</a></li>
-            <li><a href="#REPLACE-RATEMYPROFESSOR-URL" target="_blank" rel="noopener">RateMyProfessor</a></li>
-            <li><a href="#REPLACE-CLUTCH-URL" target="_blank" rel="noopener">Clutch.co</a></li>
-            <li><a href="#REPLACE-G2-URL" target="_blank" rel="noopener">G2</a></li>
-            <li><a href="#REPLACE-TRUSTPILOT-URL" target="_blank" rel="noopener">Trustpilot</a></li>
-            <li><a href="#REPLACE-FIVERR-URL" target="_blank" rel="noopener">Fiverr</a></li>
-            <li><a href="#REPLACE-UPWORK-URL" target="_blank" rel="noopener">Upwork</a></li>
-          </ul>
-        </div>
-        <div class="footer-col">
-          <p class="footer-col-label">Ecosystem</p>
-          <ul class="footer-links">
-            <li>CyberTex Institute &mdash; Lead Instructor</li>
-            <li>HackersHideout &mdash; Discord Guild</li>
-            <li>InfraRange &mdash; Lab Platform (2026)</li>
-            <li>Multi-Tutor &mdash; Workshops (2027)</li>
-            <li>HHO Guild Network</li>
-            <li>Austin AI Alliance</li>
-            <li>Austin Technology Council</li>
-            <li>Elgin City Leadership</li>
-          </ul>
-        </div>
       </div>
-      <p class="footer-copy">© 2026 Kerry P. &mdash; Strategic Architect of Integrated Defense &middot; Lead Instructor &amp; Security Strategist &middot; Austin, Texas</p>
-    </footer>
-  </div>
+    </section>
+  </main>
 
+  <footer class="site-footer">
+    <div class="page-width footer-inner">
+      <a class="brand footer-brand" href="#top">
+        <span class="brand-mark" aria-hidden="true">KP</span>
+        <span class="brand-name">Kerry P.<span>Learn · Build · Demonstrate</span></span>
+      </a>
+      <p>CMMC-aligned engineering, hands-on learning, and shared progress.</p>
+      <a href="https://www.linkedin.com/in/kerrypp" target="_blank" rel="noopener noreferrer">LinkedIn <span aria-hidden="true">↗</span></a>
+      <small>© <span id="current-year">2026</span> Kerry P.</small>
+    </div>
+  </footer>
   <script src="script.js"></script>
 </body>
 </html>
