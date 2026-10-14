@@ -11,12 +11,12 @@ Training, the HHO Experts Guild, consulting inquiries, cloud / DevOps / AIOps, a
 ## Five-step funnel
 
 1. **Connect** on LinkedIn and join the [HHO Experts Guild Discord](https://discord.gg/2Y4vXTmpZb).
-2. **Endorse** with an honest recommendation or review.
+2. **Recommend and share** with an honest LinkedIn recommendation or, if you independently choose to share feedback after a firsthand CyberTex experience, use the CyberTex Institute of Technology Yelp listing. An expandable directory links to the professional, education, local, tech, and community platforms from the supplied list; platforms without known personal profile URLs link to their official homepages and are not presented as claimed profiles. The compact review starter is adaptable; reviews should reflect firsthand experience, and Yelp discourages solicited reviews. The optional share panel includes a ready-to-copy profile blurb for referrals.
 3. **Join** HHO, workshops, meetups, study groups, and upcoming guilds.
 4. **Consult** on CMMC readiness, cloud, DevOps, automation, physical security, and instruction.
 5. **Collaborate** on project pipeline work, freelance projects, startups, and shared community efforts.
 
-Yelp, RateMyProfessor, Eventbrite, Meetup, and other profile-specific links should be added when the correct profile URLs are available; the site intentionally does not point those names to generic or unverified pages.
+Only LinkedIn, Yelp, GitHub, and the Experts Guild Discord link to known personal or organization destinations. Other directory entries lead to platform homepages.
 
 ## Learning platforms
 
@@ -35,6 +35,8 @@ The CMMC section is a learning / engineering preview only; it explicitly states 
 
 - `index.html` — semantic page content, funnel, goals, and links
 - `profile.css` — responsive white and navy visual theme with a small terminal-inspired accent
-- `script.js` — accessible mobile navigation and dynamic copyright year
+- `script.js` — accessible mobile navigation and tabs, service inquiries, share-text copying, and dynamic copyright year
+
+The recommendation section includes an optional copyable profile blurb; its profile URL is filled in from the page address at runtime.
 
 The site uses plain HTML, CSS, and JavaScript. Open `index.html` in a modern browser or deploy the files to GitHub Pages, Netlify, Vercel, or another static host.

@@ -73,6 +73,30 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  const shareBlurb = document.querySelector('#share-blurb');
+  const copyShareButton = document.querySelector('[data-copy-share]');
+  const shareStatus = document.querySelector('#share-status');
+  const shareEmailLink = document.querySelector('#share-email-link');
+  if (shareBlurb && copyShareButton && shareStatus && shareEmailLink) {
+    const profileUrl = new URL(window.location.href);
+    profileUrl.hash = '';
+    profileUrl.search = '';
+    shareBlurb.value = `${shareBlurb.value.trim()} ${profileUrl.href}`;
+    const emailBody = `I thought you might find Kerry P.'s profile useful for cloud, DevOps, security, training, or capstone projects: ${profileUrl.href}`;
+    shareEmailLink.href = `mailto:?subject=${encodeURIComponent('Cloud, DevOps & Security Resources')}&body=${encodeURIComponent(emailBody)}`;
+
+    copyShareButton.addEventListener('click', async () => {
+      try {
+        await navigator.clipboard.writeText(shareBlurb.value);
+        shareStatus.textContent = 'Share text copied. Paste it wherever you like.';
+      } catch (error) {
+        shareBlurb.focus();
+        shareBlurb.select();
+        shareStatus.textContent = 'Could not copy automatically. The share text is selected so you can copy it manually.';
+      }
+    });
+  }
+
   const year = document.querySelector('#current-year');
   if (year) year.textContent = String(new Date().getFullYear());
 });
