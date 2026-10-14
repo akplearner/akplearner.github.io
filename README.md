@@ -2,6 +2,12 @@
 
 A responsive profile and portfolio site for Kerry P., instructor and community builder in Austin, Texas. It presents CMMC-aligned engineering and learning goals, certification preparation, practical capstones, community, consulting, and collaboration opportunities.
 
+## Who the site serves
+
+IT learners, career changers, small businesses, and early-stage teams building cloud and security skills or CMMC-aligned systems.
+
+Training, the HHO Experts Guild, consulting inquiries, cloud / DevOps / AIOps, and tutoring are presented as available paths. CMMC readiness services and the other guilds are explicitly identified as pending or in development.
+
 ## Five-step funnel
 
 1. **Connect** on LinkedIn and join the [HHO Experts Guild Discord](https://discord.gg/2Y4vXTmpZb).
@@ -21,7 +27,9 @@ Yelp, RateMyProfessor, Eventbrite, Meetup, and other profile-specific links shou
 
 The top-of-page selector lets visitors choose **Training**, **Consulting**, or **Services**. Service inquiries can be categorized using the selector; CMMC readiness is explicitly marked pending.
 
-The learning approach emphasizes realistic environment cases, architecture understanding, meaningful build metrics, and PKI-backed records learners can use to track and showcase their work.
+The learning approach emphasizes realistic environment cases, architecture understanding, meaningful build metrics, and PKI-backed records learners can use to track and showcase their work. The hero terminal is an illustrative sample rather than a claim of a specific verified project.
+
+The CMMC section is a learning / engineering preview only; it explicitly states that CMMC readiness services are not currently offered. Engagements are described as consultation, scoped project, and ongoing support; no rates are listed.
 
 ## Files
 

@@ -36,7 +36,7 @@
     <section class="hero page-width" id="top">
       <div class="hero-copy">
         <p class="eyebrow"><span class="eyebrow-line" aria-hidden="true"></span> Austin, Texas · Instructor · Community builder</p>
-        <h1>Turn IT knowledge into <span>work you can show.</span></h1>
+        <h1>I help learners and teams build <span>real cloud and security skills.</span></h1>
         <p class="identity-line">Kerry P. — Cloud, DevOps &amp; Security Engineer · Instructor</p>
         <p class="hero-intro">CMMC-aligned engineering, DevOps pipelines, automation, and community leadership. I help people prepare for certifications and build practical cloud and security projects—so your skills go beyond the practice test and into work you can explain to employers.</p>
         <div class="role-chips" aria-label="Professional focus">
@@ -46,7 +46,7 @@
           <span>CMMC readiness · pending</span>
         </div>
         <div class="path-picker">
-          <p class="path-picker-label">What are you looking for?</p>
+          <p class="path-picker-label" id="path-picker">Start here · choose what you need</p>
           <div class="path-tabs" role="tablist" aria-label="Choose a learning or service path">
             <button class="path-tab is-active" type="button" role="tab" id="path-tab-training" aria-selected="true" aria-controls="path-panel-training" tabindex="0" data-path="training">Training</button>
             <button class="path-tab" type="button" role="tab" id="path-tab-consulting" aria-selected="false" aria-controls="path-panel-consulting" tabindex="-1" data-path="consulting">Consulting</button>
@@ -87,18 +87,18 @@
             </div>
           </div>
         </div>
-        <p class="hero-footnote">Follow → Review → Join → Consult → Build together</p>
+        <a class="hero-footnote" href="#journey">Follow → Review → Join → Consult → Build together <span aria-hidden="true">↓</span></a>
       </div>
 
       <aside class="proof-panel" aria-label="Example project verification output">
         <div class="terminal-top">
           <span class="terminal-dots" aria-hidden="true"><i></i><i></i><i></i></span>
-          <span>portfolio-proof.log</span>
-          <span class="terminal-status"><span aria-hidden="true"></span> verified</span>
+          <span>sample-build-record.log</span>
+          <span class="terminal-status">example</span>
         </div>
         <div class="terminal-content">
-          <p><span class="terminal-prompt">$</span> project verify --evidence</p>
-          <p class="terminal-muted">checking build record and measurements…</p>
+          <p><span class="terminal-prompt">$</span> inspect sample --evidence</p>
+          <p class="terminal-muted">example project record · illustrative format</p>
           <div class="terminal-result">
             <span class="terminal-check" aria-hidden="true">✓</span>
             <span><strong>Build evidence</strong><small>Architecture · implementation · results</small></span>
@@ -116,8 +116,14 @@
       <div class="page-width focus-layout">
         <div class="focus-copy">
           <p class="eyebrow">Current goals</p>
-          <h2>Build capability that holds up in the real world.</h2>
-          <p>Focused on practical readiness, systems that work, and stronger pathways from learning into employment and collaboration.</p>
+          <h2>Who I help—and what’s available now.</h2>
+          <p class="who-we-serve"><strong>Who I serve</strong><br />IT learners, career changers, small businesses, and early-stage teams building cloud and security skills or CMMC-aligned systems.</p>
+          <div class="status-block">
+            <div><span class="status-indicator status-available"></span><strong>Available now</strong></div>
+            <p>LinkedIn · reviews · training · HHO Experts Guild · consultations · cloud / DevOps / AIOps · tutoring</p>
+            <div><span class="status-indicator status-pending"></span><strong>In development</strong></div>
+            <p>CMMC readiness services · Physical Elite · Business &amp; Investment · Spiritual Leadership guilds</p>
+          </div>
         </div>
         <div class="focus-grid">
           <article class="focus-item">
@@ -140,14 +146,52 @@
           </article>
         </div>
       </div>
+      <div class="page-width focus-why">
+        <p class="eyebrow">Why learn and build with me</p>
+        <div class="why-grid">
+          <article><span>TEACHING</span><h3>Instructor-led experience</h3><p>Lead instructor at CyberTex, with a focus on building understanding through practical scenarios and guided practice.</p></article>
+          <article><span>ENGINEERING</span><h3>Infrastructure to operations</h3><p>10+ years across infrastructure and security, bringing architecture, automation, and operational thinking into the work.</p></article>
+          <article><span>PORTFOLIO</span><h3>Show how you think</h3><p>Use project work to explain design choices, implementation, and measured results—not just list tools on a résumé.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="cmmc-preview section-space" id="cmmc">
+      <div class="page-width cmmc-layout">
+        <div>
+          <p class="eyebrow"><span class="eyebrow-line" aria-hidden="true"></span> CMMC readiness · pending</p>
+          <h2>A practical path toward CMMC readiness.</h2>
+          <p>CMMC readiness services are not currently offered. This preview outlines the engineering areas the learning and lab work is focused on—without implying an assessment, certification, or audit service.</p>
+        </div>
+        <div class="cmmc-preview-list" aria-label="CMMC learning focus">
+          <div><span>01</span><p><strong>Understand the requirements</strong><small>NIST SP 800-171 practices and system boundaries</small></p></div>
+          <div><span>02</span><p><strong>Design secure systems</strong><small>Architecture, access, infrastructure, and operations</small></p></div>
+          <div><span>03</span><p><strong>Make work observable</strong><small>Document decisions, evidence, and measurable outcomes</small></p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="proof-section section-space" id="proof">
+      <div class="page-width proof-layout">
+        <div class="section-heading">
+          <p class="eyebrow">Proof of work</p>
+          <h2>See the project-based learning path.</h2>
+          <p>Explore the capstone platform for hands-on project work. Project examples and verified build records can be added here as they are ready to share.</p>
+        </div>
+        <a class="proof-cta" href="https://capstone-static-site.vercel.app/" target="_blank" rel="noopener noreferrer">
+          <span class="proof-cta-icon" aria-hidden="true">↗</span>
+          <span><strong>Explore capstone projects</strong><small>Real scenarios · architecture · implementation · metrics</small></span>
+          <span class="proof-cta-arrow" aria-hidden="true">→</span>
+        </a>
+      </div>
     </section>
 
     <section class="platform-section section-space" id="platforms">
       <div class="page-width">
         <div class="section-heading">
           <p class="eyebrow">Choose your next step</p>
-          <h2>Two ways to move your skills forward.</h2>
-          <p>Start with the goal you have today. Build toward skills you can confidently demonstrate tomorrow.</p>
+          <h2>Training that leads to work you can demonstrate.</h2>
+          <p>Prepare for certification exams, then practice architecture and implementation through realistic capstone builds.</p>
         </div>
         <div class="platform-grid">
           <article class="platform-card cert-card">
@@ -236,6 +280,13 @@
                 <span>CMMC readiness · pending</span><span>Cloud architecture · Terraform · IaC</span>
                 <span>DevOps · CI/CD · scripting</span><span>AIOps · workflow automation</span>
                 <span>Cameras · access control · cabling</span><span>Tutoring · cert prep · coaching · labs</span>
+              </div>
+              <div class="engagement-steps" aria-label="Engagement structure">
+                <div><span>01</span><strong>Consultation</strong><small>Clarify needs</small></div>
+                <span class="engagement-arrow" aria-hidden="true">→</span>
+                <div><span>02</span><strong>Scoped project</strong><small>Agree deliverables</small></div>
+                <span class="engagement-arrow" aria-hidden="true">→</span>
+                <div><span>03</span><strong>Ongoing support</strong><small>As needed</small></div>
               </div>
               <a class="funnel-cta" href="mailto:kerry.p.pro@gmail.com?subject=Consultation%20Request">Discuss a consultation <span aria-hidden="true">→</span></a>
             </div>

@@ -62,8 +62,11 @@ document.addEventListener('DOMContentLoaded', () => {
       const service = serviceType.value;
       if (!service) return;
 
-      serviceContactLink.href = `mailto:kerry.p.pro@gmail.com?subject=${encodeURIComponent(`Service inquiry: ${service}`)}`;
-      serviceContactLink.textContent = 'Ask about this service →';
+      const isPending = service.startsWith('CMMC readiness');
+      const subject = isPending ? 'CMMC readiness updates (pending)' : `Service inquiry: ${service}`;
+      const action = isPending ? 'Ask about future availability →' : 'Ask about this service →';
+      serviceContactLink.href = `mailto:kerry.p.pro@gmail.com?subject=${encodeURIComponent(subject)}`;
+      serviceContactLink.textContent = action;
       serviceContactLink.classList.remove('is-disabled');
       serviceContactLink.removeAttribute('aria-disabled');
       serviceContactLink.removeAttribute('tabindex');
