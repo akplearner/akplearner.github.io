@@ -82,8 +82,11 @@ document.addEventListener('DOMContentLoaded', () => {
     profileUrl.hash = '';
     profileUrl.search = '';
     shareBlurb.value = `${shareBlurb.value.trim()} ${profileUrl.href}`;
-    const emailBody = `I thought you might find Kerry P.'s profile useful for cloud, DevOps, security, training, or capstone projects: ${profileUrl.href}`;
-    shareEmailLink.href = `mailto:?subject=${encodeURIComponent('Cloud, DevOps & Security Resources')}&body=${encodeURIComponent(emailBody)}`;
+    const updateShareEmail = () => {
+      shareEmailLink.href = `mailto:?subject=${encodeURIComponent('Cloud, DevOps & Security Resources')}&body=${encodeURIComponent(shareBlurb.value)}`;
+    };
+    updateShareEmail();
+    shareBlurb.addEventListener('input', updateShareEmail);
 
     copyShareButton.addEventListener('click', async () => {
       try {

@@ -11,12 +11,12 @@ Training, the HHO Experts Guild, consulting inquiries, cloud / DevOps / AIOps, a
 ## Five-step funnel
 
 1. **Connect** on LinkedIn and join the [HHO Experts Guild Discord](https://discord.gg/2Y4vXTmpZb).
-2. **Recommend and share** with an honest LinkedIn recommendation or, if you independently choose to share feedback after a firsthand CyberTex experience, use the CyberTex Institute of Technology Yelp listing. An expandable directory links to the professional, education, local, tech, and community platforms from the supplied list; platforms without known personal profile URLs link to their official homepages and are not presented as claimed profiles. The compact review starter is adaptable; reviews should reflect firsthand experience, and Yelp discourages solicited reviews. The optional share panel includes a ready-to-copy profile blurb for referrals.
+2. **Recommend or share (optional).** Open LinkedIn to recommend Kerry, or the CyberTex Yelp listing if sharing firsthand feedback about the school. Other listed platforms link to their homepages, not Kerry-specific review pages. The short template is optional; use your own truthful words and follow each platform's rules. Alternatively, edit, copy, or email the profile blurb.
 3. **Join** HHO, workshops, meetups, study groups, and upcoming guilds.
 4. **Consult** on CMMC readiness, cloud, DevOps, automation, physical security, and instruction.
 5. **Collaborate** on project pipeline work, freelance projects, startups, and shared community efforts.
 
-Only LinkedIn, Yelp, GitHub, and the Experts Guild Discord link to known personal or organization destinations. Other directory entries lead to platform homepages.
+Only LinkedIn, GitHub, and Experts Guild Discord link to known profiles or the community; Yelp goes to the CyberTex school listing. Other directory entries lead to platform homepages.
 
 ## Learning platforms
 

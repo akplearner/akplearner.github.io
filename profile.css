@@ -1315,6 +1315,16 @@ p {
   line-height: 1.75;
 }
 
+.review-steps {
+  display: grid;
+  gap: 5px;
+  margin: 11px 0 0;
+  padding-left: 19px;
+  color: #68778b;
+  font-size: 0.65rem;
+  line-height: 1.55;
+}
+
 .platform-directory {
   max-width: 780px;
   margin-top: 13px;
